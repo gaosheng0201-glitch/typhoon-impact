@@ -1,5 +1,5 @@
 {
- "version": "draft-2026-07-13-b2",
+ "version": "draft-2026-07-13-c1",
  "note": "对照库草稿：批次一(Top20试点) + 批次二(Top100剩余，Haiku抽取+Opus质检)。内容准则：只写生活影响。pending=待人工终审，approved 后合入 analogs.json。",
  "skipped": [
   {
@@ -6393,6 +6393,1851 @@
    ],
    "review": "pending",
    "eventId": "202506-wipha-香港"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "杭州"
+   },
+   "hazard": {
+    "rainTotalMm": 509,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "临安龙岗镇、岛石镇突发山洪、泥石流",
+    "power": "大面积断电",
+    "water": "330国道多处被冲跨，山体滑坡",
+    "evacuation": "",
+    "note": "西部山区遭遇历史最大短时局地暴雨"
+   },
+   "narrative": "台风利奇马使杭州临安西部山区遭遇历史极端暴雨，龙岗、岛石两镇突发山洪与泥石流，致通讯中断、道路塌方。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/2019%E5%B9%B4%E9%A2%B1%E9%A2%A8%E5%88%A9%E5%A5%87%E9%A6%AC%E5%B0%8D%E4%B8%AD%E5%9C%8B%E5%A4%A7%E9%99%B8%E7%9A%84%E5%BD%B1%E9%9F%BF",
+    "https://www.thepaper.cn/newsDetail_forward_4137473"
+   ],
+   "quotes": [
+    "照君岩雨量达到509毫米、天池455毫米、上溪站达到426毫米",
+    "330国道多处被雨水冲跨并引发多发性山体滑坡",
+    "浙江临安遭遇史上最大短时局地暴雨"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-杭州"
+  },
+  {
+   "typhoon": {
+    "name": "菲特",
+    "enName": "Fitow",
+    "tfid": "201323"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "杭州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "省级防台预警，河流水位预警",
+    "power": "",
+    "water": "南苕溪等重要河流险情",
+    "evacuation": "群众防汛转移",
+    "note": "倒槽降水导致浙江全境罕见洪涝"
+   },
+   "narrative": "台风菲特形成的倒槽降水使浙江全境出现罕见洪涝，杭州沿浙江主要河流发布预警，省级启动防台防汛措施。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/%E9%A2%B1%E9%A2%A8%E8%8F%B2%E7%89%B9",
+    "https://zh.wikipedia.org/wiki/2013%E5%B9%B4%E5%AE%81%E6%B3%A2%E6%B0%B4%E7%81%BE"
+   ],
+   "quotes": [
+    "菲特形成的倒槽降水使浙江全境出现罕见洪涝灾害",
+    "浙江省气象部门在10月6日下午5时发布了台风红色预警信号"
+   ],
+   "review": "pending",
+   "eventId": "201323-fitow-杭州"
+  },
+  {
+   "typhoon": {
+    "name": "灿鸿",
+    "enName": "Chan-hom",
+    "tfid": "201509"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "杭州"
+   },
+   "hazard": {
+    "rainTotalMm": 531,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "11条河流超越警戒水位1.91米，房屋倒塌",
+    "power": "",
+    "water": "巨浪、山崩灾害",
+    "evacuation": "浙江全省110万人撤离，杭州等8市共转移群众220886人",
+    "note": "1949年以来7月份登陆最强台风"
+   },
+   "narrative": "灿鸿于7月11日成为1949年以来7月登陆浙江最强台风，杭州地区大量群众转移，多条河流超警戒水位，造成大规模房屋破损。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-cn/%E9%A2%B1%E9%A2%A8%E7%87%A6%E9%B4%BB_(2015%E5%B9%B4)"
+   ],
+   "quotes": [
+    "灿鸿在浙江省摧毁700所房屋，并损坏另外1,400所房屋",
+    "浙江11条河流超越1.91米的警戒水位",
+    "受台风影响，中国大陆沿海地区约110万人需要撤离"
+   ],
+   "review": "pending",
+   "eventId": "201509-chan-hom-杭州"
+  },
+  {
+   "typhoon": {
+    "name": "菲特",
+    "enName": "Fitow",
+    "tfid": "201323"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "绍兴"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "下辖县市（新昌、嵊州）遭暴雨",
+    "power": "",
+    "water": "甬江流域最大规模降雨影响",
+    "evacuation": "防汛防台预警",
+    "note": "浙江全境洪涝灾害"
+   },
+   "narrative": "台风菲特导致绍兴地区（含新昌、嵊州）暴雨成灾，甬江流域遭遇水文记录以来最大规模降雨，全域进入防汛预警。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/%E9%A2%B1%E9%A2%A8%E8%8F%B2%E7%89%B9",
+    "https://zh.wikipedia.org/wiki/2013%E5%B9%B4%E5%AE%81%E6%B3%A2%E6%B0%B4%E7%81%BE"
+   ],
+   "quotes": [
+    "甬江流域遭遇有水文记录以来最大规模的降雨"
+   ],
+   "review": "pending",
+   "eventId": "201323-fitow-绍兴"
+  },
+  {
+   "typhoon": {
+    "name": "灿鸿",
+    "enName": "Chan-hom",
+    "tfid": "201509"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "绍兴"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "河流警戒水位预警",
+    "power": "",
+    "water": "暴雨、山洪风险",
+    "evacuation": "群众防汛转移",
+    "note": "浙江沿海严重降雨区域"
+   },
+   "narrative": "灿鸿登陆浙江期间，绍兴地区多条河流超警戒水位，大量群众受组织转移，暴雨引发山洪风险。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-cn/%E9%A2%B1%E9%A2%A8%E7%87%A6%E9%B4%BB_(2015%E5%B9%B4)"
+   ],
+   "quotes": [
+    "浙江11条河流超越1.91米的警戒水位"
+   ],
+   "review": "pending",
+   "eventId": "201509-chan-hom-绍兴"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "绍兴"
+   },
+   "hazard": {
+    "rainTotalMm": 396,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "诸暨浦阳江达警戒水位，形成2021年第1号洪水",
+    "power": "",
+    "water": "降雨导致浦阳江流域编号洪水",
+    "evacuation": "",
+    "note": "诸暨大岭山站创月降雨记录"
+   },
+   "narrative": "台风烟花使绍兴诸暨地区遭遇创纪录暴雨，大岭山累计降雨396毫米，浦阳江流域超警戒水位，形成当年首场编号洪水。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/%E9%A2%B1%E9%A2%A8%E7%83%9F%E8%8A%B1"
+   ],
+   "quotes": [
+    "诸暨大岭山站累计降雨量最大为396毫米",
+    "浦阳江流域诸暨站7月25日达到警戒水位，浦阳江流域发生今年第1场编号洪水"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-绍兴"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "南京"
+   },
+   "hazard": {
+    "rainTotalMm": 50,
+    "rainDurationH": 6,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "6小时50毫米以上强降水预警",
+    "power": "",
+    "water": "地铁风力影响，S3号线启动应急预案",
+    "evacuation": "",
+    "note": "南京南部强降水，地铁临时停运调度"
+   },
+   "narrative": "台风烟花影响南京地区，预报6小时降水超50毫米，地铁S3号线因风力预警触发应急预案，实行小交路运行。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/%E9%A2%B1%E9%A2%A8%E7%83%9F%E8%8A%B1",
+    "https://m.thepaper.cn/newsDetail_forward_13738256"
+   ],
+   "quotes": [
+    "南京南部等地区将出现6小时50毫米以上的强降水"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-南京"
+  },
+  {
+   "typhoon": {
+    "name": "云雀",
+    "enName": "Jongdari",
+    "tfid": "201812"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "南京"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "6级风及7-8级阵风",
+    "water": "大风预警",
+    "evacuation": "",
+    "note": "路径罕见，历史第四个东海登陆台风"
+   },
+   "narrative": "台风云雀于8月2日在上海登陆后进入江苏，南京地区发布蓝色台风预警，随后迅速减弱。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/%E9%A2%B1%E9%A2%A8%E9%9B%B2%E9%9B%80_(2018%E5%B9%B4)"
+   ],
+   "quotes": [
+    "云雀为有纪录以来第四个从东海登陆上海的热带气旋"
+   ],
+   "review": "pending",
+   "eventId": "201812-jongdari-南京"
+  },
+  {
+   "typhoon": {
+    "name": "麦莎",
+    "enName": "Matsa",
+    "tfid": "200509"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "南京"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "穿越江苏通道，带来降雨和洪涝",
+    "power": "",
+    "water": "山洪、泥石流次生灾害",
+    "evacuation": "",
+    "note": "登陆浙江后西北移动穿越江苏"
+   },
+   "narrative": "台风麦莎于8月5日在浙江登陆，随后西北移动穿越江苏，带来强风强雨，引发山洪和泥石流等次生灾害。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/%E9%A2%B1%E9%A2%A8%E9%BA%A5%E8%8E%8E"
+   ],
+   "quotes": [
+    "台风麦莎于8月5日19时40分登陆浙江省台州市玉环县沙门镇，随后向西北方向移动穿越浙江省、安徽省、江苏省和山东省"
+   ],
+   "review": "pending",
+   "eventId": "200509-matsa-南京"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "无锡"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "宜兴等地超过100毫米降雨",
+    "power": "大面积停电41.28万人次",
+    "water": "降雨导致积水内涝",
+    "evacuation": "143000人转移，20000艘船返港",
+    "note": "江苏次生灾害多发区域"
+   },
+   "narrative": "台风利奇马北上时，无锡（宜兴）地区遭遇超百毫米暴雨，大面积停电，数万群众被组织转移，海上船舶返港避险。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-hans/2019%E5%B9%B4%E9%A2%B1%E9%A2%A8%E5%88%A9%E5%A5%87%E9%A6%AC%E5%B0%8D%E4%B8%AD%E5%9C%8B%E5%A4%A7%E9%99%B8%E7%9A%84%E5%BD%B1%E9%9F%BF"
+   ],
+   "quotes": [
+    "1275个乡镇出现50毫米以上降雨，576个乡镇出现100毫米以上降雨",
+    "Jiangsu Province initiated a secondary emergency response to the typhoon, with 143,000 people evacuated and nearly 20,000 ships returning to port"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-无锡"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "无锡"
+   },
+   "hazard": {
+    "rainTotalMm": 385,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 4,
+    "flood": "太湖形成2021年第1号洪水，超警戒水位0.15米；19座宜兴水库全部溢洪",
+    "power": "",
+    "water": "太湖平均水位3.95米，7天排涝5980万立方米",
+    "evacuation": "防汛预警，河网精细调度",
+    "note": "近十年台风中最大雨量，宜兴水库接近历史极值"
+   },
+   "narrative": "台风烟花为无锡近十年台风中最强，宜兴竹海降雨385毫米创纪录，太湖形成年度首场洪水，19座水库溢洪，3天水位涨幅接近历史极值。",
+   "sources": [
+    "https://m.thepaper.cn/newsDetail_forward_13786368",
+    "https://zh.wikipedia.org/zh-cn/%E9%A2%B1%E9%A2%A8%E7%83%9F%E8%8A%B1_(2021%E5%B9%B4)"
+   ],
+   "quotes": [
+    "宜兴竹海，达385.1毫米",
+    "太湖形成2021年第1号洪水",
+    "19座水库全部溢洪，横山水库库区平均雨量347.5毫米，3天时间水库水位猛涨近5米，接近历史极值",
+    "7天累计排涝5980万立方米，相当于4个蛡湖的水量"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-无锡"
+  },
+  {
+   "typhoon": {
+    "name": "泰利",
+    "enName": "Talim",
+    "tfid": "200513"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "金华"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "残涡降雨导致浙江暴雨",
+    "power": "",
+    "water": "山洪、泥石流多地发生",
+    "evacuation": "",
+    "note": "福建登陆后残涡影响内陆浙江"
+   },
+   "narrative": "台风泰利于9月1日在福建登陆，其残涡在浙江内陆引发暴雨，金华等地遭遇山洪、泥石流灾害。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-tw/%E9%A2%B1%E9%A2%A8%E6%B3%B0%E5%88%A9_(2005%E5%B9%B4)"
+   ],
+   "quotes": [
+    "泰利在中国多省造成严重灾害，导致96人死亡，约30人失踪"
+   ],
+   "review": "pending",
+   "eventId": "200513-talim-金华"
+  },
+  {
+   "typhoon": {
+    "name": "莫兰蒂",
+    "enName": "Meranti",
+    "tfid": "201614"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "金华"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "暴雨导致山洪、泥石流",
+    "power": "",
+    "water": "浙江暴雨预警、山体滑坡",
+    "evacuation": "防汛预警",
+    "note": "2016年最强台风"
+   },
+   "narrative": "台风莫兰蒂为2016年西北太平洋最强热带气旋，登陆福建后影响浙江，金华地区遭遇暴雨，引发山洪泥石流灾害。",
+   "sources": [
+    "https://zh.wikipedia.org/zh-cn/%E9%A2%B1%E9%A2%A8%E8%8E%AB%E8%98%AD%E8%92%82"
+   ],
+   "quotes": [
+    "台风莫兰蒂是2016年西北太平洋最强的热带气旋，更是21世纪西北太平洋海域第四强风暴"
+   ],
+   "review": "pending",
+   "eventId": "201614-meranti-金华"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "南通"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "苏北地区普遍受灾",
+    "power": "停电12.6万户主要集中于南通、盐城",
+    "water": null,
+    "evacuation": "14.3万人撤离",
+    "note": "北上登陆浙江后逐步向江苏推进，外围降雨"
+   },
+   "narrative": "利奇马北上影响，南通地区普降强雨，电力系统受到严重冲击，大量居民被转移到安全地点。",
+   "sources": [
+    "zh.wikipedia: 2019年台风利奇马对中国大陆的影响"
+   ],
+   "quotes": [
+    "江苏有12.6万户用电受到影响，主要集中于南通、盐城等地",
+    "江苏省有14.3万人撤离"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-南通"
+  },
+  {
+   "typhoon": {
+    "name": "温比亚",
+    "enName": "Rumbia",
+    "tfid": "201818"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "南通"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "淮河以南出现区域性大暴雨，317个乡镇达大暴雨级别",
+    "power": null,
+    "water": null,
+    "evacuation": null,
+    "note": "8月17日登陆上海后西行进入江苏，苏通大桥斜拉索断裂"
+   },
+   "narrative": "温比亚登陆上海后西行，江苏地区遭遇持续强降雨，多地出现特大暴雨，苏通大桥受损被迫关闭。",
+   "sources": [
+    "zh.wikipedia: 2018年热带风暴温比亚"
+   ],
+   "quotes": [
+    "317个乡镇（街道）达到大暴雨级别",
+    "苏通大桥出现一根斜拉索阻尼器断裂的情况"
+   ],
+   "review": "pending",
+   "eventId": "201818-rumbia-南通"
+  },
+  {
+   "typhoon": {
+    "name": "达维",
+    "enName": "Damrey",
+    "tfid": "201210"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "南通"
+   },
+   "hazard": {
+    "rainTotalMm": 80,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "73万人受灾，海水倒灌",
+    "power": null,
+    "water": "天文大潮期间风暴潮",
+    "evacuation": "12.4万人紧急转移",
+    "note": "登陆盐城，南通地区受外围影响，苏北沿海海水倒灌特别严重"
+   },
+   "narrative": "达维登陆盐城时恰逢天文大潮，导致风、雨、潮\"三碰头\"灾害，南通地区海水倒灌，大量居民被紧急转移。",
+   "sources": [
+    "zh.wikipedia: 台风达维 (2012年)"
+   ],
+   "quotes": [
+    "江苏省连云港、盐城、南通3市24个县(区、市)73万人受灾，12.4万人紧急转移，近600间房屋倒塌"
+   ],
+   "review": "pending",
+   "eventId": "201210-damrey-南通"
+  },
+  {
+   "typhoon": {
+    "name": "贝碧嘉",
+    "enName": "Bebinca",
+    "tfid": "202413"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "南通"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "沿海风暴潮增水预警",
+    "power": "多地停电",
+    "water": "风暴潮增水100-270厘米",
+    "evacuation": null,
+    "note": "登陆上海浦东后影响江苏沿海，风暴潮叠加天文潮构成威胁"
+   },
+   "narrative": "贝碧嘉登陆上海成1949年来最强台风，余波影响南通沿海地区，强风暴潮加天文潮造成海水倒灌风险。",
+   "sources": [
+    "zh.wikipedia: 台风贝碧嘉 (2024年)"
+   ],
+   "quotes": [
+    "江苏南通风暴潮预警级别为蓝色，预计风暴增水100到270厘米"
+   ],
+   "review": "pending",
+   "eventId": "202413-bebinca-南通"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "盐城"
+   },
+   "hazard": {
+    "rainTotalMm": 80,
+    "rainDurationH": 6,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "苏北地区普遍受灾",
+    "power": "停电12.6万户主要集中于南通、盐城",
+    "water": null,
+    "evacuation": "14.3万人撤离",
+    "note": "预计6小时雨量超50毫米强降水，局地超100毫米"
+   },
+   "narrative": "利奇马外围影响盐城，强降雨持续，电力供应中断，大批居民被转移，苏北沿海风险高。",
+   "sources": [
+    "zh.wikipedia: 2019年台风利奇马对中国大陆的影响"
+   ],
+   "quotes": [
+    "江苏有12.6万户用电受到影响，主要集中于南通、盐城等地"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-盐城"
+  },
+  {
+   "typhoon": {
+    "name": "温比亚",
+    "enName": "Rumbia",
+    "tfid": "201818"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "盐城"
+   },
+   "hazard": {
+    "rainTotalMm": 120,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "淮河以南出现区域性大暴雨，317个乡镇达大暴雨级别",
+    "power": null,
+    "water": null,
+    "evacuation": null,
+    "note": "登陆上海后西行，盐城地区大风暴雨"
+   },
+   "narrative": "温比亚登陆后影响盐城，淮河以南普遍出现大暴雨，317个乡镇达到大暴雨级别，防灾压力巨大。",
+   "sources": [
+    "zh.wikipedia: 2018年热带风暴温比亚"
+   ],
+   "quotes": [
+    "317个乡镇（街道）达到大暴雨级别"
+   ],
+   "review": "pending",
+   "eventId": "201818-rumbia-盐城"
+  },
+  {
+   "typhoon": {
+    "name": "达维",
+    "enName": "Damrey",
+    "tfid": "201210"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "盐城"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 4,
+    "flood": "73万人受灾，苏北沿海海水倒灌",
+    "power": null,
+    "water": "天文大潮期风暴潮",
+    "evacuation": "12.4万人紧急转移，600间房屋倒塌",
+    "note": "8月2日登陆盐城陈家港，为1949年来登陆江苏最强台风"
+   },
+   "narrative": "达维在天文大潮期间登陆盐城，风雨潮\"三碰头\"造成灾难性后果，大量房屋倒塌，居民紧急转移。",
+   "sources": [
+    "zh.wikipedia: 台风达维 (2012年)"
+   ],
+   "quotes": [
+    "江苏省连云港、盐城、南通3市24个县(区、市)73万人受灾，12.4万人紧急转移，近600间房屋倒塌"
+   ],
+   "review": "pending",
+   "eventId": "201210-damrey-盐城"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "山东",
+    "city": "青岛"
+   },
+   "hazard": {
+    "rainTotalMm": 158,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "山东受灾165.53万人，停电216.56万户",
+    "power": "停电216.56万户",
+    "water": null,
+    "evacuation": "转移18.38万人",
+    "note": "11日晚登陆青岛黄岛区，创山东历史降雨纪录"
+   },
+   "narrative": "利奇马在青岛黄岛区再次登陆，创造山东158mm历史最高雨量纪录，停电范围广泛，大量居民被转移。",
+   "sources": [
+    "zh.wikipedia: 2019年台风利奇马对中国大陆的影响"
+   ],
+   "quotes": [
+    "山东普降暴雨。利奇马对山东带来158毫米的雨量，打破2018年强热带风暴温比亚的记录，位居该省历史第一",
+    "山东省应急厅初步统计，全省受灾人数165.53万人"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-青岛"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "山东",
+    "city": "烟台"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "山东普降暴雨",
+    "power": "停电216.56万户",
+    "water": null,
+    "evacuation": "转移18.38万人",
+    "note": "北上影响，暴雨强风"
+   },
+   "narrative": "利奇马北上影响山东半岛，烟台受外围强降雨影响，停电范围波及全省，电力紧张。",
+   "sources": [
+    "zh.wikipedia: 2019年台风利奇马对中国大陆的影响"
+   ],
+   "quotes": [
+    "山东省应急厅初步统计，全省受灾人数165.53万人"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-烟台"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "山东",
+    "city": "日照"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "山东普降暴雨",
+    "power": "停电216.56万户",
+    "water": null,
+    "evacuation": "转移18.38万人",
+    "note": "北上影响，暴雨强风"
+   },
+   "narrative": "利奇马北上影响山东半岛东部，日照地区遭遇强降雨和大风，电力供应中断，居民出行受阻。",
+   "sources": [
+    "zh.wikipedia: 2019年台风利奇马对中国大陆的影响"
+   ],
+   "quotes": [
+    "山东省应急厅初步统计，全省受灾人数165.53万人"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-日照"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "山东",
+    "city": "青岛"
+   },
+   "hazard": {
+    "rainTotalMm": 80,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "暴雨橙色预警",
+    "power": null,
+    "water": null,
+    "evacuation": null,
+    "note": "外围降雨影响，防汛Ⅳ级应急响应"
+   },
+   "narrative": "烟花外围影响山东沿海，青岛地区启动暴雨预警，中到大雨局部暴雨，防灾工作加强。",
+   "sources": [
+    "zh.wikipedia: 台风烟花 (2021年)"
+   ],
+   "quotes": [
+    "7月28日06时00分，山东省气象台发布台风蓝色预警信号和暴雨橙色预警信号"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-青岛"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "山东",
+    "city": "烟台"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "中到大雨局部暴雨",
+    "power": null,
+    "water": null,
+    "evacuation": null,
+    "note": "外围降雨，轻度影响"
+   },
+   "narrative": "烟花外围影响烟台，降雨量较小，中到大雨为主，防灾响应启动。",
+   "sources": [
+    "zh.wikipedia: 台风烟花 (2021年)"
+   ],
+   "quotes": [
+    "山东多地包括半岛地区有中到大雨局部暴雨，烟台地区降水10～30毫米"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-烟台"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "山东",
+    "city": "日照"
+   },
+   "hazard": {
+    "rainTotalMm": 50,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "中到大雨局部暴雨",
+    "power": null,
+    "water": null,
+    "evacuation": null,
+    "note": "外围降雨，轻度影响"
+   },
+   "narrative": "烟花外围影响日照，降雨10-30毫米，中等降雨，防灾措施启动。",
+   "sources": [
+    "zh.wikipedia: 台风烟花 (2021年)"
+   ],
+   "quotes": [
+    "山东多地包括半岛地区有中到大雨局部暴雨，日照地区降水10～30毫米"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-日照"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202009"
+   },
+   "region": {
+    "province": "辽宁",
+    "city": "大连"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "沿海地区受外围降雨影响",
+    "power": null,
+    "water": "沿海风浪增强",
+    "evacuation": null,
+    "note": "东北三连击之一，黄色预警"
+   },
+   "narrative": "美莎克北上影响大连，带来中等强度降雨和大风，沿海地区风浪增强，防灾预警发布。",
+   "sources": [
+    "zh.wikipedia: 台风美莎克 (2020年)"
+   ],
+   "quotes": [
+    "东北地区半个月内平均降水量达170.1毫米，较常年同期偏多3倍"
+   ],
+   "review": "pending",
+   "eventId": "202009-maysak-大连"
+  },
+  {
+   "typhoon": {
+    "name": "海神",
+    "enName": "Haishen",
+    "tfid": "202010"
+   },
+   "region": {
+    "province": "辽宁",
+    "city": "大连"
+   },
+   "hazard": {
+    "rainTotalMm": 80,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "暴雨影响",
+    "power": null,
+    "water": "沿海风力8-9级",
+    "evacuation": null,
+    "note": "东北三连击最后一个，风浪增强"
+   },
+   "narrative": "海神是东北\"三连击\"的最后一个台风，大连地区受到风雨影响，沿海风浪8-9级，降雨量接近美莎克。",
+   "sources": [
+    "zh.wikipedia: 台风海神 (2020年)"
+   ],
+   "quotes": [
+    "8日08时至9日08时，辽宁东北部等地有大到暴雨（50-80毫米）"
+   ],
+   "review": "pending",
+   "eventId": "202010-haishen-大连"
+  },
+  {
+   "typhoon": {
+    "name": "利奇马",
+    "enName": "Lekima",
+    "tfid": "201909"
+   },
+   "region": {
+    "province": "天津",
+    "city": "天津"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "自城市降水10.7毫米，蓟州庄果峪70.1毫米",
+    "power": null,
+    "water": "滨海沿海8级大风阵风10级，渤海10-12级",
+    "evacuation": null,
+    "note": "北上倒槽与冷空气结合产生强降雨"
+   },
+   "narrative": "利奇马北上与冷空气结合，天津地区遭遇强降雨和大风，滨海新区和沿海地区风力最强，海面风力达10-12级。",
+   "sources": [
+    "zh.wikipedia: 2019年台风利奇马对中国大陆的影响"
+   ],
+   "quotes": [
+    "自2019年08月10日17时至2019年08月11日14时全市平均降水10.7毫米，最大降雨量出现在蓟州的庄果峪，雨量为70.1毫米",
+    "滨海新区及宁河等东部沿海地区有8级大风阵风10级，渤海海面风力可达10～12级"
+   ],
+   "review": "pending",
+   "eventId": "201909-lekima-天津"
+  },
+  {
+   "typhoon": {
+    "name": "山竹",
+    "enName": "Mangkhut",
+    "tfid": "201822"
+   },
+   "region": {
+    "province": "广东",
+    "city": "佛山"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "43000户停电",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "强台风山竹登陆江门，佛山珠三角位置受影响明显，约4.3万户停电。",
+   "sources": [
+    "zh.wikipedia: 台风山竹_(2018年)",
+    "中国气象局"
+   ],
+   "quotes": [
+    "9月16日15时，佛山共有43000余户用户停电"
+   ],
+   "review": "pending",
+   "eventId": "201822-mangkhut-佛山"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "Hato",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "广东",
+    "city": "佛山"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "约5万户停电",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "天鸽珠海登陆，系当年最强台风，佛山经历极端高温后遭遇强风，停电人数众多。",
+   "sources": [
+    "新浪广东",
+    "国家应急广播网"
+   ],
+   "quotes": [
+    "逾5万用户停电"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-佛山"
+  },
+  {
+   "typhoon": {
+    "name": "妮妲",
+    "enName": "Nida",
+    "tfid": "201604"
+   },
+   "region": {
+    "province": "广东",
+    "city": "佛山"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "300余间房屋倒塌、500余间受损",
+    "power": "",
+    "water": "",
+    "evacuation": "6.3万人转移安置",
+    "note": ""
+   },
+   "narrative": "妮妲正面登陆深圳后穿越佛山，广东全省45.5万人受灾、6.3万人转移，农作物受灾23.8千公顷。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴妮妲_(2016年)",
+    "广东省民政厅"
+   ],
+   "quotes": [
+    "45.5万人受灾，6.3万人紧急转移安置，300余间房屋倒塌",
+    "农作物受灾面积23.8千公顷"
+   ],
+   "review": "pending",
+   "eventId": "201604-nida-佛山"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "Saola",
+    "tfid": "202309"
+   },
+   "region": {
+    "province": "广东",
+    "city": "佛山"
+   },
+   "hazard": {
+    "rainTotalMm": 58.5,
+    "rainDurationH": 16,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "3161名渔民上岸避险，1612艘渔船回港",
+    "note": ""
+   },
+   "narrative": "强台风苏拉珠海登陆，佛山全市平均58.5mm降雨最大170.4mm，1612艘渔船回港避风。",
+   "sources": [
+    "腾讯新闻: 深读佛山 | 抗击台风苏拉实录",
+    "佛山气象部门"
+   ],
+   "quotes": [
+    "全市平均雨量58.5毫米，各区最大雨量...高明杨和170.4毫米",
+    "分步组织全市1612艘渔船...全部回港避风，3161名渔民...全部上岸避险"
+   ],
+   "review": "pending",
+   "eventId": "202309-saola-佛山"
+  },
+  {
+   "typhoon": {
+    "name": "山竹",
+    "enName": "Mangkhut",
+    "tfid": "201822"
+   },
+   "region": {
+    "province": "广东",
+    "city": "东莞"
+   },
+   "hazard": {
+    "rainTotalMm": 299.1,
+    "rainDurationH": 24,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "谢岗镇严重水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "山竹登陆江门后接近东莞，谢岗镇9月15日22时至16日22时降雨量达299.1mm，为全市极端降雨。",
+   "sources": [
+    "zh.wikipedia: 台风山竹_(2018年)",
+    "东莞气象部门"
+   ],
+   "quotes": [
+    "谢岗镇降雨量达299.1毫米（9月15日22时至16日22时统计期间）"
+   ],
+   "review": "pending",
+   "eventId": "201822-mangkhut-东莞"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "Hato",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "广东",
+    "city": "东莞"
+   },
+   "hazard": {
+    "rainTotalMm": 75.7,
+    "rainDurationH": 24,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "多个镇街水浸，沿海潮位异常",
+    "power": "535户停电",
+    "water": "",
+    "evacuation": "",
+    "note": "沿海潮位3.08米超警0.28米"
+   },
+   "narrative": "天鸽外围环流影响东莞，局部降雨75.7mm，沿海潮位创新高，部分停电。",
+   "sources": [
+    "新浪广东: 天鸽袭莞多个镇街水浸",
+    "东莞气象部门"
+   ],
+   "quotes": [
+    "最大降雨量...为75.7毫米",
+    "截至午间，东莞电力线路跳闸，535客户停电"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-东莞"
+  },
+  {
+   "typhoon": {
+    "name": "妮妲",
+    "enName": "Nida",
+    "tfid": "201604"
+   },
+   "region": {
+    "province": "广东",
+    "city": "东莞"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "泗盛围风暴潮潮位创历史高位",
+    "power": "电网130万户受影响、东莞10012户停电",
+    "water": "",
+    "evacuation": "全市停工停业停课",
+    "note": "东莞首次发布台风红色预警"
+   },
+   "narrative": "妮妲登陆深圳对东莞造成巨大冲击，东莞首次发布台风红色预警，电网跳闸22条次致10012户停电。",
+   "sources": [
+    "东莞阳光网",
+    "新浪广东"
+   ],
+   "quotes": [
+    "泗盛围站最高潮位2.45米，超警0.55米",
+    "截至13点30分，东莞电网线路跳闸22条次，造成10012户用户停电"
+   ],
+   "review": "pending",
+   "eventId": "201604-nida-东莞"
+  },
+  {
+   "typhoon": {
+    "name": "山竹",
+    "enName": "Mangkhut",
+    "tfid": "201822"
+   },
+   "region": {
+    "province": "广东",
+    "city": "中山"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 14,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "超强台风山竹正面登陆江门后影响中山，全市现10-14级阵风，风雨叠加效应明显。",
+   "sources": [
+    "zh.wikipedia: 台风山竹_(2018年)",
+    "中山气象部门"
+   ],
+   "quotes": [
+    "中山有10-14级阵风",
+    "风雨叠加效应明显"
+   ],
+   "review": "pending",
+   "eventId": "201822-mangkhut-中山"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "Saola",
+    "tfid": "202309"
+   },
+   "region": {
+    "province": "广东",
+    "city": "中山"
+   },
+   "hazard": {
+    "rainTotalMm": 120.5,
+    "rainDurationH": 16,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "鸦岗水闸积水约1米",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "港澳客运停航、公交停运、学校延迟开学至9月4日"
+   },
+   "narrative": "苏拉登陆珠海后，中山全市平均120.5mm降雨最大209.8mm，港澳客运停航，中小学开学延迟。",
+   "sources": [
+    "中山市政府",
+    "中山网"
+   ],
+   "quotes": [
+    "全市共59个气象自动站雨量超过100毫米，平均面雨量120.5毫米，其中坦洲快线五桂山段...209.8毫米",
+    "中港客运2023年9月2日全天停航"
+   ],
+   "review": "pending",
+   "eventId": "202309-saola-中山"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "Hato",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "广东",
+    "city": "潮州"
+   },
+   "hazard": {
+    "rainTotalMm": 83,
+    "rainDurationH": 24,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "7间房屋倒塌、4处道路塌方、6处滑坡、80米水利沟渠损坏",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "农业损失明显：500亩农作物受灾"
+   },
+   "narrative": "天鸽外围环流影响潮州文祠镇，降雨83mm，500亩农作物受灾，5万斤橄榄落果，7间房屋倒塌。",
+   "sources": [
+    "潮州气象部门",
+    "新浪广东"
+   ],
+   "quotes": [
+    "全市最大降雨为凤凰山83毫米",
+    "文祠镇受灾农作物约500亩，橄榄落果约5万斤，果树倒伏100株，房屋倒塌7间"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-潮州"
+  },
+  {
+   "typhoon": {
+    "name": "海马",
+    "enName": "Haima",
+    "tfid": "201621"
+   },
+   "region": {
+    "province": "广东",
+    "city": "潮州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "600间房屋倒塌、3100间受损",
+    "power": "",
+    "water": "",
+    "evacuation": "9.5万人转移安置",
+    "note": "农田广泛受灾"
+   },
+   "narrative": "海马在汕尾登陆，潮州所在粤东7市合计186.5万人受灾、9.5万人转移，农作物受灾210.2千公顷。",
+   "sources": [
+    "zh.wikipedia: 超强台风海马_(2016年)",
+    "广东省民政厅"
+   ],
+   "quotes": [
+    "汕头、惠州、梅州等7市38个县(市、区)186.5万人受灾，9.5万人紧急转移安置",
+    "农作物受灾面积210.2千公顷"
+   ],
+   "review": "pending",
+   "eventId": "201621-haima-潮州"
+  },
+  {
+   "typhoon": {
+    "name": "妮妲",
+    "enName": "Nida",
+    "tfid": "201604"
+   },
+   "region": {
+    "province": "广西",
+    "city": "南宁"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "广西部分地区降雨超200mm"
+   },
+   "narrative": "妮妲登陆深圳后影响广西，南宁作为广西首府受外围雨带影响，广西总降雨超200mm。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴妮妲_(2016年)",
+    "广西气象部门"
+   ],
+   "quotes": [
+    "总雨量超过200毫米的强降雨出现在桂林、来宾、玉林、贵港、河池、南宁、崇左、钦州等市"
+   ],
+   "review": "pending",
+   "eventId": "201604-nida-南宁"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "Hato",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "广西",
+    "city": "南宁"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "近100间房屋倒塌、近300间受损、农作物受灾8.5万公顷",
+    "power": "",
+    "water": "",
+    "evacuation": "7800人转移安置",
+    "note": ""
+   },
+   "narrative": "天鸽珠海登陆后影响广西，南宁武鸣区等地受灾；广西7市合计17.8万人受灾、7800余人紧急转移。",
+   "sources": [
+    "新华网",
+    "广西气象部门"
+   ],
+   "quotes": [
+    "南宁、梧州、防城港等7市21个县(市、区)17.8万人受灾，7800余人紧急转移安置",
+    "农作物受灾面积8.5千公顷"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-南宁"
+  },
+  {
+   "typhoon": {
+    "name": "威马逊",
+    "enName": "Rammasun",
+    "tfid": "201409"
+   },
+   "region": {
+    "province": "广西",
+    "city": "南宁"
+   },
+   "hazard": {
+    "rainTotalMm": 170.3,
+    "rainDurationH": 36,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "农作物受灾7699公顷",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "横县11个乡镇出现大暴雨"
+   },
+   "narrative": "超强台风威马逊登陆防城港后深入广西，南宁横县降雨170.3mm，10.4万人受灾，7699公顷农田受灾。",
+   "sources": [
+    "中国新闻网",
+    "广西气象部门"
+   ],
+   "quotes": [
+    "横县11个乡镇出现大暴雨，最大降雨量出现在新福镇为170.3毫米",
+    "受灾人口10.4万人，农作物受灾面积7699公顷"
+   ],
+   "review": "pending",
+   "eventId": "201409-rammasun-南宁"
+  },
+  {
+   "typhoon": {
+    "name": "海鸥",
+    "enName": "Kalmaegi",
+    "tfid": "201415"
+   },
+   "region": {
+    "province": "广西",
+    "city": "钦州"
+   },
+   "hazard": {
+    "rainTotalMm": 522,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "近2800间房屋倒塌、3.2万间房屋受损、农作物受灾284千公顷",
+    "power": "",
+    "water": "",
+    "evacuation": "15.1万人转移安置",
+    "note": "钦州洞利圩降雨522mm创历史新高"
+   },
+   "narrative": "台风海鸥南下登陆湛江，钦州洞利圩极端降雨522mm破纪录；广西9市合计2800间房屋倒塌、15.1万人紧急转移。",
+   "sources": [
+    "zh.wikipedia: 强台风海鸥_(2014年)",
+    "广西气象部门"
+   ],
+   "quotes": [
+    "最大点雨量中，广西钦州洞利圩522毫米",
+    "钦州、北海、防城港等9市...2800间房屋倒塌，3.2万间损坏，15.1万人紧急转移安置"
+   ],
+   "review": "pending",
+   "eventId": "201415-kalmaegi-钦州"
+  },
+  {
+   "typhoon": {
+    "name": "威马逊",
+    "enName": "Rammasun",
+    "tfid": "201409"
+   },
+   "region": {
+    "province": "广西",
+    "city": "钦州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大量树木倒伏、广告牌倒下",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "沿海渔业毁灭性打击"
+   },
+   "narrative": "威马逊在防城港登陆，钦州作为北部湾地区之一，大量树木和广告牌倒塌，沿海渔业受损。",
+   "sources": [
+    "中国新闻网",
+    "广西天气网"
+   ],
+   "quotes": [
+    "钦州大量树木和广告牌倒下",
+    "北海、防城港、钦州等11市57个县（市、区）428万人受灾"
+   ],
+   "review": "pending",
+   "eventId": "201409-rammasun-钦州"
+  },
+  {
+   "typhoon": {
+    "name": "威马逊",
+    "enName": "Rammasun",
+    "tfid": "201409"
+   },
+   "region": {
+    "province": "广西",
+    "city": "防城港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 15,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 4,
+    "flood": "8100间房屋倒塌、13.9万间受损",
+    "power": "",
+    "water": "",
+    "evacuation": "31.7万人转移安置",
+    "note": "渔业毁灭性打击，3586艘渔船回港"
+   },
+   "narrative": "防城港是威马逊的登陆地（光坡镇），登陆时15级风力创历史记录；广西11市合计8100余间房屋倒塌、13.9万间损坏。",
+   "sources": [
+    "zh.wikipedia: 超强台风威马逊_(2014年)",
+    "广西民政厅"
+   ],
+   "quotes": [
+    "7月19日7时10分前后，台风在防城港登陆，中心风力达15级",
+    "防城港共有渔船3589艘...共有3586艘渔船回港",
+    "北海、防城港、钦州等11市57个县...8100余间房屋倒塌，13.9万间不同程度损坏"
+   ],
+   "review": "pending",
+   "eventId": "201409-rammasun-防城港"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "安徽",
+    "city": "合肥"
+   },
+   "hazard": {
+    "rainTotalMm": 250,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "部分地区大暴雨，积水风险",
+    "power": "大风4-5级，阵风7-9级",
+    "water": "防范中小河流汛情",
+    "evacuation": "提前转移建筑安全隐患点",
+    "note": "安徽全省江淮之间东部和沿江地区受暴雨影响最重"
+   },
+   "narrative": "2021年台风烟花7月27日下午进入合肥，带来强降水和大风。部分地区24小时降雨超300毫米，小时雨强最大50-80毫米。工地停工，景区关闭。",
+   "sources": [
+    "澎湃新闻: https://m.thepaper.cn/newsDetail_forward_13741149",
+    "合肥本地宝: http://hf.bendibao.com/news/2021727/73830.shtm"
+   ],
+   "quotes": [
+    "最大小时雨强50～80毫米，局部超过100毫米",
+    "累计降雨量150-250毫米，局部超300毫米",
+    "预计7月27日下午到傍晚，'烟花'将移入安徽省内"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-合肥"
+  },
+  {
+   "typhoon": {
+    "name": "格美",
+    "enName": "Gaemi",
+    "tfid": "202403"
+   },
+   "region": {
+    "province": "江西",
+    "city": "南昌"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "中到大雨，局部暴雨到大暴雨",
+    "power": "阵风7-8级",
+    "water": "防范内涝风险",
+    "evacuation": "",
+    "note": "台风环流中心7月26日傍晚由上饶、鹰潭进入江西"
+   },
+   "narrative": "2024年台风格美7月25-27日影响南昌，带来阵风7-8级和大到暴雨。气象部门启动三级应急响应，高温天气明显缓和。",
+   "sources": [
+    "南昌新闻网: https://www.ncnews.com.cn/xwzx/ncxw/shzx/202407/t20240724_2082520.html",
+    "南昌本地宝: http://nc.bendibao.com/news/2024724/89810.shtm"
+   ],
+   "quotes": [
+    "预计2024年7月25-27日南昌市有一次大风、降水天气过程，有中到大雨或雷雨，局部有暴雨到大暴雨，阵风可达7-8级",
+    "台风环流中心于7月26日傍晚前后由上饶、鹰潭到抚州一带进入江西"
+   ],
+   "review": "pending",
+   "eventId": "202403-gaemi-南昌"
+  },
+  {
+   "typhoon": {
+    "name": "烟花",
+    "enName": "In-fa",
+    "tfid": "202106"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "杭州"
+   },
+   "hazard": {
+    "rainTotalMm": 199,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "市区面雨量199mm，城市内部积水",
+    "power": "树木导致中低压架空线路跳闸，多地停电",
+    "water": null,
+    "evacuation": "2.3万名建筑工人转移安置",
+    "note": "台风中心纵穿杭州市，启动Ⅰ级应急响应"
+   },
+   "narrative": "台风烟花穿过杭州湾进入中国大陆，杭州市面雨量达199毫米，导致大量建筑工人紧急转移。",
+   "sources": [
+    "zh.wikipedia: 台风烟花 (2021年)",
+    "杭州网: 烟花来袭 杭州众志成城战台风"
+   ],
+   "quotes": [
+    "全市面雨量达199mm",
+    "2.3万名建筑工人在1.5小时内全部撤离完毕",
+    "树木造成中低压架空线路跳闸，导致许多地方停电"
+   ],
+   "review": "pending",
+   "eventId": "202106-in-fa-杭州"
+  },
+  {
+   "typhoon": {
+    "name": "米娜",
+    "enName": "Mitag",
+    "tfid": "201918"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "舟山"
+   },
+   "hazard": {
+    "rainTotalMm": 279.6,
+    "rainDurationH": 12,
+    "peakPower": null,
+    "landfall": true,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "舟山城区大面积受淹，强风导致海水倒灌",
+    "power": null,
+    "water": null,
+    "evacuation": "浙江全省78万人撤离（舟山登陆地）",
+    "note": "10月1日登陆普陀沿海，是月份最强登陆台风"
+   },
+   "narrative": "强台风米娜于10月1日登陆舟山普陀，12小时降雨达279.6毫米创新纪录，舟山城区大面积积水受淹。",
+   "sources": [
+    "zh.wikipedia: 台风米娜 (2019年)"
+   ],
+   "quotes": [
+    "12小时雨量279.6毫米，创下新纪录",
+    "登陆舟山后，舟山城区大面积受淹"
+   ],
+   "review": "pending",
+   "eventId": "201918-mitag-舟山"
+  },
+  {
+   "typhoon": {
+    "name": "梅花",
+    "enName": "Muifa",
+    "tfid": "202212"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "舟山"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": null,
+    "power": null,
+    "water": null,
+    "evacuation": "浙江全省72万人转移",
+    "note": "9月14日登陆舟山普陀沿海，停课停运措施广泛实施"
+   },
+   "narrative": "强台风梅花于9月14日登陆舟山，导致浙江全省中小学停课，各地景区关闭，交通运输中断。",
+   "sources": [
+    "zh.wikipedia: 台风梅花 (2022年)"
+   ],
+   "quotes": [
+    "浙江全境转移72万人",
+    "宁波、舟山、台州、嘉兴和绍兴等地9月14日停课"
+   ],
+   "review": "pending",
+   "eventId": "202212-muifa-舟山"
   }
  ]
 }
