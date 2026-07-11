@@ -61,6 +61,7 @@ const ImpactPanel = (() => {
 
   function updateAll(storms) {
     P.storms = (storms || []).filter((s) => s && s.track && s.track.length);
+    if (P.regions) loadForecast(); // 15 分钟 TTL，保持「此刻」新鲜
     renderBar();
     renderResult();
   }
@@ -367,13 +368,17 @@ const ImpactPanel = (() => {
     }
     if (win) durationH = (win.endT - win.startT) / 3.6e6;
 
-    // 此刻锚点：用户对照的是窗外，卡片必须回答「现在」
+    // 此刻锚点：优先 15 分钟级 current，整点槽仅回退
     let nowWx = null, easing = false;
     if (fdata) {
-      let iNow = -1;
-      for (let i = 0; i < fdata.t.length; i++) if (fdata.t[i] <= nowT) iNow = i;
-      if (iNow >= 0) {
-        nowWx = { rain: fdata.p[iNow] || 0, gust: fdata.g[iNow] || 0 };
+      if (fdata.cur && fdata.cur.rain != null) {
+        nowWx = { rain: fdata.cur.rain, gust: fdata.cur.gust || 0 };
+      } else {
+        let iNow = -1;
+        for (let i = 0; i < fdata.t.length; i++) if (fdata.t[i] <= nowT) iNow = i;
+        if (iNow >= 0) nowWx = { rain: fdata.p[iNow] || 0, gust: fdata.g[iNow] || 0 };
+      }
+      if (nowWx) {
         easing = phase === "during" && ptime(closest) < nowT &&
           nowWx.rain < 1.5 && nowWx.gust < 62;
       }
@@ -393,11 +398,12 @@ const ImpactPanel = (() => {
              nowWx, easing, level, moveKmh, slowMover, durationH, endPoint, stillInRangeAtEnd };
   }
 
-  /* 此刻天气的人话描述 */
+  /* 此刻天气的人话描述（小时雨强口径：<2.5 小雨 / <8 中雨 / <16 大雨 / ≥16 暴雨强度） */
   function nowWxDesc(w) {
-    const r = w.rain < 0.2 ? "基本无雨" : w.rain < 1 ? "零星小雨" : w.rain < 4 ? "小到中雨"
-      : w.rain < 10 ? "大雨" : "暴雨强度";
-    return `${r} · 阵风约${gustLevel(w.gust)}级`;
+    const r = w.rain < 0.1 ? "基本无雨" : w.rain < 2.5 ? "小雨" : w.rain < 8 ? "中雨"
+      : w.rain < 16 ? "大雨" : "暴雨强度";
+    const num = w.rain >= 0.1 ? `（约 ${Math.round(w.rain * 10) / 10} mm/h）` : "";
+    return `${r}${num} · 阵风约${gustLevel(w.gust)}级`;
   }
 
   /* 阶段化标题：不同阶段说不同的话 */
@@ -438,17 +444,23 @@ const ImpactPanel = (() => {
 
   async function loadForecast() {
     const key = `${P.loc.lat},${P.loc.lng}`;
-    if (P.forecast[key] !== undefined) return;
-    P.forecast[key] = undefined; // 占位
+    const cached = P.forecast[key];
+    if (cached === null) return; // 请求进行中
+    if (cached && Date.now() - cached.at < 15 * 60e3) return; // 15 分钟内视为新鲜
+    P.forecast[key] = null;
     try {
       const d = await fetchJSON2(
         `https://api.open-meteo.com/v1/forecast?latitude=${P.loc.lat}&longitude=${P.loc.lng}` +
-        `&hourly=precipitation,wind_gusts_10m&past_days=2&forecast_days=7&timezone=Asia%2FShanghai`);
+        `&hourly=precipitation,wind_gusts_10m&current=precipitation,wind_gusts_10m` +
+        `&past_days=2&forecast_days=7&timezone=Asia%2FShanghai`);
       P.forecast[key] = {
+        at: Date.now(),
         ts: d.hourly.time, // 北京钟面原文，用于展示
         t: d.hourly.time.map((s) => new Date(s + ":00+08:00").getTime()),
         p: d.hourly.precipitation,
         g: d.hourly.wind_gusts_10m,
+        // 15 分钟级当前实况——「此刻」必须用它，整点槽可能滞后近一小时
+        cur: d.current ? { rain: d.current.precipitation, gust: d.current.wind_gusts_10m } : null,
       };
       renderBar();
       renderResult();
