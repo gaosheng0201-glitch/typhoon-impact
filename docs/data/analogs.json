@@ -1,270 +1,486 @@
 {
-  "version": "0.2-draft",
-  "note": "历史台风影响对照库（人工整理的代表性案例，并非完整台风年表）。数值多取城市范围内最大站点过程量并作约数，供相对对照用，不作工程依据。schema 见 README。",
-  "events": [
-    {
-      "eventId": "201909-lekima-taizhou",
-      "typhoon": { "tfid": "201909", "name": "利奇马", "enName": "LEKIMA" },
-      "region": { "province": "浙江", "city": "台州" },
-      "hazard": { "rainTotalMm": 830, "rainDurationH": 48, "peakPower": 16, "landfall": true, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "城区大范围内涝，临海古城被淹",
-        "power": "大面积停电，部分区域数日恢复",
-        "water": "部分区域停水",
-        "evacuation": "大规模人员转移",
-        "note": "超强台风在温岭登陆，括苍山站过程雨量约830mm"
-      },
-      "narrative": "2019年利奇马在温岭登陆（16级），台州山区过程雨量超800mm，临海古城被淹、大面积停电，组织了大规模转移。",
-      "sources": ["中国气象灾害年鉴2020", "公开报道"]
-    },
-    {
-      "eventId": "201909-lekima-wenzhou",
-      "typhoon": { "tfid": "201909", "name": "利奇马", "enName": "LEKIMA" },
-      "region": { "province": "浙江", "city": "温州" },
-      "hazard": { "rainTotalMm": 400, "rainDurationH": 36, "peakPower": 16, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "永嘉山区山洪，山早村堰塞湖漫坝致重大伤亡；多地内涝",
-        "power": "大范围停电",
-        "water": "部分区域停水",
-        "evacuation": "数十万人转移",
-        "note": "登陆点在北侧温岭，温州以强降雨致灾为主"
-      },
-      "narrative": "2019年利奇马过境，温州山区强降雨引发永嘉山早村山洪灾害，全市大范围停电、数十万人转移。",
-      "sources": ["中国气象灾害年鉴2020", "公开报道"]
-    },
-    {
-      "eventId": "201323-fitow-ningbo",
-      "typhoon": { "tfid": "201323", "name": "菲特", "enName": "FITOW" },
-      "region": { "province": "浙江", "city": "宁波" },
-      "hazard": { "rainTotalMm": 500, "rainDurationH": 72, "peakPower": 14, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "余姚约七成城区受淹，主城交通瘫痪多日",
-        "power": "余姚大面积停电约一周",
-        "water": "停水多日",
-        "evacuation": "大量人员转移",
-        "note": "登陆点在福建福鼎，宁波致灾主因是持续性极端降雨叠加天文大潮"
-      },
-      "narrative": "2013年菲特虽登陆福建，但给宁波带来3天约500mm降雨叠加天文大潮，余姚七成城区被淹、停电停水约一周——「台风不登陆也能重灾」的典型案例。",
-      "sources": ["中国气象灾害年鉴2014", "公开报道"]
-    },
-    {
-      "eventId": "202106-infa-ningbo",
-      "typhoon": { "tfid": "202106", "name": "烟花", "enName": "IN-FA" },
-      "region": { "province": "浙江", "city": "宁波" },
-      "hazard": { "rainTotalMm": 1000, "rainDurationH": 96, "peakPower": 13, "landfall": true, "approx": true },
-      "impact": {
-        "level": 3,
-        "flood": "余姚等地内涝，但提前防御充分，未成重灾",
-        "power": "局部停电，快速恢复",
-        "water": "基本正常",
-        "evacuation": "提前大规模预防性转移",
-        "note": "移速极慢导致雨量极大（余姚山区站过程雨量约1000mm），但充分预警下损失可控——预警价值的正面案例"
-      },
-      "narrative": "2021年烟花移速极慢，余姚山区累计雨量约1000mm创纪录，但因提前预警和大规模预防性转移，损失远小于菲特——同一座城市，预警充分与否结果完全不同。",
-      "sources": ["中国气象灾害年鉴2022", "公开报道"]
-    },
-    {
-      "eventId": "202106-infa-shanghai",
-      "typhoon": { "tfid": "202106", "name": "烟花", "enName": "IN-FA" },
-      "region": { "province": "上海", "city": "上海" },
-      "hazard": { "rainTotalMm": 300, "rainDurationH": 96, "peakPower": 13, "landfall": false, "approx": true },
-      "impact": {
-        "level": 3,
-        "flood": "市区多处积水，部分下立交封闭",
-        "power": "局部停电",
-        "water": "基本正常",
-        "evacuation": "沿海一线人员转移，两机场航班大面积取消",
-        "note": "风雨持续时间长是主要特点"
-      },
-      "narrative": "2021年烟花影响上海4天，累计雨量约300mm，市区多处积水、航班大面积取消，但未成重灾。",
-      "sources": ["中国气象灾害年鉴2022", "公开报道"]
-    },
-    {
-      "eventId": "200608-saomai-wenzhou",
-      "typhoon": { "tfid": "200608", "name": "桑美", "enName": "SAOMAI" },
-      "region": { "province": "浙江", "city": "温州" },
-      "hazard": { "rainTotalMm": 250, "rainDurationH": 24, "peakPower": 17, "landfall": true, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "苍南沿海风暴潮，渔港船只大量损毁",
-        "power": "登陆区域电网大面积损毁",
-        "water": "登陆区域长时间停水",
-        "evacuation": "紧急转移，仍造成重大人员伤亡",
-        "note": "以极端风灾为主（登陆时17级、920hPa），非降雨型灾害的代表案例"
-      },
-      "narrative": "2006年桑美以17级强度在苍南登陆，是登陆我国大陆的最强台风之一，风灾和风暴潮造成重大伤亡——「风比雨更致命」的极端案例。",
-      "sources": ["中国气象灾害年鉴2007", "公开报道"]
-    },
-    {
-      "eventId": "201822-mangkhut-shenzhen",
-      "typhoon": { "tfid": "201822", "name": "山竹", "enName": "MANGKHUT" },
-      "region": { "province": "广东", "city": "深圳" },
-      "hazard": { "rainTotalMm": 200, "rainDurationH": 36, "peakPower": 14, "landfall": false, "approx": true },
-      "impact": {
-        "level": 3,
-        "flood": "沿海风暴潮漫堤，局部内涝",
-        "power": "局部停电",
-        "water": "基本正常",
-        "evacuation": "全市停工停课，沿海人员转移",
-        "note": "全市树木倒伏数万棵，城市运转中断以风灾为主"
-      },
-      "narrative": "2018年山竹在台山登陆，深圳全市停工停课，树木倒伏数万棵、沿海风暴潮漫堤，城市恢复用了数天。",
-      "sources": ["中国气象灾害年鉴2019", "公开报道"]
-    },
-    {
-      "eventId": "202212-muifa-ningbo",
-      "typhoon": { "tfid": "202212", "name": "梅花", "enName": "MUIFA" },
-      "region": { "province": "浙江", "city": "宁波" },
-      "hazard": { "rainTotalMm": 707, "rainDurationH": 72, "peakPower": 14, "landfall": false, "approx": true },
-      "impact": {
-        "level": 3,
-        "flood": "宁波山区出现持续强降雨，余姚局地过程雨量超过700毫米",
-        "power": "未见大范围长期停电的官方统计",
-        "water": "未见大范围停水的官方统计",
-        "evacuation": "浙沪提前组织人员转移避险",
-        "note": "余姚夏家岭最大过程雨量707毫米；浙江实现人员无伤亡、灾害损失较轻"
-      },
-      "narrative": "2022年梅花虽在舟山登陆，但宁波余姚山区过程雨量达到707毫米；依靠提前预警和转移，浙江实现人员无伤亡、灾害损失较轻。",
-      "sources": [
-        "中国气象局｜2022年9月8日至9月16日台风“梅花”及暴雨预报案例：https://www.cma.gov.cn/ztbd/2022zt/20221031/2022103101/202210/t20221031_5157503.html",
-        "中国气象局｜我的2022：那一夜，精准捕捉台风“梅花”：https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xqxyw/202212/t20221226_5233417.html"
-      ]
-    },
-    {
-      "eventId": "202305-doksuri-wenzhou",
-      "typhoon": { "tfid": "202305", "name": "杜苏芮", "enName": "DOKSURI" },
-      "region": { "province": "浙江", "city": "温州" },
-      "hazard": { "rainTotalMm": 821, "rainDurationH": 120, "peakPower": 15, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "苍南西部山区出现极端强降雨，全市台风影响期间发生多起地质灾害",
-        "power": "局部基础设施受持续强降雨影响",
-        "water": "未见大范围停水的官方统计",
-        "evacuation": "苍南县紧急转移安置5527人",
-        "note": "苍南岑溪天井站最大过程雨量820.7毫米，强降雨持续5天"
-      },
-      "narrative": "2023年杜苏芮登陆福建前后，温州苍南连续5天强降雨，山区单站过程雨量约821毫米并转移5527人——台风不在本地登陆，山区仍可能遭遇极端降雨。",
-      "sources": [
-        "苍南县地方志研究室｜苍南年鉴2024：https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1831/site/attach/0/394bc1251beb4ba2a98f3b1e5826247c.pdf",
-        "温州市水利局｜温州市水资源公报2023：https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2514/site/attach/0/48e6519e963d47c5bc7660988e549575.pdf"
-      ]
-    },
-    {
-      "eventId": "202305-doksuri-beijing",
-      "typhoon": { "tfid": "202305", "name": "杜苏芮", "enName": "DOKSURI" },
-      "region": { "province": "北京", "city": "北京" },
-      "hazard": { "rainTotalMm": 745, "rainDurationH": 83, "peakPower": 15, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "门头沟、房山等地发生严重洪涝、山洪和地质灾害，海河流域发生流域性洪水",
-        "power": "部分受灾山区通信、电力和道路中断",
-        "water": "部分受灾区域供水和交通受影响",
-        "evacuation": "全市启动防汛一级应急响应并大规模转移涉险群众",
-        "note": "昌平王家园水库过程雨量744.8毫米，为北京地区140年来最大雨量"
-      },
-      "narrative": "2023年杜苏芮停编后，残余环流北上与地形共同作用，北京连续降雨约83小时，最大过程雨量近745毫米并引发严重洪涝——“台风停编”不等于影响结束。",
-      "sources": [
-        "中国气象局｜2023年国内十大天气气候事件：https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xqxyw/202401/t20240119_6016036.html",
-        "应急管理部｜2023年全国自然灾害基本情况：https://www.mem.gov.cn/xw/yjglbgzdt/202401/t20240120_475697.shtml"
-      ]
-    },
-    {
-      "eventId": "202311-haikui-shenzhen",
-      "typhoon": { "tfid": "202311", "name": "海葵", "enName": "HAIKUI" },
-      "region": { "province": "广东", "city": "深圳" },
-      "hazard": { "rainTotalMm": 560, "rainDurationH": 72, "peakPower": 15, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "多区出现严重积水和内涝，部分道路、地下空间受影响",
-        "power": "局部城市设施受暴雨影响",
-        "water": "部分低洼区域排水系统承压",
-        "evacuation": "全市启动高级别防汛响应并转移危险区域人员",
-        "note": "最大24小时滑动雨量560毫米，2至72小时七项滑动雨量刷新1952年以来纪录"
-      },
-      "narrative": "2023年海葵残余环流叠加季风和弱冷空气，深圳出现1952年以来最强暴雨过程，最大24小时滑动雨量560毫米，多项纪录被同时打破。",
-      "sources": [
-        "深圳市气象局｜2023年深圳市气候公报：https://weather.sz.gov.cn/qixiangfuwu/qihoufuwu/qihouguanceyupinggu/nianduqihougongbao/content/post_11121693.html",
-        "深圳市气象局｜才战台风“苏拉”又迎创历史记录的特大暴雨：https://weather.sz.gov.cn/gkmlpt/content/10/10827/post_10827001.html"
-      ]
-    },
-    {
-      "eventId": "202403-gaemi-chenzhou",
-      "typhoon": { "tfid": "202403", "name": "格美", "enName": "GAEMI" },
-      "region": { "province": "湖南", "city": "郴州" },
-      "hazard": { "rainTotalMm": 674, "rainDurationH": 72, "peakPower": 12, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "资兴等地发生严重洪涝、山体滑坡和泥石流，多地道路塌方",
-        "power": "多个乡镇一度断电、断网、断路",
-        "water": "部分村镇因交通中断依靠空中投送生活物资",
-        "evacuation": "启动高级别防汛响应并转移被困、涉险群众",
-        "note": "资兴最大过程雨量673.9毫米，单点24小时642.5毫米，突破湖南历史极值"
-      },
-      "narrative": "2024年格美残余环流深入内陆，郴州资兴最大过程雨量约674毫米，多个村镇断电断网断路并发生滑坡泥石流——残涡深入内陆仍可造成极端灾害。",
-      "sources": [
-        "湖南省人民政府｜台风“格美”对资兴降雨强度超“碧利斯”：https://hunan.gov.cn/topic/fx2024/kpzs24/202408/t20240803_33420648.html",
-        "应急管理部｜2024年全国十大自然灾害：https://www.mem.gov.cn/xw/yjglbgzdt/202502/t20250212_516042.shtml"
-      ]
-    },
-    {
-      "eventId": "202411-yagi-haikou",
-      "typhoon": { "tfid": "202411", "name": "摩羯", "enName": "YAGI" },
-      "region": { "province": "海南", "city": "海口" },
-      "hazard": { "rainTotalMm": 400, "rainDurationH": 48, "peakPower": 17, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "强风暴雨和风暴潮造成道路、树木及沿海设施严重受损",
-        "power": "电网和通信设施大范围受损，部分区域恢复时间较长",
-        "water": "部分区域供水及城市运行受停电影响",
-        "evacuation": "海口等地实施停课、停工、停运、停航、停园、停业措施",
-        "note": "海南岛北部累计雨量约300至600毫米；摩羯以17级以上强度在文昌登陆"
-      },
-      "narrative": "2024年摩羯以17级以上强度登陆文昌并重创海南北部，海口遭遇极端大风、强降雨和大范围基础设施损伤，是近年典型的超强风灾案例。",
-      "sources": [
-        "中国气象局｜2024年全国生态气象公报：https://www.cma.gov.cn/zfxxgk/gknr/qxbg/202507/W020250723534606038596.pdf",
-        "应急管理部｜2024年全国十大自然灾害：https://www.mem.gov.cn/xw/yjglbgzdt/202502/t20250212_516042.shtml"
-      ]
-    },
-    {
-      "eventId": "202413-bebinca-shanghai",
-      "typhoon": { "tfid": "202413", "name": "贝碧嘉", "enName": "BEBINCA" },
-      "region": { "province": "上海", "city": "上海" },
-      "hazard": { "rainTotalMm": 221, "rainDurationH": 36, "peakPower": 14, "landfall": true, "approx": true },
-      "impact": {
-        "level": 3,
-        "flood": "部分道路积水，大量树木倒伏和断枝",
-        "power": "局部用户失电，随后完成抢修恢复",
-        "water": "城市供水总体保持正常",
-        "evacuation": "提前转移安置41.4万余人，机场、铁路、轮渡等调整或停运",
-        "note": "松江永丰街道过程雨量220.5毫米；1949年以来登陆上海的最强台风"
-      },
-      "narrative": "2024年贝碧嘉以强台风级登陆上海，局地过程雨量约221毫米、树木大量倒伏；41.4万余人提前转移，城市在短时中断后较快恢复。",
-      "sources": [
-        "上海市人民政府｜“贝碧嘉”刚登陆，“普拉桑”又要来：https://www.shanghai.gov.cn/nw4411/20240917/c3df4f2ac2be4af8973bb0d1155d7baf.html",
-        "中国气象局｜直面“贝碧嘉”筑牢气象防灾减灾第一道防线：https://www.cma.gov.cn/ztbd/2024zt/20240430/2024043002/202409/t20240918_6589721.html"
-      ]
-    },
-    {
-      "eventId": "202513-kajiki-sanya",
-      "typhoon": { "tfid": "202513", "name": "剑鱼", "enName": "KAJIKI" },
-      "region": { "province": "海南", "city": "三亚" },
-      "hazard": { "rainTotalMm": 410, "rainDurationH": 72, "peakPower": 14, "landfall": false, "approx": true },
-      "impact": {
-        "level": 4,
-        "flood": "暴雨、强风导致道路积水、树木倒伏和城市设施受损",
-        "power": "部分区域电力和通信设施受损",
-        "water": "低洼区域排水承压，部分生活设施受影响",
-        "evacuation": "组织危险区域人员转移并调集跨市县救援力量",
-        "note": "海棠区最大累计雨量410毫米；三亚多站阵风14级以上，最大16级"
-      },
-      "narrative": "2025年剑鱼从三亚近海掠过，未在当地登陆，却带来最大410毫米雨量和最高16级阵风，成为有观测记录以来影响三亚最严重的台风之一。",
-      "sources": [
-        "海南省人民政府｜海南省抗击台风“剑鱼”新闻发布会：https://en.hainan.gov.cn/hainan/szfxwfbh/202508/eea103894f7d4ea39ed75586bebe1807.shtml",
-        "应急管理部｜2025年全国自然灾害情况：https://www.mem.gov.cn/xw/yjglbgzdt/202601/t20260116_592135.shtml"
-      ]
-    }
-  ]
+ "version": "0.2-draft",
+ "note": "历史台风影响对照库。内容准则：只写对生活的影响（被淹/停电停水/转移/停工停课/交通中断），不写死伤人数与经济损失。数值为约数，供相对对照用。",
+ "events": [
+  {
+   "eventId": "201909-lekima-taizhou",
+   "typhoon": {
+    "tfid": "201909",
+    "name": "利奇马",
+    "enName": "LEKIMA"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "台州"
+   },
+   "hazard": {
+    "rainTotalMm": 830,
+    "rainDurationH": 48,
+    "peakPower": 16,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "城区大范围内涝，临海古城被淹",
+    "power": "大面积停电，部分区域数日恢复",
+    "water": "部分区域停水",
+    "evacuation": "大规模人员转移",
+    "note": "超强台风在温岭登陆，括苍山站过程雨量约830mm"
+   },
+   "narrative": "2019年利奇马在温岭登陆（16级），台州山区过程雨量超800mm，临海古城被淹、大面积停电，组织了大规模转移。",
+   "sources": [
+    "中国气象灾害年鉴2020",
+    "公开报道"
+   ]
+  },
+  {
+   "eventId": "201909-lekima-wenzhou",
+   "typhoon": {
+    "tfid": "201909",
+    "name": "利奇马",
+    "enName": "LEKIMA"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": 400,
+    "rainDurationH": 36,
+    "peakPower": 16,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "永嘉山区山洪、堰塞湖漫坝，多地内涝",
+    "power": "大范围停电",
+    "water": "部分区域停水",
+    "evacuation": "数十万人转移",
+    "note": "登陆点在北侧温岭，温州以强降雨致灾为主"
+   },
+   "narrative": "2019年利奇马过境，温州山区强降雨引发永嘉山洪，全市大范围停电、数十万人转移。",
+   "sources": [
+    "中国气象灾害年鉴2020",
+    "公开报道"
+   ]
+  },
+  {
+   "eventId": "201323-fitow-ningbo",
+   "typhoon": {
+    "tfid": "201323",
+    "name": "菲特",
+    "enName": "FITOW"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "宁波"
+   },
+   "hazard": {
+    "rainTotalMm": 500,
+    "rainDurationH": 72,
+    "peakPower": 14,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "余姚约七成城区受淹，主城交通瘫痪多日",
+    "power": "余姚大面积停电约一周",
+    "water": "停水多日",
+    "evacuation": "大量人员转移",
+    "note": "登陆点在福建福鼎，宁波致灾主因是持续性极端降雨叠加天文大潮"
+   },
+   "narrative": "2013年菲特虽登陆福建，但给宁波带来3天约500mm降雨叠加天文大潮，余姚七成城区被淹、停电停水约一周——「台风不登陆也能重灾」的典型案例。",
+   "sources": [
+    "中国气象灾害年鉴2014",
+    "公开报道"
+   ]
+  },
+  {
+   "eventId": "202106-infa-ningbo",
+   "typhoon": {
+    "tfid": "202106",
+    "name": "烟花",
+    "enName": "IN-FA"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "宁波"
+   },
+   "hazard": {
+    "rainTotalMm": 1000,
+    "rainDurationH": 96,
+    "peakPower": 13,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "余姚等地内涝，但提前防御充分，未成重灾",
+    "power": "局部停电，快速恢复",
+    "water": "基本正常",
+    "evacuation": "提前大规模预防性转移",
+    "note": "移速极慢导致雨量极大（余姚山区站过程雨量约1000mm），但充分预警下损失可控——预警价值的正面案例"
+   },
+   "narrative": "2021年烟花移速极慢，余姚山区累计雨量约1000mm创纪录，但因提前预警和大规模预防性转移，损失远小于菲特——同一座城市，预警充分与否结果完全不同。",
+   "sources": [
+    "中国气象灾害年鉴2022",
+    "公开报道"
+   ]
+  },
+  {
+   "eventId": "202106-infa-shanghai",
+   "typhoon": {
+    "tfid": "202106",
+    "name": "烟花",
+    "enName": "IN-FA"
+   },
+   "region": {
+    "province": "上海",
+    "city": "上海"
+   },
+   "hazard": {
+    "rainTotalMm": 300,
+    "rainDurationH": 96,
+    "peakPower": 13,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "市区多处积水，部分下立交封闭",
+    "power": "局部停电",
+    "water": "基本正常",
+    "evacuation": "沿海一线人员转移，两机场航班大面积取消",
+    "note": "风雨持续时间长是主要特点"
+   },
+   "narrative": "2021年烟花影响上海4天，累计雨量约300mm，市区多处积水、航班大面积取消，但未成重灾。",
+   "sources": [
+    "中国气象灾害年鉴2022",
+    "公开报道"
+   ]
+  },
+  {
+   "eventId": "200608-saomai-wenzhou",
+   "typhoon": {
+    "tfid": "200608",
+    "name": "桑美",
+    "enName": "SAOMAI"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": 250,
+    "rainDurationH": 24,
+    "peakPower": 17,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "苍南沿海风暴潮，渔港船只大量损毁",
+    "power": "登陆区域电网大面积损毁",
+    "water": "登陆区域长时间停水",
+    "evacuation": "沿海人员紧急转移",
+    "note": "以极端风灾为主（登陆时17级、920hPa），非降雨型灾害的代表案例"
+   },
+   "narrative": "2006年桑美以17级在苍南登陆，是登陆我国大陆的最强台风之一，渔港船只大量损毁、登陆区域长时间停电停水——「风比雨更致命」的极端案例。",
+   "sources": [
+    "中国气象灾害年鉴2007",
+    "公开报道"
+   ]
+  },
+  {
+   "eventId": "201822-mangkhut-shenzhen",
+   "typhoon": {
+    "tfid": "201822",
+    "name": "山竹",
+    "enName": "MANGKHUT"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": 200,
+    "rainDurationH": 36,
+    "peakPower": 14,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "沿海风暴潮漫堤，局部内涝",
+    "power": "局部停电",
+    "water": "基本正常",
+    "evacuation": "全市停工停课，沿海人员转移",
+    "note": "全市树木倒伏数万棵，城市运转中断以风灾为主"
+   },
+   "narrative": "2018年山竹在台山登陆，深圳全市停工停课，树木倒伏数万棵、沿海风暴潮漫堤，城市恢复用了数天。",
+   "sources": [
+    "中国气象灾害年鉴2019",
+    "公开报道"
+   ]
+  },
+  {
+   "eventId": "202212-muifa-ningbo",
+   "typhoon": {
+    "tfid": "202212",
+    "name": "梅花",
+    "enName": "MUIFA"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "宁波"
+   },
+   "hazard": {
+    "rainTotalMm": 707,
+    "rainDurationH": 72,
+    "peakPower": 14,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "宁波山区出现持续强降雨，余姚局地过程雨量超过700毫米",
+    "power": "未见大范围长期停电的官方统计",
+    "water": "未见大范围停水的官方统计",
+    "evacuation": "浙沪提前组织人员转移避险",
+    "note": "余姚夏家岭最大过程雨量707毫米；浙江实现人员无伤亡、灾害损失较轻"
+   },
+   "narrative": "2022年梅花虽在舟山登陆，但宁波余姚山区过程雨量达到707毫米；依靠提前预警和转移，浙江实现人员无伤亡、灾害损失较轻。",
+   "sources": [
+    "中国气象局｜2022年9月8日至9月16日台风“梅花”及暴雨预报案例：https://www.cma.gov.cn/ztbd/2022zt/20221031/2022103101/202210/t20221031_5157503.html",
+    "中国气象局｜我的2022：那一夜，精准捕捉台风“梅花”：https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xqxyw/202212/t20221226_5233417.html"
+   ]
+  },
+  {
+   "eventId": "202305-doksuri-wenzhou",
+   "typhoon": {
+    "tfid": "202305",
+    "name": "杜苏芮",
+    "enName": "DOKSURI"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": 821,
+    "rainDurationH": 120,
+    "peakPower": 15,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "苍南西部山区出现极端强降雨，全市台风影响期间发生多起地质灾害",
+    "power": "局部基础设施受持续强降雨影响",
+    "water": "未见大范围停水的官方统计",
+    "evacuation": "苍南县紧急转移安置5527人",
+    "note": "苍南岑溪天井站最大过程雨量820.7毫米，强降雨持续5天"
+   },
+   "narrative": "2023年杜苏芮登陆福建前后，温州苍南连续5天强降雨，山区单站过程雨量约821毫米并转移5527人——台风不在本地登陆，山区仍可能遭遇极端降雨。",
+   "sources": [
+    "苍南县地方志研究室｜苍南年鉴2024：https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web1831/site/attach/0/394bc1251beb4ba2a98f3b1e5826247c.pdf",
+    "温州市水利局｜温州市水资源公报2023：https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2514/site/attach/0/48e6519e963d47c5bc7660988e549575.pdf"
+   ]
+  },
+  {
+   "eventId": "202305-doksuri-beijing",
+   "typhoon": {
+    "tfid": "202305",
+    "name": "杜苏芮",
+    "enName": "DOKSURI"
+   },
+   "region": {
+    "province": "北京",
+    "city": "北京"
+   },
+   "hazard": {
+    "rainTotalMm": 745,
+    "rainDurationH": 83,
+    "peakPower": 15,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "门头沟、房山等地发生严重洪涝、山洪和地质灾害，海河流域发生流域性洪水",
+    "power": "部分受灾山区通信、电力和道路中断",
+    "water": "部分受灾区域供水和交通受影响",
+    "evacuation": "全市启动防汛一级应急响应并大规模转移涉险群众",
+    "note": "昌平王家园水库过程雨量744.8毫米，为北京地区140年来最大雨量"
+   },
+   "narrative": "2023年杜苏芮停编后，残余环流北上与地形共同作用，北京连续降雨约83小时，最大过程雨量近745毫米并引发严重洪涝——“台风停编”不等于影响结束。",
+   "sources": [
+    "中国气象局｜2023年国内十大天气气候事件：https://www.cma.gov.cn/2011xwzx/2011xqxxw/2011xqxyw/202401/t20240119_6016036.html",
+    "应急管理部｜2023年全国自然灾害基本情况：https://www.mem.gov.cn/xw/yjglbgzdt/202401/t20240120_475697.shtml"
+   ]
+  },
+  {
+   "eventId": "202311-haikui-shenzhen",
+   "typhoon": {
+    "tfid": "202311",
+    "name": "海葵",
+    "enName": "HAIKUI"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": 560,
+    "rainDurationH": 72,
+    "peakPower": 15,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "多区出现严重积水和内涝，部分道路、地下空间受影响",
+    "power": "局部城市设施受暴雨影响",
+    "water": "部分低洼区域排水系统承压",
+    "evacuation": "全市启动高级别防汛响应并转移危险区域人员",
+    "note": "最大24小时滑动雨量560毫米，2至72小时七项滑动雨量刷新1952年以来纪录"
+   },
+   "narrative": "2023年海葵残余环流叠加季风和弱冷空气，深圳出现1952年以来最强暴雨过程，最大24小时滑动雨量560毫米，多项纪录被同时打破。",
+   "sources": [
+    "深圳市气象局｜2023年深圳市气候公报：https://weather.sz.gov.cn/qixiangfuwu/qihoufuwu/qihouguanceyupinggu/nianduqihougongbao/content/post_11121693.html",
+    "深圳市气象局｜才战台风“苏拉”又迎创历史记录的特大暴雨：https://weather.sz.gov.cn/gkmlpt/content/10/10827/post_10827001.html"
+   ]
+  },
+  {
+   "eventId": "202403-gaemi-chenzhou",
+   "typhoon": {
+    "tfid": "202403",
+    "name": "格美",
+    "enName": "GAEMI"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "郴州"
+   },
+   "hazard": {
+    "rainTotalMm": 674,
+    "rainDurationH": 72,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "资兴等地发生严重洪涝、山体滑坡和泥石流，多地道路塌方",
+    "power": "多个乡镇一度断电、断网、断路",
+    "water": "部分村镇因交通中断依靠空中投送生活物资",
+    "evacuation": "启动高级别防汛响应并转移被困、涉险群众",
+    "note": "资兴最大过程雨量673.9毫米，单点24小时642.5毫米，突破湖南历史极值"
+   },
+   "narrative": "2024年格美残余环流深入内陆，郴州资兴最大过程雨量约674毫米，多个村镇断电断网断路并发生滑坡泥石流——残涡深入内陆仍可造成极端灾害。",
+   "sources": [
+    "湖南省人民政府｜台风“格美”对资兴降雨强度超“碧利斯”：https://hunan.gov.cn/topic/fx2024/kpzs24/202408/t20240803_33420648.html",
+    "应急管理部｜2024年全国十大自然灾害：https://www.mem.gov.cn/xw/yjglbgzdt/202502/t20250212_516042.shtml"
+   ]
+  },
+  {
+   "eventId": "202411-yagi-haikou",
+   "typhoon": {
+    "tfid": "202411",
+    "name": "摩羯",
+    "enName": "YAGI"
+   },
+   "region": {
+    "province": "海南",
+    "city": "海口"
+   },
+   "hazard": {
+    "rainTotalMm": 400,
+    "rainDurationH": 48,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "强风暴雨和风暴潮造成道路、树木及沿海设施严重受损",
+    "power": "电网和通信设施大范围受损，部分区域恢复时间较长",
+    "water": "部分区域供水及城市运行受停电影响",
+    "evacuation": "海口等地实施停课、停工、停运、停航、停园、停业措施",
+    "note": "海南岛北部累计雨量约300至600毫米；摩羯以17级以上强度在文昌登陆"
+   },
+   "narrative": "2024年摩羯以17级以上强度登陆文昌并重创海南北部，海口遭遇极端大风、强降雨和大范围基础设施损伤，是近年典型的超强风灾案例。",
+   "sources": [
+    "中国气象局｜2024年全国生态气象公报：https://www.cma.gov.cn/zfxxgk/gknr/qxbg/202507/W020250723534606038596.pdf",
+    "应急管理部｜2024年全国十大自然灾害：https://www.mem.gov.cn/xw/yjglbgzdt/202502/t20250212_516042.shtml"
+   ]
+  },
+  {
+   "eventId": "202413-bebinca-shanghai",
+   "typhoon": {
+    "tfid": "202413",
+    "name": "贝碧嘉",
+    "enName": "BEBINCA"
+   },
+   "region": {
+    "province": "上海",
+    "city": "上海"
+   },
+   "hazard": {
+    "rainTotalMm": 221,
+    "rainDurationH": 36,
+    "peakPower": 14,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "部分道路积水，大量树木倒伏和断枝",
+    "power": "局部用户失电，随后完成抢修恢复",
+    "water": "城市供水总体保持正常",
+    "evacuation": "提前转移安置41.4万余人，机场、铁路、轮渡等调整或停运",
+    "note": "松江永丰街道过程雨量220.5毫米；1949年以来登陆上海的最强台风"
+   },
+   "narrative": "2024年贝碧嘉以强台风级登陆上海，局地过程雨量约221毫米、树木大量倒伏；41.4万余人提前转移，城市在短时中断后较快恢复。",
+   "sources": [
+    "上海市人民政府｜“贝碧嘉”刚登陆，“普拉桑”又要来：https://www.shanghai.gov.cn/nw4411/20240917/c3df4f2ac2be4af8973bb0d1155d7baf.html",
+    "中国气象局｜直面“贝碧嘉”筑牢气象防灾减灾第一道防线：https://www.cma.gov.cn/ztbd/2024zt/20240430/2024043002/202409/t20240918_6589721.html"
+   ]
+  },
+  {
+   "eventId": "202513-kajiki-sanya",
+   "typhoon": {
+    "tfid": "202513",
+    "name": "剑鱼",
+    "enName": "KAJIKI"
+   },
+   "region": {
+    "province": "海南",
+    "city": "三亚"
+   },
+   "hazard": {
+    "rainTotalMm": 410,
+    "rainDurationH": 72,
+    "peakPower": 14,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "暴雨、强风导致道路积水、树木倒伏和城市设施受损",
+    "power": "部分区域电力和通信设施受损",
+    "water": "低洼区域排水承压，部分生活设施受影响",
+    "evacuation": "组织危险区域人员转移并调集跨市县救援力量",
+    "note": "海棠区最大累计雨量410毫米；三亚多站阵风14级以上，最大16级"
+   },
+   "narrative": "2025年剑鱼从三亚近海掠过，未在当地登陆，却带来最大410毫米雨量和最高16级阵风，成为有观测记录以来影响三亚最严重的台风之一。",
+   "sources": [
+    "海南省人民政府｜海南省抗击台风“剑鱼”新闻发布会：https://en.hainan.gov.cn/hainan/szfxwfbh/202508/eea103894f7d4ea39ed75586bebe1807.shtml",
+    "应急管理部｜2025年全国自然灾害情况：https://www.mem.gov.cn/xw/yjglbgzdt/202601/t20260116_592135.shtml"
+   ]
+  }
+ ]
 }
