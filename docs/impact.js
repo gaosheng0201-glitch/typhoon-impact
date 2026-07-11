@@ -30,7 +30,7 @@ init();
 
 async function init() {
   const [index, analogs] = await Promise.all([
-    fetchJSON(`data/index.json?t=${Date.now()}`),
+    TyphoonData.loadIndex(),
     fetchJSON(`data/analogs.json?t=${Date.now()}`),
   ]);
   state.analogs = analogs;
@@ -38,7 +38,7 @@ async function init() {
     document.getElementById("storm-line").textContent = "当前无活跃台风";
     return;
   }
-  state.storm = await fetchJSON(`data/typhoon_${index.typhoons[0].tfid}.json?t=${Date.now()}`);
+  state.storm = await TyphoonData.loadStorm(index.typhoons[0].tfid, index.live);
 
   const sel = document.getElementById("city-select");
   sel.innerHTML = Object.keys(CITIES)
@@ -140,7 +140,7 @@ function render() {
     正以 ${last.moveSpeed} km/h 向${fmtDir(last.moveDir)}方向移动
     ${a.slowMover ? `<div class="slow-badge">🐌 停留型台风：预报移速仅约 ${Math.round(a.moveKmh)} km/h，
       在一地停留久、累计雨量大——<b>这种台风的危险在雨不在风</b></div>` : ""}
-    <div class="muted">实况时间 ${last.time} · 数据：温州台风网</div>`;
+    <div class="muted">实况时间 ${last.time} · 数据：温州台风网${s.live ? "（🟢 实时）" : "（快照）"}</div>`;
 
   const tl = [];
   if (a.inRange.length) {

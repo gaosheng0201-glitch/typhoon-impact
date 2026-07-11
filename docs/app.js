@@ -106,7 +106,7 @@ function addLayers() {
 
 async function refresh() {
   try {
-    state.index = await fetchJSON(`data/index.json?t=${Date.now()}`);
+    state.index = await TyphoonData.loadIndex();
   } catch (e) {
     document.getElementById("meta").textContent = "数据加载失败：" + e.message;
     return;
@@ -125,7 +125,7 @@ async function refresh() {
 
 async function loadStorm(tfid, fit = true) {
   state.selected = tfid;
-  state.storm = await fetchJSON(`data/typhoon_${tfid}.json?t=${Date.now()}`);
+  state.storm = await TyphoonData.loadStorm(tfid, state.index.live);
   renderStormList();
   renderAgencyToggles();
   renderLegend();
@@ -293,7 +293,7 @@ function renderMeta() {
   const last = s.track[s.track.length - 1];
   document.getElementById("meta").innerHTML = [
     `实况截至 ${last ? last.time : "—"}`,
-    `数据抓取 ${s.updatedAt}（UTC）`,
+    s.live ? `🟢 实时直连温州台风网（每 5 分钟自动刷新）` : `⚪ 仓库快照数据 ${s.updatedAt}`,
     `预报虚线为各机构最新预报路径`,
   ].join("<br>");
 }
