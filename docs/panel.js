@@ -28,6 +28,7 @@ const ImpactPanel = (() => {
     persona: "urban",
     situations: new Set(),
     antecedent: {},
+    forecast: {},   // 数值模式逐小时预报（Open-Meteo），按坐标缓存
     setupDone: false,
     open: false,
     step: "region",
@@ -52,6 +53,7 @@ const ImpactPanel = (() => {
       b.onclick = () => gotoStep(b.dataset.to);
     });
     loadAntecedent();
+    loadForecast();
     if (P.setupDone) P.step = "result";
     showStep(P.step);
     renderBar();
@@ -177,6 +179,7 @@ const ImpactPanel = (() => {
     }
     persist();
     loadAntecedent();
+    loadForecast();
     renderBar();
     renderResult();
   }
@@ -279,9 +282,30 @@ const ImpactPanel = (() => {
       stillInRangeAtEnd = !endPoint && path[path.length - 1].dist < galeR;
     }
 
-    let rain = closest.dist < 80 ? 260 : closest.dist < 150 ? 180
-      : closest.dist < 250 ? 100 : closest.dist < 400 ? 50 : 15;
-    if (slowMover) rain = Math.round(rain * 1.6);
+    // 雨量：优先数值模式预报在影响窗口内的实际累计（ECMWF/GFS via Open-Meteo）；
+    // 模式数据未就绪时回退到距离衰减演示公式（明确标注）
+    const fdata = P.forecast[`${P.loc.lat},${P.loc.lng}`];
+    let rain, rainSrc = "演示估算", peakRain = null, peakGust = null;
+    if (fdata) {
+      const startT = inRange.length ? ptime(inRange[0]) : Date.now();
+      const endT = (endPoint ? ptime(endPoint) : inRange.length
+        ? ptime(inRange[inRange.length - 1]) : Date.now() + 48 * 3.6e6) + 12 * 3.6e6; // 雨带滞后余量
+      let sum = 0;
+      for (let i = 0; i < fdata.t.length; i++) {
+        if (fdata.t[i] < startT || fdata.t[i] > endT) continue;
+        sum += fdata.p[i] || 0;
+        if (!peakRain || (fdata.p[i] || 0) > peakRain.v) peakRain = { ts: fdata.ts[i], v: fdata.p[i] || 0 };
+        if (!peakGust || (fdata.g[i] || 0) > peakGust.v) peakGust = { ts: fdata.ts[i], v: fdata.g[i] || 0 };
+      }
+      rain = Math.round(sum);
+      rainSrc = "模式预报";
+      if (peakRain && peakRain.v < 1) peakRain = null; // 没有实质降雨就不报峰值
+      if (peakGust && peakGust.v < 40) peakGust = null;
+    } else {
+      rain = closest.dist < 80 ? 260 : closest.dist < 150 ? 180
+        : closest.dist < 250 ? 100 : closest.dist < 400 ? 50 : 15;
+      if (slowMover) rain = Math.round(rain * 1.6);
+    }
 
     const power = parseInt(closest.power) || 0;
     let level = 1;
@@ -290,7 +314,8 @@ const ImpactPanel = (() => {
     if (rain >= 250 || (closest.dist < 100 && power >= 14)) level = 4;
     if (slowMover && closest.dist < galeR) level = Math.max(level, 3);
 
-    return { closest, galeR, inRange, rain, level, moveKmh, slowMover, durationH, endPoint, stillInRangeAtEnd };
+    return { closest, galeR, inRange, rain, rainSrc, peakRain, peakGust,
+             level, moveKmh, slowMover, durationH, endPoint, stillInRangeAtEnd };
   }
 
   function assessAll() {
@@ -314,6 +339,36 @@ const ImpactPanel = (() => {
       ((a.region.province.startsWith(provShort) ? 0 : 1) * 10000 + Math.abs(a.hazard.rainTotalMm - rain)) -
       ((b.region.province.startsWith(provShort) ? 0 : 1) * 10000 + Math.abs(b.hazard.rainTotalMm - rain)));
     return { analog: rest[0] || null, local: false };
+  }
+
+  /* ---------- 数值模式预报（逐小时降水与阵风） ---------- */
+
+  async function loadForecast() {
+    const key = `${P.loc.lat},${P.loc.lng}`;
+    if (P.forecast[key] !== undefined) return;
+    P.forecast[key] = undefined; // 占位
+    try {
+      const d = await fetchJSON2(
+        `https://api.open-meteo.com/v1/forecast?latitude=${P.loc.lat}&longitude=${P.loc.lng}` +
+        `&hourly=precipitation,wind_gusts_10m&past_days=2&forecast_days=7&timezone=Asia%2FShanghai`);
+      P.forecast[key] = {
+        ts: d.hourly.time, // 北京钟面原文，用于展示
+        t: d.hourly.time.map((s) => new Date(s).getTime()),
+        p: d.hourly.precipitation,
+        g: d.hourly.wind_gusts_10m,
+      };
+      renderBar();
+      renderResult();
+    } catch (e) { delete P.forecast[key]; }
+  }
+
+  /* 阵风 km/h → 蒲福风级（近似） */
+  function gustLevel(kmh) {
+    const ms = kmh / 3.6;
+    const t = [0.3, 1.6, 3.4, 5.5, 8, 10.8, 13.9, 17.2, 20.8, 24.5, 28.5, 32.7, 37, 41.5, 46.2, 51, 56.1];
+    let lv = 0;
+    while (lv < t.length && ms >= t[lv]) lv++;
+    return lv;
   }
 
   /* ---------- 前期降雨 ---------- */
@@ -384,7 +439,9 @@ const ImpactPanel = (() => {
       else if (a.stillInRangeAtEnd) tl.push(["", "<b>⚠️ 预报期内未移出影响范围</b>"]);
       if (a.durationH) tl.push(["", `影响持续约 <b>${Math.round(a.durationH)} 小时</b>${a.slowMover ? "（停留型，明显偏长）" : ""}`]);
     }
-    tl.push(["", `<span class="muted">预计雨量约 ${a.rain} mm（演示估算）</span>`]);
+    tl.push(["", `预计过程雨量约 <b>${a.rain} mm</b><span class="muted">（${a.rainSrc === "模式预报" ? "数值模式预报" : "演示估算，模式数据加载中"}）</span>`]);
+    if (a.peakRain) tl.push([fmtTime(a.peakRain.ts.replace("T", " ")), `本地雨强峰值（约 ${Math.round(a.peakRain.v)} mm/h，模式预报）`]);
+    if (a.peakGust) tl.push([fmtTime(a.peakGust.ts.replace("T", " ")), `本地阵风最强（约 ${gustLevel(a.peakGust.v)} 级，模式预报）`]);
     const ante = P.antecedent[`${P.loc.lat},${P.loc.lng}`];
     if (ante != null) {
       tl.push(["", ante >= WET_SOIL_MM
@@ -638,7 +695,7 @@ const ImpactPanel = (() => {
     const stats = [
       { v: `${Math.round(dist)}`, u: "km", k: "当前距离" },
       { v: `${last.power}`, u: "级", k: "台风强度" },
-      { v: `${a.rain}`, u: "mm", k: "预计雨量*" },
+      { v: `${a.rain}`, u: "mm", k: "预计雨量" },
       { v: a.endPoint ? fmtTime(a.endPoint.time) : "—", u: "", k: "预计结束" },
     ];
     const gw = (W - 72 - 3 * 12) / 4;
@@ -683,7 +740,7 @@ const ImpactPanel = (() => {
     ctx.fillStyle = "#76726a";
     ctx.font = F(400, 18);
     ctx.textAlign = "center";
-    ctx.fillText("非官方预警 · 以气象部门发布为准 · *雨量为演示估算 · 数据：温州台风网", W / 2, H - 22);
+    ctx.fillText("非官方预警 · 以气象部门发布为准 · 雨量为数值模式预报 · 温州台风网/Open-Meteo", W / 2, H - 22);
     ctx.textAlign = "left";
 
     document.getElementById("share-modal").style.display = "flex";

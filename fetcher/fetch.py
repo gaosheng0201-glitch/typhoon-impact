@@ -107,11 +107,28 @@ def latest_forecasts(points):
     return seen
 
 
-RESIDUAL_HOURS = 48  # 停编后继续追踪残余环流的时长
+RESIDUAL_MAX_H = 72   # 停编后继续追踪的硬上限（防呆）
+RESIDUAL_RAIN_MM = 30  # 残涡下游 24h 模式预报雨量门槛：雨还在，就继续盯
+
+
+def residual_rain_ok(lat, lng):
+    """残涡最后位置及四周（±2°）是否仍有显著降雨预报。
+    窗口由天气本身决定，而非固定时长；API 失败时保守保留。"""
+    for dla, dlo in ((0, 0), (2, 0), (-2, 0), (0, 2), (0, -2)):
+        try:
+            d = get_json(
+                "https://api.open-meteo.com/v1/forecast"
+                f"?latitude={lat + dla}&longitude={lng + dlo}"
+                "&daily=precipitation_sum&forecast_days=2")
+            if max((x or 0) for x in d["daily"]["precipitation_sum"]) >= RESIDUAL_RAIN_MM:
+                return True
+        except Exception:
+            return True  # 查不到宁可多盯，不可漏盯
+    return False
 
 
 def residual_tfids(active_ids):
-    """已停编但最后实况在 48h 内的台风——残涡仍可能致灾，继续追。"""
+    """已停编的台风：72h 内且残涡区仍有强降雨预报时继续追踪。"""
     found = []
     # 数据时间为北京时间：两边都用无时区的“北京钟面”直接比较
     now_bj = datetime.now(timezone.utc).replace(tzinfo=None) + timedelta(hours=8)
@@ -121,10 +138,13 @@ def residual_tfids(active_ids):
             continue
         try:
             track = json.loads(f.read_text(encoding="utf-8")).get("track") or []
-            last = datetime.strptime(track[-1]["time"], "%Y-%m-%d %H:%M:%S")
+            last_p = track[-1]
+            last = datetime.strptime(last_p["time"], "%Y-%m-%d %H:%M:%S")
         except (ValueError, KeyError, IndexError, json.JSONDecodeError):
             continue
-        if now_bj - last <= timedelta(hours=RESIDUAL_HOURS):
+        if now_bj - last > timedelta(hours=RESIDUAL_MAX_H):
+            continue
+        if residual_rain_ok(last_p["lat"], last_p["lng"]):
             found.append(tfid)
     return found
 
