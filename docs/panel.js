@@ -300,13 +300,20 @@ const ImpactPanel = (() => {
     return { results, focus };
   }
 
+  /* 对照严格同城优先：城市自己的历史才编码了它的排水、地形与基建。
+     没有本地案例时只做「量级参考」，不做量化对比（异地不可比）。 */
   function findAnalog(rain) {
     const cityShort = (P.loc.city || "").replace(/(市|地区|自治州|盟)$/, "");
+    const local = P.analogs.events.filter((e) => e.region.city === cityShort);
+    if (local.length) {
+      local.sort((a, b) => Math.abs(a.hazard.rainTotalMm - rain) - Math.abs(b.hazard.rainTotalMm - rain));
+      return { analog: local[0], local: true };
+    }
     const provShort = (P.loc.province || "").replace(/(省|市|壮族自治区|回族自治区|维吾尔自治区|自治区|特别行政区)$/, "");
-    const score = (e) =>
-      (e.region.city === cityShort ? 0 : e.region.province.startsWith(provShort) ? 1 : 2) * 10000 +
-      Math.abs(e.hazard.rainTotalMm - rain);
-    return P.analogs.events.slice().sort((a, b) => score(a) - score(b))[0];
+    const rest = P.analogs.events.slice().sort((a, b) =>
+      ((a.region.province.startsWith(provShort) ? 0 : 1) * 10000 + Math.abs(a.hazard.rainTotalMm - rain)) -
+      ((b.region.province.startsWith(provShort) ? 0 : 1) * 10000 + Math.abs(b.hazard.rainTotalMm - rain)));
+    return { analog: rest[0] || null, local: false };
   }
 
   /* ---------- 前期降雨 ---------- */
@@ -405,16 +412,24 @@ const ImpactPanel = (() => {
         <div style="border-top:1px solid var(--hairline);padding-top:8px"></div>`;
     }
 
-    // 历史对照
-    const analog = findAnalog(a.rain);
-    const cityShort = (P.loc.city || "").replace(/(市|地区|自治州|盟)$/, "");
-    const ratio = a.rain / analog.hazard.rainTotalMm;
-    const compare = ratio > 1.3 ? "已超过" : ratio >= 0.7 ? "接近" : `约为其 ${Math.round(ratio * 100)}%，远小于`;
-    document.querySelector("#d-analog > div").innerHTML = histHTML + `
-      预计雨量 ${a.rain}mm ${compare}
-      <b>${analog.typhoon.tfid.slice(0, 4)}年${analog.typhoon.name}</b>时${analog.region.city}的 ${analog.hazard.rainTotalMm}mm
-      ${analog.region.city !== cityShort ? `<span class="muted">（${analog.region.city}案例，异地参考）</span>` : ""}
-      <div class="quote">${analog.narrative}</div>`;
+    // 历史对照：同城才做量化对比；异地只做量级参考并明说局限
+    const { analog, local } = findAnalog(a.rain);
+    let analogHTML = "";
+    if (analog && local) {
+      const ratio = a.rain / analog.hazard.rainTotalMm;
+      const compare = ratio > 1.3 ? "已超过" : ratio >= 0.7 ? "接近" : `约为其 ${Math.round(ratio * 100)}%，远小于`;
+      analogHTML = `
+        预计雨量 ${a.rain}mm ${compare}
+        <b>${analog.typhoon.tfid.slice(0, 4)}年${analog.typhoon.name}</b>时本地的 ${analog.hazard.rainTotalMm}mm
+        <div class="quote">${analog.narrative}</div>`;
+    } else if (analog) {
+      analogHTML = `
+        <span class="muted">本地（${P.loc.city}）暂无历史对照案例——异地案例无法体现本地排水与地形，
+        不作量化对比。以下仅供感受同量级降雨的可能后果：</span>
+        <div class="quote">${analog.narrative}</div>
+        <span class="muted">欢迎依据《气象灾害年鉴》为本地补充案例（见仓库 CONTRIBUTING）。</span>`;
+    }
+    document.querySelector("#d-analog > div").innerHTML = histHTML + analogHTML;
 
     // 清单
     const items = checklistItems(a.level);
