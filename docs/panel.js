@@ -305,8 +305,14 @@ const ImpactPanel = (() => {
               startTs: inRange[0].time, endTs: endP.time,
               src: "几何", open: !endPoint && stillInRangeAtEnd };
     }
+    // 相关性门槛：台风最近距离远超风圈时，本地降雨与台风无关，不建时间窗、不归因
+    const relevant = inRange.length > 0 || closest.dist <= galeR * 1.25;
     let rain, rainSrc = "演示估算", peakRain = null, peakGust = null;
-    if (fdata) {
+    if (fdata && !relevant) {
+      rain = 0;
+      rainSrc = "模式预报";
+      win = null;
+    } else if (fdata) {
       // 门槛：≥1.5mm/h 的实质降雨或≥8级阵风才算「台风风雨」；
       // 间断>6小时即分段，只取包含台风最近时刻的那段——把梅雨和事后零星降雨排除在归因外
       const RAIN_ON = 1.5, GUST_ON = 62, GAP_H = 6;
@@ -562,7 +568,11 @@ const ImpactPanel = (() => {
       if (a.durationH && a.phase === "approach") tl.push(["", `影响持续约 <b>${Math.round(a.durationH)} 小时</b>${a.slowMover ? "（停留型，明显偏长）" : ""}`]);
       tl.push(["", `<span class="muted">时间窗来源：${a.win.src === "模式" ? "本地逐时数值预报" : "官方路径几何推算"}</span>`]);
     }
-    tl.push(["", `预计过程雨量约 <b>${a.rain} mm</b><span class="muted">（${a.rainSrc === "模式预报" ? "数值模式预报" : "演示估算，模式数据加载中"}）</span>`]);
+    if (a.win) {
+      tl.push(["", `预计过程雨量约 <b>${a.rain} mm</b><span class="muted">（${a.rainSrc === "模式预报" ? "数值模式预报" : "演示估算，模式数据加载中"}）</span>`]);
+    } else {
+      tl.push(["", `<span class="muted">本台风预计不会给本地带来明显风雨（最近约 ${Math.round(a.closest.dist)} km，远超其风圈）。本地若有降雨，属于正常天气过程，与该台风无关。</span>`]);
+    }
     if (a.peakRain) tl.push([fmtTime(a.peakRain.ts.replace("T", " ")), `本地雨强峰值（约 ${Math.round(a.peakRain.v)} mm/h，模式预报）`]);
     if (a.peakGust) tl.push([fmtTime(a.peakGust.ts.replace("T", " ")), `本地阵风最强（约 ${gustLevel(a.peakGust.v)} 级，模式预报）`]);
     const ante = P.antecedent[`${P.loc.lat},${P.loc.lng}`];
@@ -602,12 +612,17 @@ const ImpactPanel = (() => {
         预计雨量 ${a.rain}mm ${compare}
         <b>${analog.typhoon.tfid.slice(0, 4)}年${analog.typhoon.name}</b>时本地的 ${analog.hazard.rainTotalMm}mm
         <div class="quote">${analog.narrative}</div>`;
-    } else if (analog) {
+    } else if (analog && a.rain >= 50 && analog.hazard.rainTotalMm <= a.rain * 2.5 && analog.hazard.rainTotalMm >= a.rain * 0.4) {
+      // 异地量级参考：仅当预计雨量可观且与案例确实同量级时才展示
       analogHTML = `
         <span class="muted">本地（${P.loc.city}）暂无历史对照案例——异地案例无法体现本地排水与地形，
         不作量化对比。以下仅供感受同量级降雨的可能后果：</span>
         <div class="quote">${analog.narrative}</div>
         <span class="muted">欢迎依据《气象灾害年鉴》为本地补充案例（见仓库 CONTRIBUTING）。</span>`;
+    } else {
+      analogHTML = `
+        <span class="muted">本地（${P.loc.city}）暂无历史对照案例${a.rain < 50 ? "，且本次预计雨量有限，无需对照" : "，且现有案例与本次量级差距过大，不作参考"}。
+        欢迎依据《气象灾害年鉴》为本地补充案例（见仓库 CONTRIBUTING）。</span>`;
     }
     document.querySelector("#d-analog > div").innerHTML = histHTML + analogHTML;
 
