@@ -46,6 +46,17 @@ archive/           每次抓取的原始快照，按台风编号分目录
 | 历史最佳路径 | JMA RSMC / IBTrACS | 用于误差回算 |
 | 前期实测雨量 | Open-Meteo API | 免费、开 CORS，前端直连 |
 
+## 区县历史台风档案（docs/data/history.json）
+
+每个区县 1949 年以来的客观统计（数据源 IBTrACS v04r01 西太子集，NOAA 公开数据）：
+台风中心 100km 内经过次数、300km 内次数、最高发月份、最强过境 Top3。
+1407 个台风 × 1757 个区县，纯计算、可复核。重新生成：
+
+```bash
+curl -O https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.WP.list.v04r01.csv
+python3 fetcher/build_history.py ibtracs.WP.list.v04r01.csv
+```
+
 ## 历史台风对照库（docs/data/analogs.json）
 
 「影响预警」的核心资产：历次台风 × 城市 × 灾情的结构化记录，用于把预报雨量

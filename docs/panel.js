@@ -36,10 +36,11 @@ const ImpactPanel = (() => {
   /* ---------- init ---------- */
 
   async function init() {
-    [P.regions, P.checklists, P.analogs] = await Promise.all([
+    [P.regions, P.checklists, P.analogs, P.history] = await Promise.all([
       fetchJSON2("data/regions.json"),
       fetchJSON2("data/checklists.json"),
       fetchJSON2(`data/analogs.json?t=${Date.now()}`),
+      fetchJSON2("data/history.json").catch(() => null), // 历史档案缺失时降级
     ]);
     restore();
     buildLocSelects();
@@ -386,12 +387,30 @@ const ImpactPanel = (() => {
     document.querySelector("#d-timeline > div").innerHTML =
       tl.map(([t, x]) => `<div class="tl-row">${t ? `<span class="t">${t}</span>` : ""}<span>${x}</span></div>`).join("");
 
+    // 本地历史档案（IBTrACS 客观统计——你正在经历的是常态还是异常）
+    let histHTML = "";
+    const hist = P.history &&
+      (P.history.d[`${P.loc.province}|${P.loc.city}|${P.loc.district || ""}`] ||
+       P.history.d[`${P.loc.province}|${P.loc.city}|`]);
+    if (hist) {
+      const m = P.history.meta;
+      const [c100, c300, month, top] = hist;
+      const freq = c100 > 0 ? `，约每 ${Math.max(1, Math.round(m.years / c100))} 年一次` : "";
+      histHTML = `
+        <div style="margin-bottom:8px">
+          本地档案 <span class="muted">（${m.source}，${m.since} 年以来）</span><br>
+          台风中心 ${m.near_km}km 内经过 <b>${c100}</b> 次${freq}；${m.wide_km}km 内 ${c300} 次，${month} 月最高发<br>
+          <span class="muted">最强过境：${top.map((t) => `${t[1]} ${t[0]}·距${t[2]}km`).join(" ／ ")}</span>
+        </div>
+        <div style="border-top:1px solid var(--hairline);padding-top:8px"></div>`;
+    }
+
     // 历史对照
     const analog = findAnalog(a.rain);
     const cityShort = (P.loc.city || "").replace(/(市|地区|自治州|盟)$/, "");
     const ratio = a.rain / analog.hazard.rainTotalMm;
     const compare = ratio > 1.3 ? "已超过" : ratio >= 0.7 ? "接近" : `约为其 ${Math.round(ratio * 100)}%，远小于`;
-    document.querySelector("#d-analog > div").innerHTML = `
+    document.querySelector("#d-analog > div").innerHTML = histHTML + `
       预计雨量 ${a.rain}mm ${compare}
       <b>${analog.typhoon.tfid.slice(0, 4)}年${analog.typhoon.name}</b>时${analog.region.city}的 ${analog.hazard.rainTotalMm}mm
       ${analog.region.city !== cityShort ? `<span class="muted">（${analog.region.city}案例，异地参考）</span>` : ""}
