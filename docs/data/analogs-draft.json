@@ -1275,7 +1275,7 @@
     "tfid": "200413"
    },
    "region": {
-    "province": "台北",
+    "province": "台湾",
     "city": "台北市"
    },
    "hazard": {
@@ -2238,7 +2238,7 @@
    },
    "region": {
     "province": "台湾",
-    "city": "高雄县"
+    "city": "高雄市"
    },
    "hazard": {
     "rainTotalMm": null,
@@ -2451,7 +2451,7 @@
    },
    "region": {
     "province": "台湾",
-    "city": "台南县"
+    "city": "台南市"
    },
    "hazard": {
     "rainTotalMm": 963.0,
@@ -4945,7 +4945,7 @@
    },
    "region": {
     "province": "台湾",
-    "city": "台湾南部"
+    "city": "台湾"
    },
    "hazard": {
     "rainTotalMm": null,
@@ -4960,7 +4960,7 @@
     "power": "近59万户停电",
     "water": "",
     "evacuation": "",
-    "note": ""
+    "note": "（区域级条目：台湾南部）"
    },
    "narrative": "台风杜鹃掠过台湾南部，导致近59万户停电，为主要灾情。",
    "sources": [
@@ -5642,7 +5642,7 @@
     "rainDurationH": null,
     "peakPower": 12,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -6012,7 +6012,7 @@
     "rainDurationH": null,
     "peakPower": 9,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -6122,7 +6122,7 @@
     "rainDurationH": null,
     "peakPower": 10,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -6159,7 +6159,7 @@
     "rainDurationH": null,
     "peakPower": 9,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -6265,7 +6265,7 @@
     "rainDurationH": null,
     "peakPower": 11,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
