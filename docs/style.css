@@ -1,0 +1,67 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+
+#map { position: absolute; inset: 0; }
+
+#panel {
+  position: absolute;
+  top: 12px; left: 12px;
+  width: 250px;
+  max-height: calc(100% - 24px);
+  overflow-y: auto;
+  background: rgba(18, 22, 33, 0.92);
+  color: #e8eaf0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+}
+
+#panel h1 { font-size: 17px; margin-bottom: 10px; }
+#panel h2 { font-size: 12px; color: #9aa3b5; margin: 12px 0 6px; font-weight: 600; }
+
+.storm-item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-bottom: 4px;
+}
+.storm-item:hover { background: rgba(255,255,255,0.06); }
+.storm-item.selected { border-color: #4c8dff; background: rgba(76,141,255,0.12); }
+.storm-item .name { font-weight: 700; font-size: 14px; }
+.storm-item .sub { color: #9aa3b5; font-size: 12px; margin-top: 2px; }
+
+#impact-link {
+  display: block;
+  margin: 6px 0 2px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(76, 141, 255, 0.15);
+  color: #8ab0ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+#impact-link:hover { background: rgba(76, 141, 255, 0.25); }
+
+.toggle-row { display: flex; align-items: center; gap: 7px; padding: 3px 0; cursor: pointer; }
+.toggle-row input { accent-color: #4c8dff; }
+.swatch { width: 18px; height: 4px; border-radius: 2px; display: inline-block; }
+
+.legend-row { display: flex; align-items: center; gap: 7px; padding: 2px 0; color: #c6ccd9; }
+.legend-row .dot { width: 10px; height: 10px; border-radius: 50%; }
+
+#meta { margin-top: 12px; color: #6b7386; font-size: 11px; line-height: 1.6; }
+
+.maplibregl-popup-content {
+  background: rgba(18, 22, 33, 0.95);
+  color: #e8eaf0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.maplibregl-popup-tip { border-top-color: rgba(18, 22, 33, 0.95) !important; }
+.popup-title { font-weight: 700; font-size: 13px; margin-bottom: 3px; }

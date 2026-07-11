@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台风追踪</title>
+  <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div id="map"></div>
+
+  <aside id="panel">
+    <h1>台风追踪</h1>
+    <div id="storm-list"></div>
+  <a id="impact-link" href="impact.html">📍 影响卡片：我会受灾吗 →</a>
+
+    <section>
+      <h2>预报机构</h2>
+      <div id="agency-toggles"></div>
+    </section>
+
+    <section>
+      <h2>强度图例</h2>
+      <div id="legend"></div>
+    </section>
+
+    <footer id="meta"></footer>
+  </aside>
+
+  <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

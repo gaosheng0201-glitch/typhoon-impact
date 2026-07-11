@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>影响卡片（原型）</title>
+  <link href="style.css" rel="stylesheet">
+  <link href="impact.css" rel="stylesheet">
+</head>
+<body class="impact-page">
+  <main id="card-wrap">
+    <nav><a href="index.html">← 返回路径图</a></nav>
+
+    <header id="card-head">
+      <div>
+        <label for="city-select">📍 你的位置</label>
+        <select id="city-select"></select>
+      </div>
+      <div id="level-badge"></div>
+    </header>
+
+    <section id="storm-line" class="card"></section>
+    <section id="timeline" class="card"></section>
+    <section id="analog" class="card"></section>
+    <section id="checklist" class="card"></section>
+
+    <button id="share-btn">📤 生成分享卡片</button>
+
+    <footer id="disclaimer">
+      本页为风险参考与备灾建议的产品原型，<strong>不是官方预警</strong>。
+      灾害预警信息请以各级气象部门与应急管理部门发布为准；
+      涉及撤离请听从当地政府与社区安排。雨量估算为演示数据。
+    </footer>
+  </main>
+  <div id="share-modal">
+    <div id="share-box">
+      <canvas id="share-canvas"></canvas>
+      <div id="share-actions">
+        <button id="share-save">保存图片</button>
+        <button id="share-close">关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="impact.js"></script>
+</body>
+</html>

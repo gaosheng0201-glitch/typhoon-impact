@@ -1,0 +1,118 @@
+{
+  "version": "0.1-draft",
+  "note": "历史台风影响对照库（人工整理种子数据）。数值为约数，供相对对照用，不作工程依据。schema 见 README。",
+  "events": [
+    {
+      "eventId": "201909-lekima-taizhou",
+      "typhoon": { "tfid": "201909", "name": "利奇马", "enName": "LEKIMA" },
+      "region": { "province": "浙江", "city": "台州" },
+      "hazard": { "rainTotalMm": 830, "rainDurationH": 48, "peakPower": 16, "landfall": true, "approx": true },
+      "impact": {
+        "level": 4,
+        "flood": "城区大范围内涝，临海古城被淹",
+        "power": "大面积停电，部分区域数日恢复",
+        "water": "部分区域停水",
+        "evacuation": "大规模人员转移",
+        "note": "超强台风在温岭登陆，括苍山站过程雨量约830mm"
+      },
+      "narrative": "2019年利奇马在温岭登陆（16级），台州山区过程雨量超800mm，临海古城被淹、大面积停电，组织了大规模转移。",
+      "sources": ["中国气象灾害年鉴2020", "公开报道"]
+    },
+    {
+      "eventId": "201909-lekima-wenzhou",
+      "typhoon": { "tfid": "201909", "name": "利奇马", "enName": "LEKIMA" },
+      "region": { "province": "浙江", "city": "温州" },
+      "hazard": { "rainTotalMm": 400, "rainDurationH": 36, "peakPower": 16, "landfall": false, "approx": true },
+      "impact": {
+        "level": 4,
+        "flood": "永嘉山区山洪，山早村堰塞湖漫坝致重大伤亡；多地内涝",
+        "power": "大范围停电",
+        "water": "部分区域停水",
+        "evacuation": "数十万人转移",
+        "note": "登陆点在北侧温岭，温州以强降雨致灾为主"
+      },
+      "narrative": "2019年利奇马过境，温州山区强降雨引发永嘉山早村山洪灾害，全市大范围停电、数十万人转移。",
+      "sources": ["中国气象灾害年鉴2020", "公开报道"]
+    },
+    {
+      "eventId": "201323-fitow-ningbo",
+      "typhoon": { "tfid": "201323", "name": "菲特", "enName": "FITOW" },
+      "region": { "province": "浙江", "city": "宁波" },
+      "hazard": { "rainTotalMm": 500, "rainDurationH": 72, "peakPower": 14, "landfall": false, "approx": true },
+      "impact": {
+        "level": 4,
+        "flood": "余姚约七成城区受淹，主城交通瘫痪多日",
+        "power": "余姚大面积停电约一周",
+        "water": "停水多日",
+        "evacuation": "大量人员转移",
+        "note": "登陆点在福建福鼎，宁波致灾主因是持续性极端降雨叠加天文大潮"
+      },
+      "narrative": "2013年菲特虽登陆福建，但给宁波带来3天约500mm降雨叠加天文大潮，余姚七成城区被淹、停电停水约一周——「台风不登陆也能重灾」的典型案例。",
+      "sources": ["中国气象灾害年鉴2014", "公开报道"]
+    },
+    {
+      "eventId": "202106-infa-ningbo",
+      "typhoon": { "tfid": "202106", "name": "烟花", "enName": "IN-FA" },
+      "region": { "province": "浙江", "city": "宁波" },
+      "hazard": { "rainTotalMm": 1000, "rainDurationH": 96, "peakPower": 13, "landfall": true, "approx": true },
+      "impact": {
+        "level": 3,
+        "flood": "余姚等地内涝，但提前防御充分，未成重灾",
+        "power": "局部停电，快速恢复",
+        "water": "基本正常",
+        "evacuation": "提前大规模预防性转移",
+        "note": "移速极慢导致雨量极大（余姚山区站过程雨量约1000mm），但充分预警下损失可控——预警价值的正面案例"
+      },
+      "narrative": "2021年烟花移速极慢，余姚山区累计雨量约1000mm创纪录，但因提前预警和大规模预防性转移，损失远小于菲特——同一座城市，预警充分与否结果完全不同。",
+      "sources": ["中国气象灾害年鉴2022", "公开报道"]
+    },
+    {
+      "eventId": "202106-infa-shanghai",
+      "typhoon": { "tfid": "202106", "name": "烟花", "enName": "IN-FA" },
+      "region": { "province": "上海", "city": "上海" },
+      "hazard": { "rainTotalMm": 300, "rainDurationH": 96, "peakPower": 13, "landfall": false, "approx": true },
+      "impact": {
+        "level": 3,
+        "flood": "市区多处积水，部分下立交封闭",
+        "power": "局部停电",
+        "water": "基本正常",
+        "evacuation": "沿海一线人员转移，两机场航班大面积取消",
+        "note": "风雨持续时间长是主要特点"
+      },
+      "narrative": "2021年烟花影响上海4天，累计雨量约300mm，市区多处积水、航班大面积取消，但未成重灾。",
+      "sources": ["中国气象灾害年鉴2022", "公开报道"]
+    },
+    {
+      "eventId": "200608-saomai-wenzhou",
+      "typhoon": { "tfid": "200608", "name": "桑美", "enName": "SAOMAI" },
+      "region": { "province": "浙江", "city": "温州" },
+      "hazard": { "rainTotalMm": 250, "rainDurationH": 24, "peakPower": 17, "landfall": true, "approx": true },
+      "impact": {
+        "level": 4,
+        "flood": "苍南沿海风暴潮，渔港船只大量损毁",
+        "power": "登陆区域电网大面积损毁",
+        "water": "登陆区域长时间停水",
+        "evacuation": "紧急转移，仍造成重大人员伤亡",
+        "note": "以极端风灾为主（登陆时17级、920hPa），非降雨型灾害的代表案例"
+      },
+      "narrative": "2006年桑美以17级强度在苍南登陆，是登陆我国大陆的最强台风之一，风灾和风暴潮造成重大伤亡——「风比雨更致命」的极端案例。",
+      "sources": ["中国气象灾害年鉴2007", "公开报道"]
+    },
+    {
+      "eventId": "201822-mangkhut-shenzhen",
+      "typhoon": { "tfid": "201822", "name": "山竹", "enName": "MANGKHUT" },
+      "region": { "province": "广东", "city": "深圳" },
+      "hazard": { "rainTotalMm": 200, "rainDurationH": 36, "peakPower": 14, "landfall": false, "approx": true },
+      "impact": {
+        "level": 3,
+        "flood": "沿海风暴潮漫堤，局部内涝",
+        "power": "局部停电",
+        "water": "基本正常",
+        "evacuation": "全市停工停课，沿海人员转移",
+        "note": "全市树木倒伏数万棵，城市运转中断以风灾为主"
+      },
+      "narrative": "2018年山竹在台山登陆，深圳全市停工停课，树木倒伏数万棵、沿海风暴潮漫堤，城市恢复用了数天。",
+      "sources": ["中国气象灾害年鉴2019", "公开报道"]
+    }
+  ]
+}
