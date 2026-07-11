@@ -74,3 +74,138 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
 }
 .maplibregl-popup-tip { border-top-color: rgba(18, 22, 33, 0.95) !important; }
 .popup-title { font-weight: 700; font-size: 13px; margin-bottom: 3px; }
+
+/* ---------- 内嵌影响评估面板 ---------- */
+
+#panel { width: 330px; }
+
+#impact-section { border-top: 1px solid #232b42; margin-top: 10px; padding-top: 4px; }
+
+#loc-row { display: flex; gap: 4px; margin: 6px 0; }
+#loc-row select {
+  flex: 1;
+  min-width: 0;
+  background: #1a2030;
+  color: #e8eaf0;
+  border: 1px solid #2c3550;
+  border-radius: 7px;
+  font-size: 12px;
+  padding: 5px 3px;
+}
+#btn-geo {
+  border: 1px solid #2c3550;
+  background: #1a2030;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0 7px;
+}
+#btn-geo:hover { background: #232b42; }
+
+#persona-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 2px; }
+.chip {
+  border: 1px solid #2c3550;
+  background: #1a2030;
+  color: #9aa3b5;
+  border-radius: 14px;
+  padding: 3px 9px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.chip.on { background: rgba(76, 141, 255, 0.18); border-color: #4c8dff; color: #cfe0ff; }
+
+#situation-row { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 2px 0 6px; }
+.sit { display: flex; align-items: center; gap: 4px; font-size: 12px; color: #9aa3b5; cursor: pointer; }
+.sit input { accent-color: #4c8dff; }
+
+#impact-summary { margin: 8px 0; }
+.lv-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+}
+.lv-1 { background: #1d3a2a; color: #6fdc8c; }
+.lv-2 { background: #3a331d; color: #f0c743; }
+.lv-3 { background: #3a2a1d; color: #ff9d4d; }
+.lv-4 { background: #3a1d22; color: #ff6470; }
+.headline { font-size: 15px; font-weight: 800; margin: 7px 0 3px; line-height: 1.4; }
+.timebrief { color: #9aa3b5; font-size: 12px; }
+
+.slow-badge {
+  margin: 7px 0 0;
+  padding: 6px 9px;
+  border-radius: 8px;
+  background: rgba(240, 199, 67, 0.12);
+  border: 1px solid rgba(240, 199, 67, 0.35);
+  color: #f0c743;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+#impact-section details {
+  border: 1px solid #232b42;
+  border-radius: 9px;
+  margin: 6px 0;
+  padding: 7px 10px;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+#impact-section summary { cursor: pointer; font-weight: 600; color: #c6ccd9; font-size: 12.5px; }
+#impact-section details[open] summary { margin-bottom: 5px; }
+
+.tl-row { display: flex; gap: 8px; align-items: baseline; padding: 1px 0; }
+.tl-row .t { color: #8ab0ff; font-variant-numeric: tabular-nums; min-width: 62px; font-weight: 600; }
+.muted { color: #6b7386; }
+.quote { border-left: 3px solid #4c8dff; padding-left: 8px; margin-top: 5px; color: #c6ccd9; }
+
+.check-row { display: flex; gap: 7px; align-items: flex-start; padding: 3px 0; cursor: pointer; }
+.check-row input { margin-top: 3px; accent-color: #4c8dff; }
+.check-row.done span { text-decoration: line-through; color: #6b7386; }
+
+#share-btn {
+  width: 100%;
+  padding: 9px;
+  margin-top: 4px;
+  border: none;
+  border-radius: 9px;
+  background: #4c8dff;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+#share-btn:hover { background: #3a7bef; }
+
+#disclaimer-mini { margin-top: 8px; color: #565e70; font-size: 10.5px; line-height: 1.6; }
+
+#share-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+#share-box { max-width: 400px; width: 100%; }
+#share-canvas {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+}
+#share-actions { display: flex; gap: 10px; margin-top: 12px; }
+#share-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#share-save { background: #4c8dff; color: #fff; }
+#share-close { background: #2c3550; color: #c6ccd9; }

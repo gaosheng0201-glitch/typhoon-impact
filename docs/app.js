@@ -55,6 +55,7 @@ map.on("load", () => {
   }
 });
 
+ImpactPanel.init();
 refresh();
 setInterval(refresh, REFRESH_MS);
 
@@ -137,6 +138,7 @@ async function loadStorm(tfid, fit = true) {
   renderLegend();
   renderMeta();
   draw();
+  ImpactPanel.update(state.storm);
   if (fit && map.getSource("track-lines")) fitToStorm();
 }
 

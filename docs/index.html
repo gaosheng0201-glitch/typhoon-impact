@@ -3,17 +3,35 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>台风追踪</title>
+  <title>台风影响</title>
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-  <link href="style.css?v=3" rel="stylesheet">
+  <link href="style.css?v=4" rel="stylesheet">
 </head>
 <body>
   <div id="map"></div>
 
   <aside id="panel">
-    <h1>台风追踪</h1>
+    <h1>台风影响</h1>
     <div id="storm-list"></div>
-  <a id="impact-link" href="impact.html">📍 影响卡片：我会受灾吗 →</a>
+
+    <section id="impact-section">
+      <h2>📍 我会不会受灾</h2>
+      <div id="loc-row">
+        <select id="sel-prov"></select>
+        <select id="sel-city"></select>
+        <select id="sel-dist"></select>
+        <button id="btn-geo" title="使用我的位置">📍</button>
+      </div>
+      <div id="persona-row"></div>
+      <div id="situation-row"></div>
+      <div id="impact-summary"></div>
+
+      <details id="d-timeline"><summary>⏱ 时间线</summary><div></div></details>
+      <details id="d-analog"><summary>📚 历史对照</summary><div></div></details>
+      <details id="d-checklist" open><summary>✅ 现在该做的</summary><div></div></details>
+
+      <button id="share-btn">📤 生成分享卡片</button>
+    </section>
 
     <section>
       <h2>预报机构</h2>
@@ -26,10 +44,25 @@
     </section>
 
     <footer id="meta"></footer>
+    <footer id="disclaimer-mini">
+      非官方预警，以气象与应急部门发布为准；涉撤离听从当地政府安排。
+      雨量估算为演示数据；前期降雨来自 Open-Meteo。
+    </footer>
   </aside>
 
+  <div id="share-modal">
+    <div id="share-box">
+      <canvas id="share-canvas"></canvas>
+      <div id="share-actions">
+        <button id="share-save">保存图片</button>
+        <button id="share-close">关闭</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script src="data.js?v=3"></script>
-  <script src="app.js?v=3"></script>
+  <script src="data.js?v=4"></script>
+  <script src="panel.js?v=4"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
