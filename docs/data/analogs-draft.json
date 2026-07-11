@@ -1,6 +1,6 @@
 {
- "version": "draft-2026-07-13",
- "note": "第二层试点：Top20 台风 × 城市灾情，Haiku 从中文维基抽取，每条含原文引用。内容准则：只写对生活的影响（被淹/停电停水/转移/停工停课/交通中断），不写死伤人数与经济损失。状态 pending=待人工审核。",
+ "version": "draft-2026-07-13-b2",
+ "note": "对照库草稿：批次一(Top20试点) + 批次二(Top100剩余，Haiku抽取+Opus质检)。内容准则：只写生活影响。pending=待人工终审，approved 后合入 analogs.json。",
  "skipped": [
   {
    "typhoon": {
@@ -1267,6 +1267,5132 @@
    "quotes": [
     "9月16日13时21分，江苏昆山周市镇萧林路和横泾路口10千伏线路受台风影响导线落地，导致途经此处的两名居民触电倒地，经抢救仍告不治"
    ]
+  },
+  {
+   "typhoon": {
+    "name": "海马",
+    "enName": "HAIMA",
+    "tfid": "200413"
+   },
+   "region": {
+    "province": "台北",
+    "city": "台北市"
+   },
+   "hazard": {
+    "rainTotalMm": 611.5,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "台北市录得611.5mm降雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "台北市遭受高降雨，测得611.5毫米雨量。",
+   "sources": [
+    "zh.wikipedia: 热带风暴海马 (2004年)"
+   ],
+   "quotes": [
+    "台北市则测得611.5毫米雨量"
+   ],
+   "review": "pending",
+   "eventId": "200413-haima-台北市"
+  },
+  {
+   "typhoon": {
+    "name": "海马",
+    "enName": "HAIMA",
+    "tfid": "200413"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "78公顷农地被摧毁",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "浙江温州瑞安市登陆后减弱。农地受损78公顷。",
+   "sources": [
+    "zh.wikipedia: 热带风暴海马 (2004年)"
+   ],
+   "quotes": [
+    "摧毁浙江省78公顷农地"
+   ],
+   "review": "pending",
+   "eventId": "200413-haima-温州"
+  },
+  {
+   "typhoon": {
+    "name": "碧利斯",
+    "enName": "BILIS",
+    "tfid": "200608"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 1053,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "屏东县上德文站测得1053mm降雨，为全台最高。大范围被淹",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "屏东县遭遇创纪录降雨。屏东县上德文站测得全台最高降雨1053mm，多处被淹。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴碧利斯 (2006年)"
+   ],
+   "quotes": [
+    "屏东县上德文站的总降雨量达1,053毫米，为全台最高"
+   ],
+   "review": "pending",
+   "eventId": "200608-bilis-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "碧利斯",
+    "enName": "BILIS",
+    "tfid": "200608"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "高雄市"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": 1,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "高雄市1小时最大降水69.5mm",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "高雄市录得最大一小时降水量69.5毫米，短时强降雨造成局地积水。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴碧利斯 (2006年)"
+   ],
+   "quotes": [
+    "高雄市录得最大一小时降水量69.5毫米"
+   ],
+   "review": "pending",
+   "eventId": "200608-bilis-高雄市"
+  },
+  {
+   "typhoon": {
+    "name": "圣帕",
+    "enName": "SEPAT",
+    "tfid": "200715"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 987,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "屏东县玛家测得987mm降雨",
+    "power": "全台最高停电户数61万多户",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "屏东县玛家测站测得987mm降雨，为最高记录。全台最高停电61万多户。",
+   "sources": [
+    "zh.wikipedia: 超强台风圣帕(2007年)"
+   ],
+   "quotes": [
+    "屏东县玛家测站：987毫米（最高记录）",
+    "全台最高停电户数：61万多户"
+   ],
+   "review": "pending",
+   "eventId": "200715-sepat-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "圣帕",
+    "enName": "SEPAT",
+    "tfid": "200715"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大面积农作物受灾",
+    "power": "",
+    "water": "",
+    "evacuation": "转移137.3万人",
+    "note": ""
+   },
+   "narrative": "福建惠安以台风级登陆。农作物受灾313.9万公顷、绝收42.4万公顷。紧急转移137.3万人。",
+   "sources": [
+    "zh.wikipedia: 超强台风圣帕(2007年)"
+   ],
+   "quotes": [
+    "紧急转移安置137.3万人",
+    "农作物受灾面积313.9千公顷，其中绝收42.4千公顷"
+   ],
+   "review": "pending",
+   "eventId": "200715-sepat-福州"
+  },
+  {
+   "typhoon": {
+    "name": "丹娜丝",
+    "enName": "DANAS",
+    "tfid": "202504"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 658,
+    "rainDurationH": null,
+    "peakPower": 16,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "屏东牡丹658mm降雨",
+    "power": "超100万户停电",
+    "water": "6.8万户停水",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "屏东县牡丹测得658mm降雨。全台超100万户停电、6.8万户停水。",
+   "sources": [
+    "zh.wikipedia: 强台风丹娜丝 (2025年)"
+   ],
+   "quotes": [
+    "屏东牡丹累积雨量达658毫米",
+    "超过100万户停电",
+    "6万8367户停水"
+   ],
+   "review": "pending",
+   "eventId": "202504-danas-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "丹娜丝",
+    "enName": "DANAS",
+    "tfid": "202504"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "航线停运、工程停工"
+   },
+   "narrative": "温州市瑞安登陆。浙江全省147条客运航线停航，所有水工项目停工。",
+   "sources": [
+    "zh.wikipedia: 强台风丹娜丝 (2025年)"
+   ],
+   "quotes": [
+    "丹娜丝于7月8日晚9时25分在温州市洞头区登陆",
+    "全省147条客运航线停航"
+   ],
+   "review": "pending",
+   "eventId": "202504-danas-温州"
+  },
+  {
+   "typhoon": {
+    "name": "丹娜丝",
+    "enName": "DANAS",
+    "tfid": "202504"
+   },
+   "region": {
+    "province": "福建",
+    "city": "厦门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "强降雨、积水内涝",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "航班延误、列车限速"
+   },
+   "narrative": "厦门市出现大暴雨，多处积水内涝。航班延误、轮船航线停航。",
+   "sources": [
+    "zh.wikipedia: 强台风丹娜丝 (2025年)"
+   ],
+   "quotes": [
+    "厦门市（7月10-11日）：普降暴雨到大暴雨，出现积水内涝，部分列车限速晚点，航班延误"
+   ],
+   "review": "pending",
+   "eventId": "202504-danas-厦门"
+  },
+  {
+   "typhoon": {
+    "name": "莫兰蒂",
+    "enName": "MERANTI",
+    "tfid": "201618"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 840,
+    "rainDurationH": null,
+    "peakPower": 16,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "屏东西大武山840mm降雨",
+    "power": "110万户停电",
+    "water": "72万户停水",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "屏东县西大武山测得840mm降雨。全台停水72万户、停电110万户。",
+   "sources": [
+    "zh.wikipedia: 颱風莫蘭蒂 (2016年)"
+   ],
+   "quotes": [
+    "全台超过72万戸停水、110万戸停电",
+    "屏东西大武山累积降雨超过840毫米"
+   ],
+   "review": "pending",
+   "eventId": "201618-meranti-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "莫兰蒂",
+    "enName": "MERANTI",
+    "tfid": "201618"
+   },
+   "region": {
+    "province": "福建",
+    "city": "厦门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 16,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大面积洪水",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "多棵树木倒塌、基础设施受损"
+   },
+   "narrative": "厦门近180万人受灾。35万棵树木倒塌。东关桥被洪水冲毁。",
+   "sources": [
+    "zh.wikipedia: 颱風莫蘭蒂 (2016年)"
+   ],
+   "quotes": [
+    "廈門35万棵树木倒塌"
+   ],
+   "review": "pending",
+   "eventId": "201618-meranti-厦门"
+  },
+  {
+   "typhoon": {
+    "name": "科妈",
+    "enName": "CO-MAY",
+    "tfid": "202508"
+   },
+   "region": {
+    "province": "上海",
+    "city": "上海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "浦东转移11万人，奉贤转移1.3万人",
+    "note": ""
+   },
+   "narrative": "上海浦东转移11万人、奉贤转移1.3万人。地铁部分线路限速运行。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴竹节草"
+   ],
+   "quotes": [
+    "浦东新区转移11万人",
+    "奉贤区转移1万3千人"
+   ],
+   "review": "pending",
+   "eventId": "202508-co-may-上海"
+  },
+  {
+   "typhoon": {
+    "name": "科妈",
+    "enName": "CO-MAY",
+    "tfid": "202508"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "宁波"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "宁波出现暴雨到大暴雨",
+    "power": "",
+    "water": "太湖水位达警戒线",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "宁波市7月29日-30日出现大暴雨。太湖水位涨至3.80米，达警戒水位。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴竹节草"
+   ],
+   "quotes": [
+    "宁波市7月29日夜间至30日白天出现暴雨到大暴雨",
+    "太湖水位涨至3.80米，达警戒水位"
+   ],
+   "review": "pending",
+   "eventId": "202508-co-may-宁波"
+  },
+  {
+   "typhoon": {
+    "name": "潭美",
+    "enName": "TRAMI",
+    "tfid": "201312"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "宜兰县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "溪口乡淹水严重",
+    "power": "万户停电",
+    "water": "",
+    "evacuation": "",
+    "note": "农业及民间设施受损"
+   },
+   "narrative": "台湾沿海地区溪口乡淹水严重，逾万户停电，农业及民间设施受损。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴潭美 (2013年)"
+   ],
+   "quotes": [
+    "农业产物及民间设施估计损失3,021万元"
+   ],
+   "review": "pending",
+   "eventId": "201312-trami-宜兰县"
+  },
+  {
+   "typhoon": {
+    "name": "潭美",
+    "enName": "TRAMI",
+    "tfid": "201312"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "潭美在福州福清沿海登陆。之后逐步减弱。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴潭美 (2013年)"
+   ],
+   "quotes": [
+    "福州市福清市沿海登陆"
+   ],
+   "review": "pending",
+   "eventId": "201312-trami-福州"
+  },
+  {
+   "typhoon": {
+    "name": "云娜",
+    "enName": "RANANIM",
+    "tfid": "200413"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "台州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "大面积被淹，至少300多个村庄被困",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "倒塌损坏房屋16万间"
+   },
+   "narrative": "台州登陆后大规模受灾。倒塌及损坏房屋16万多间。至少300多个村庄被困。农作物受灾20多万公顷。",
+   "sources": [
+    "zh.wikipedia: 台风云娜"
+   ],
+   "quotes": [
+    "164人死亡，1800人受伤，24人失踪",
+    "倒塌及损坏房屋达十六万多间",
+    "至少有三百多个村庄被困",
+    "农作物受灾面积达二十多万公顷"
+   ],
+   "review": "pending",
+   "eventId": "200413-rananim-台州"
+  },
+  {
+   "typhoon": {
+    "name": "杰拉华",
+    "enName": "JELAWAT",
+    "tfid": "200006"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "宁波"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "轻微影响",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "农作物被吹毁"
+   },
+   "narrative": "宁波象山县石浦镇登陆后减弱。造成轻微交通阻塞和农作物被吹毁。",
+   "sources": [
+    "zh.wikipedia: 强台风杰拉华(2000年)"
+   ],
+   "quotes": [
+    "在浙江，杰拉华造成轻微交通阻塞及吹毁一些农作物"
+   ],
+   "review": "pending",
+   "eventId": "200006-jelawat-宁波"
+  },
+  {
+   "typhoon": {
+    "name": "海马",
+    "enName": "HAIMA",
+    "tfid": "201622"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 16,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "启动高级别应急响应、停工停业停市停课"
+   },
+   "narrative": "深圳等多个城市启动高级别应急响应。实施四停措施（停工、停业、停市、停课）。",
+   "sources": [
+    "zh.wikipedia: 超强台风海马(2016年)"
+   ],
+   "quotes": [
+    "海马造成江苏、福建、广东189.9万人受灾"
+   ],
+   "review": "pending",
+   "eventId": "201622-haima-深圳"
+  },
+  {
+   "typhoon": {
+    "name": "格美",
+    "enName": "KAEMI",
+    "tfid": "200605"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 567,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "山区降雨引发滑坡",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "屏东尾寮山录得567mm，全岛最高降雨。山区出现土壤滑动，多地停班停课。",
+   "sources": [
+    "zh.wikipedia: 台风格美(2006年)"
+   ],
+   "quotes": [
+    "屏东县尾寮山雨量站纪录567mm最多"
+   ],
+   "review": "pending",
+   "eventId": "200605-kaemi-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "格美",
+    "enName": "KAEMI",
+    "tfid": "200605"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台东县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "广泛停电",
+    "water": "",
+    "evacuation": "",
+    "note": "7月24日晚登陆"
+   },
+   "narrative": "台东成功镇登陆，超强风力持续3小时，多地基础设施受损，电网中断。",
+   "sources": [
+    "zh.wikipedia: 台风格美(2006年)"
+   ],
+   "quotes": [
+    "7月24日晚上11时45分在台湾台东县成功镇登陆",
+    "成功（新港）测得58.5 m/s阵风",
+    "台北测得了'10级阵风长达3小时'"
+   ],
+   "review": "pending",
+   "eventId": "200605-kaemi-台东县"
+  },
+  {
+   "typhoon": {
+    "name": "蝴蝶",
+    "enName": "WUTIP",
+    "tfid": "202501"
+   },
+   "region": {
+    "province": "广西",
+    "city": "玉林"
+   },
+   "hazard": {
+    "rainTotalMm": 401.5,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "容县灵山镇401mm降雨",
+    "power": "",
+    "water": "",
+    "evacuation": "转移9万人（广西全省）",
+    "note": "山体滑坡致死"
+   },
+   "narrative": "容县灵山镇降雨超400mm，引发山崩洪灾。玉林全市多地水浸，广西转移居民超9万。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴蝴蝶(2025年)"
+   ],
+   "quotes": [
+    "玉林市容县灵山镇401.5毫米",
+    "全省累计转移超9万人"
+   ],
+   "review": "pending",
+   "eventId": "202501-wutip-玉林"
+  },
+  {
+   "typhoon": {
+    "name": "蝴蝶",
+    "enName": "WUTIP",
+    "tfid": "202501"
+   },
+   "region": {
+    "province": "广西",
+    "city": "梧州"
+   },
+   "hazard": {
+    "rainTotalMm": 257.0,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "梧州岑溪257mm降雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "梧州岑溪南渡镇降雨257mm，局地水浸，农业受灾。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴蝴蝶(2025年)"
+   ],
+   "quotes": [
+    "梧州市岑溪市南渡镇257.0毫米"
+   ],
+   "review": "pending",
+   "eventId": "202501-wutip-梧州"
+  },
+  {
+   "typhoon": {
+    "name": "蝴蝶",
+    "enName": "WUTIP",
+    "tfid": "202501"
+   },
+   "region": {
+    "province": "广东",
+    "city": "湛江"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "多条跨海大桥关闭",
+    "note": "交通中断"
+   },
+   "narrative": "湛江市多条跨海通道（海湾、东海岛、调顺、南三大桥）实施封闭，高速全线关闭。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴蝴蝶(2025年)"
+   ],
+   "quotes": [
+    "湛江海湾大桥、东海岛大桥、调顺跨海大桥、南三大桥实施封闭管控，进出湛江的高速公路全线封闭"
+   ],
+   "review": "pending",
+   "eventId": "202501-wutip-湛江"
+  },
+  {
+   "typhoon": {
+    "name": "莫兰蒂",
+    "enName": "MERANTI",
+    "tfid": "201009"
+   },
+   "region": {
+    "province": "福建",
+    "city": "泉州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "9月10日登陆"
+   },
+   "narrative": "泉州石狨登陆时风力12级，气压975hPa。福建沿海基础设施受损，交通运输受阻。",
+   "sources": [
+    "zh.wikipedia: 台风莫兰蒂(2010年)"
+   ],
+   "quotes": [
+    "9月10日凌晨3时30分，强烈热带风暴莫兰蒂于福建省泉州石狮市永宁镇登陆，登陆时近中心最大风速35米/秒，中心气压为975hPa"
+   ],
+   "review": "pending",
+   "eventId": "201009-meranti-泉州"
+  },
+  {
+   "typhoon": {
+    "name": "莫兰蒂",
+    "enName": "MERANTI",
+    "tfid": "201009"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台东县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "台东县四村撤村",
+    "note": ""
+   },
+   "narrative": "台东县大鸟、爱国浦、利稻、嘉兰四村因风险撤村，全岛风力7-8级。",
+   "sources": [
+    "zh.wikipedia: 台风莫兰蒂(2010年)"
+   ],
+   "quotes": [
+    "台东县大鸟、爱国浦、利稻、嘉兰四村撤村",
+    "全台各地风力达7-8级"
+   ],
+   "review": "pending",
+   "eventId": "201009-meranti-台东县"
+  },
+  {
+   "typhoon": {
+    "name": "玛莉亚",
+    "enName": "MARIA",
+    "tfid": "200009"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕尾"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "暴雨导致洪水泛滥",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "9月1日登陆"
+   },
+   "narrative": "汕尾海丰县登陆，暴雨引发水浸和山泥倾泻，374万人受到影响，7000多间房屋倒塌。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴玛莉亚(2000年)"
+   ],
+   "quotes": [
+    "9月1日清晨，玛莉亚登陆中国广东省汕尾市海丰县鹅埠镇附近",
+    "暴雨造成水浸及山泥倾泻，最少有23人死亡，374万人受到影响",
+    "7000多间房屋倒塌"
+   ],
+   "review": "pending",
+   "eventId": "200009-maria-汕尾"
+  },
+  {
+   "typhoon": {
+    "name": "莫拉克",
+    "enName": "MORAKOT",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "嘉义县"
+   },
+   "hazard": {
+    "rainTotalMm": 3060,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "阿里山乡3060mm破纪录降雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "台湾台风降水最高纪录"
+   },
+   "narrative": "嘉义阿里山乡降雨3060mm，为台湾台风降水最高纪录，山洪爆发摧毁农业和基础设施。",
+   "sources": [
+    "zh.wikipedia: 台风莫拉克"
+   ],
+   "quotes": [
+    "嘉义县阿里山乡累计降雨3,060公釐，为台湾台风降水最高纪录"
+   ],
+   "review": "pending",
+   "eventId": "200908-morakot-嘉义县"
+  },
+  {
+   "typhoon": {
+    "name": "莫拉克",
+    "enName": "MORAKOT",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "高雄县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "小林村灭村",
+    "power": "",
+    "water": "",
+    "evacuation": "村民大规模撤离",
+    "note": "土石流灾难"
+   },
+   "narrative": "高雄小林村因土石流完全灭村，村民遭埋，农村基础设施彻底毁坏，农业损失超新台币200亿。",
+   "sources": [
+    "zh.wikipedia: 台风莫拉克"
+   ],
+   "quotes": [
+    "小林村灭村事件",
+    "农业损失超新台币200亿元"
+   ],
+   "review": "pending",
+   "eventId": "200908-morakot-高雄县"
+  },
+  {
+   "typhoon": {
+    "name": "莫拉克",
+    "enName": "MORAKOT",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "丽水"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "大暴雨导致洪灾",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "丽水庆元县遭暴雨袭击，华阳降雨超800mm属百年一遇，农作物受灾，房屋损毁。",
+   "sources": [
+    "zh.wikipedia: 台风莫拉克"
+   ],
+   "quotes": [
+    "华阳降雨800多毫米属百年一遇"
+   ],
+   "review": "pending",
+   "eventId": "200908-morakot-丽水"
+  },
+  {
+   "typhoon": {
+    "name": "莫拉克",
+    "enName": "MORAKOT",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "暴雨导致洪水",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "苍南县超800mm"
+   },
+   "narrative": "温州苍南县降雨超800mm，局地洪水泛滥，农业受灾严重，交通运输中断。",
+   "sources": [
+    "zh.wikipedia: 台风莫拉克"
+   ],
+   "quotes": [
+    "苍南县雨量超过800毫米"
+   ],
+   "review": "pending",
+   "eventId": "200908-morakot-温州"
+  },
+  {
+   "typhoon": {
+    "name": "卡努",
+    "enName": "KHANUN",
+    "tfid": "200515"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 14,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "暴雨洪灾",
+    "power": "",
+    "water": "",
+    "evacuation": "转移105万人（浙江省）",
+    "note": "9月11-12日停课"
+   },
+   "narrative": "温州遭超强台风袭击，风力14级，浙江转移105万人，多地停班停课，农田水浸。",
+   "sources": [
+    "zh.wikipedia: 强台风卡努(2005年)"
+   ],
+   "quotes": [
+    "浙江省转移超过105万人",
+    "温州：9月11-12日停止一切师生活动"
+   ],
+   "review": "pending",
+   "eventId": "200515-khanun-温州"
+  },
+  {
+   "typhoon": {
+    "name": "卡努",
+    "enName": "KHANUN",
+    "tfid": "200515"
+   },
+   "region": {
+    "province": "上海",
+    "city": "上海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "航班大量取消",
+    "water": "",
+    "evacuation": "转移16万人",
+    "note": "虹桥浦东380班次航班取消"
+   },
+   "narrative": "上海虹桥、浦东两机场共380班次航班取消，转移16万人，交通运输严重受阻。",
+   "sources": [
+    "zh.wikipedia: 强台风卡努(2005年)"
+   ],
+   "quotes": [
+    "上海市转移超过16万人",
+    "上海虹桥、浦东两大机场取消航班超过380班次"
+   ],
+   "review": "pending",
+   "eventId": "200515-khanun-上海"
+  },
+  {
+   "typhoon": {
+    "name": "卡努",
+    "enName": "KHANUN",
+    "tfid": "200515"
+   },
+   "region": {
+    "province": "江苏",
+    "city": "苏州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "暴雨洪灾",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "9月12日停课"
+   },
+   "narrative": "苏州及周边地区遭暴雨洪灾，多地停班停课，农业受灾，交通运输受阻。",
+   "sources": [
+    "zh.wikipedia: 强台风卡努(2005年)"
+   ],
+   "quotes": [
+    "苏州、无锡、嘉兴、上海：12日中小学和幼儿园停课一天"
+   ],
+   "review": "pending",
+   "eventId": "200515-khanun-苏州"
+  },
+  {
+   "typhoon": {
+    "name": "海鸥",
+    "enName": "KALMAEGI",
+    "tfid": "200807"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台南县"
+   },
+   "hazard": {
+    "rainTotalMm": 963.0,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "南化乡963mm破记录降雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "打破八七水灾纪录"
+   },
+   "narrative": "台南南化乡降雨963mm，创地方降水纪录，山洪爆发摧毁农业，房屋倒塌数百间。",
+   "sources": [
+    "zh.wikipedia: 台风海鸥(2008年)"
+   ],
+   "quotes": [
+    "台南县南化乡北寮：963.0毫米（最高）",
+    "台中地区打破'八七水灾'以来的降水纪录"
+   ],
+   "review": "pending",
+   "eventId": "200807-kalmaegi-台南县"
+  },
+  {
+   "typhoon": {
+    "name": "海鸥",
+    "enName": "KALMAEGI",
+    "tfid": "200807"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "澎湖县"
+   },
+   "hazard": {
+    "rainTotalMm": 429.5,
+    "rainDurationH": 1,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "单日429.5mm创112年纪录",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "澎湖气象站录得429.5mm单日降雨，创设站112年来新高，导致水浸和农田被淹。",
+   "sources": [
+    "zh.wikipedia: 台风海鸥(2008年)"
+   ],
+   "quotes": [
+    "澎湖气象站：429.5毫米，创设站112年来最大单日降雨记录"
+   ],
+   "review": "pending",
+   "eventId": "200807-kalmaegi-澎湖县"
+  },
+  {
+   "typhoon": {
+    "name": "海鸥",
+    "enName": "KALMAEGI",
+    "tfid": "200807"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "宜兰县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "暴雨洪水",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "7月17日登陆"
+   },
+   "narrative": "宜兰南澳乡登陆，台风中心附近风力12级，引发山洪和滑坡，多地交通中断。",
+   "sources": [
+    "zh.wikipedia: 台风海鸥(2008年)"
+   ],
+   "quotes": [
+    "7月17日21时40分，卡玫基中心于台湾宜兰县南澳乡登陆"
+   ],
+   "review": "pending",
+   "eventId": "200807-kalmaegi-宜兰县"
+  },
+  {
+   "typhoon": {
+    "name": "玛莉亚",
+    "enName": "MARIA",
+    "tfid": "201808"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "32班航班取消",
+    "water": "",
+    "evacuation": "5.5万人撤离",
+    "note": "三停一休，海峡高速停航"
+   },
+   "narrative": "福州登陆后实施\"三停一休\"（停工停产停课休市），机场32班航班取消，海峡高速客滚轮停航。",
+   "sources": [
+    "zh.wikipedia: 台风玛莉亚(2018年)"
+   ],
+   "quotes": [
+    "福州长乐国际机场已有32架次航班因台风取消",
+    "海峡高速客滚轮航班停航",
+    "国家防总启动防汛防台风三级应急响应"
+   ],
+   "review": "pending",
+   "eventId": "201808-maria-福州"
+  },
+  {
+   "typhoon": {
+    "name": "凡亚比",
+    "enName": "FANAPI",
+    "tfid": "201011"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 1079.5,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "玛家站1079.5mm破纪录",
+    "power": "",
+    "water": "",
+    "evacuation": "1.6万人撤离",
+    "note": "极端降雨"
+   },
+   "narrative": "屏东玛家测站录得1079.5mm超强降雨，引发百年一遇洪灾，农田尽数被淹，1.6万人撤离。",
+   "sources": [
+    "zh.wikipedia: 超强台风凡亚比"
+   ],
+   "quotes": [
+    "屏东县玛家测站降雨1,079.5毫米",
+    "全台农渔业损失逾34亿4,300万元"
+   ],
+   "review": "pending",
+   "eventId": "201011-fanapi-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "凡亚比",
+    "enName": "FANAPI",
+    "tfid": "201011"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "高雄市"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "楠梓区洪涝400栋建筑受淹",
+    "power": "广泛停电",
+    "water": "",
+    "evacuation": "",
+    "note": "500多辆车泡水"
+   },
+   "narrative": "高雄市楠梓区洪涝严重，400多栋建筑受淹、500多辆车泡水。全国90.5万户停电。",
+   "sources": [
+    "zh.wikipedia: 超强台风凡亚比"
+   ],
+   "quotes": [
+    "高雄市楠梓区孝顺街洪涝，400多栋建筑受淹，500多辆车泡水",
+    "台电统计全国共90.5万户停电"
+   ],
+   "review": "pending",
+   "eventId": "201011-fanapi-高雄市"
+  },
+  {
+   "typhoon": {
+    "name": "凡亚比",
+    "enName": "FANAPI",
+    "tfid": "201011"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "暴雨导致洪灾",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "房屋倒塌400间"
+   },
+   "narrative": "福建60.61万人受灾，房屋倒塌400间，农作物大面积被淹。",
+   "sources": [
+    "zh.wikipedia: 超强台风凡亚比"
+   ],
+   "quotes": [
+    "60.61万人受灾，房屋倒塌400间，直接经济损失6亿5千万元"
+   ],
+   "review": "pending",
+   "eventId": "201011-fanapi-福州"
+  },
+  {
+   "typhoon": {
+    "name": "凡亚比",
+    "enName": "FANAPI",
+    "tfid": "201011"
+   },
+   "region": {
+    "province": "广东",
+    "city": "茂名"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "山洪泥石流灾难",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "高州、信宜山区严重受灾"
+   },
+   "narrative": "茂名高州、信宜地区山洪泥石流爆发，部分站点降雨超千年一遇，多地房屋倒塌、农田被毁。",
+   "sources": [
+    "zh.wikipedia: 超强台风凡亚比"
+   ],
+   "quotes": [
+    "茂名高州、信宜地区山洪泥石流造成严重伤亡，部分站点降雨量超过千年一遇"
+   ],
+   "review": "pending",
+   "eventId": "201011-fanapi-茂名"
+  },
+  {
+   "typhoon": {
+    "name": "韦森特",
+    "enName": "VICENTE",
+    "tfid": "201208"
+   },
+   "region": {
+    "province": "广东",
+    "city": "江门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 13,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "隧道水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "转移70,200人",
+    "note": "房屋倒塌504间；3,000多树木被吹倒"
+   },
+   "narrative": "7月24日凌晨登陆江门台山。13级风力，转移超7万人，房屋倒塌500多间，深圳3000多树木被吹倒。",
+   "sources": [
+    "zh.wikipedia: 台风韦森特(2012年)"
+   ],
+   "quotes": [
+    "中心最大风力达13级",
+    "70,200人",
+    "504间倒塌",
+    "深圳3,000多树木被吹倒"
+   ],
+   "review": "pending",
+   "eventId": "201208-vicente-江门"
+  },
+  {
+   "typhoon": {
+    "name": "海贝思",
+    "enName": "HAGIBIS",
+    "tfid": "201407"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕头"
+   },
+   "hazard": {
+    "rainTotalMm": 404.7,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "澄海、南澳等地降雨超100mm",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "潮南地区单点降雨达404.7mm"
+   },
+   "narrative": "6月15日登陆广东东部。汕头南澳地区降雨404.7mm，澄海、潮阳多站超百年一遇。",
+   "sources": [
+    "zh.wikipedia: 热带风暴海贝思(2014年)"
+   ],
+   "quotes": [
+    "潮南雷岭镇录得404.7毫米",
+    "澄海观测站：208毫米",
+    "南澳观测站：279.3毫米"
+   ],
+   "review": "pending",
+   "eventId": "201407-hagibis-汕头"
+  },
+  {
+   "typhoon": {
+    "name": "米克拉",
+    "enName": "MEKKHALA",
+    "tfid": "202006"
+   },
+   "region": {
+    "province": "福建",
+    "city": "漳州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "龙海市16万户停电",
+    "water": "",
+    "evacuation": "",
+    "note": "集装箱被吹落，私家车被树木砸中"
+   },
+   "narrative": "8月11日登陆福建漳州。龙海市16万户停电，集装箱被强风吹落，私家车被树木砸中。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴米克拉(2020年)"
+   ],
+   "quotes": [
+    "龙海市亦有十六万户电力中断"
+   ],
+   "review": "pending",
+   "eventId": "202006-mekkhala-漳州"
+  },
+  {
+   "typhoon": {
+    "name": "飞燕",
+    "enName": "CHEBI",
+    "tfid": "200102"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "房屋倒塌1.25万间；渔船沉没7,000艘"
+   },
+   "narrative": "6月22日登陆福建福州。12级阵风；房屋倒塌1.25万间，渔业损失7000艘渔船沉没。",
+   "sources": [
+    "zh.wikipedia: 台风飞燕(2001年)"
+   ],
+   "quotes": [
+    "中北部沿海地区阵风超过12级",
+    "房屋倒塌1.25万间",
+    "超过7,000艘渔船沉没"
+   ],
+   "review": "pending",
+   "eventId": "200102-chebi-福州"
+  },
+  {
+   "typhoon": {
+    "name": "白鹿",
+    "enName": "BAILU",
+    "tfid": "201911"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "11万户停电",
+    "water": "",
+    "evacuation": "3,454人疏散撤离",
+    "note": "共607件灾情报告"
+   },
+   "narrative": "8月24日登陆台湾屏东。11万户停电，3454人疏散撤离，共607件灾情。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴白鹿(2019年)"
+   ],
+   "quotes": [
+    "全台累积逾11万户停电",
+    "3,454人需疏散撤离",
+    "合共607件灾情"
+   ],
+   "review": "pending",
+   "eventId": "201911-bailu-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "白鹿",
+    "enName": "BAILU",
+    "tfid": "201911"
+   },
+   "region": {
+    "province": "福建",
+    "city": "厦门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "5,000人旅客受影响",
+    "note": "163班航班取消"
+   },
+   "narrative": "厦门机场取消163班航班。厦金航线超5,000旅客受影响，交通运输中断。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴白鹿(2019年)"
+   ],
+   "quotes": [
+    "厦门机场截至24日17时已取消航班163架次",
+    "厦金航线估计有超过5000人次旅客受到影响"
+   ],
+   "review": "pending",
+   "eventId": "201911-bailu-厦门"
+  },
+  {
+   "typhoon": {
+    "name": "鹦鹉",
+    "enName": "NURI",
+    "tfid": "200812"
+   },
+   "region": {
+    "province": "广东",
+    "city": "江门"
+   },
+   "hazard": {
+    "rainTotalMm": 400,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "多地降雨超100mm",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "江门台山降雨超400mm；树木大量倒塌"
+   },
+   "narrative": "8月22日在香港附近登陆。江门台山降雨超400mm，广东多地超100mm；树木大量倒塌。",
+   "sources": [
+    "zh.wikipedia: 台风鹦鹉(2008年)"
+   ],
+   "quotes": [
+    "江门台山市更超过400毫米",
+    "降雨量超过100毫米"
+   ],
+   "review": "pending",
+   "eventId": "200812-nuri-江门"
+  },
+  {
+   "typhoon": {
+    "name": "鹦鹉",
+    "enName": "NURI",
+    "tfid": "200812"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "约30宗水浸报告",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "所有学校停课；港铁机场接近全面瘫痪"
+   },
+   "narrative": "正面吹袭香港。约30宗水浸，风速最高99km/h；所有学校停课，港铁机场交通瘫痪。",
+   "sources": [
+    "zh.wikipedia: 台风鹦鹉(2008年)"
+   ],
+   "quotes": [
+    "本港共录得约30宗水浸报告",
+    "长洲99 km/h"
+   ],
+   "review": "pending",
+   "eventId": "200812-nuri-香港"
+  },
+  {
+   "typhoon": {
+    "name": "派比安",
+    "enName": "PRAPIROON",
+    "tfid": "200606"
+   },
+   "region": {
+    "province": "广东",
+    "city": "江门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "全省455.4万人受灾，房屋9000多间倒塌，33条国省道因塌方或水浸中断",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "8月3日登陆，中心风力达12级飓风"
+   },
+   "narrative": "派比安登陆江门，12级风导致广东全省455.4万人受灾，房屋倒塌9000多间，33条道路中断。",
+   "sources": [
+    "zh.wikipedia: 台风派比安(2006年)"
+   ],
+   "quotes": [
+    "派比安以中心风力130公里每小时的强度于8月3日晚上7时20分在阳西至电白一带登陆",
+    "全省455.4万人受灾",
+    "房屋9000多间倒塌",
+    "33条国省道因塌方或水浸中断"
+   ],
+   "review": "pending",
+   "eventId": "200606-prapiroon-江门"
+  },
+  {
+   "typhoon": {
+    "name": "派比安",
+    "enName": "PRAPIROON",
+    "tfid": "200606"
+   },
+   "region": {
+    "province": "广西",
+    "city": "北海"
+   },
+   "hazard": {
+    "rainTotalMm": 164,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "全区570.6万人受灾，房屋倒塌5230户11055间，绝收面积27300公顷",
+    "power": "",
+    "water": "",
+    "evacuation": "38.7941万人紧急转移",
+    "note": "北海降雨164毫米，合浦309毫米"
+   },
+   "narrative": "派比安外围影响广西，570.6万人受灾，38.7941万人转移，房屋11055间倒塌，农田27300公顷绝收。",
+   "sources": [
+    "zh.wikipedia: 台风派比安(2006年)"
+   ],
+   "quotes": [
+    "北海164毫米",
+    "合浦309毫米",
+    "全区570.6万人受灾，38万7941人紧急转移",
+    "居民住房5230户11055间",
+    "绝收面积27300公顷"
+   ],
+   "review": "pending",
+   "eventId": "200606-prapiroon-北海"
+  },
+  {
+   "typhoon": {
+    "name": "派比安",
+    "enName": "PRAPIROON",
+    "tfid": "200606"
+   },
+   "region": {
+    "province": "海南",
+    "city": "琼海"
+   },
+   "hazard": {
+    "rainTotalMm": 222.9,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "3800多人受淹，琼州海峡停航约1500人滞留",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "临高最高降雨222.9毫米，约500台车辆滞留"
+   },
+   "narrative": "派比安外围导致海南临高降雨222.9毫米，3800多人受淹，琼州海峡停航、约1500人滞留。",
+   "sources": [
+    "zh.wikipedia: 台风派比安(2006年)"
+   ],
+   "quotes": [
+    "琼海、临高超200毫米，临高最高222.9毫米",
+    "临城、调楼、波莲等3镇3800多人受淹",
+    "琼州海峡停航，500台车辆滞留，约1500人滞留"
+   ],
+   "review": "pending",
+   "eventId": "200606-prapiroon-琼海"
+  },
+  {
+   "typhoon": {
+    "name": "派比安",
+    "enName": "PRAPIROON",
+    "tfid": "200606"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": 207.5,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "发出三号强风信号，长洲风速114公里/小时，倒塌树木630宗，航班取消381班、延误725班、滞留近12万旅客"
+   },
+   "narrative": "派比安导致香港降雨207.5毫米，长洲阵风114公里/小时，倒塌树木630宗，航班取消381班延误725班。",
+   "sources": [
+    "zh.wikipedia: 台风派比安(2006年)"
+   ],
+   "quotes": [
+    "长洲114公里/小时",
+    "降雨：最高207.5毫米",
+    "树木：630宗倒塌意外",
+    "381班取消、725班延误，近12万旅客滞留"
+   ],
+   "review": "pending",
+   "eventId": "200606-prapiroon-香港"
+  },
+  {
+   "typhoon": {
+    "name": "纳沙",
+    "enName": "NESAT",
+    "tfid": "201709"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "宜兰县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 16,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "停电586145户",
+    "water": "",
+    "evacuation": "",
+    "note": "7月29日晚登陆，宜兰测得16级阵风，30日全台停班停课"
+   },
+   "narrative": "纳沙登陆宜兰县，16级阵风，586145户停电。台湾全岛30日停班停课，121班航班取消。",
+   "sources": [
+    "zh.wikipedia: 台风纳沙(2017年)"
+   ],
+   "quotes": [
+    "登陆地区测得16级阵风",
+    "停电586,145户",
+    "30日全台县市停班停课",
+    "121班航班取消"
+   ],
+   "review": "pending",
+   "eventId": "201709-nesat-宜兰县"
+  },
+  {
+   "typhoon": {
+    "name": "纳沙",
+    "enName": "NESAT",
+    "tfid": "201709"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "沿海暴雨成灾，23人因淹水受困",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "屏东沿海是重灾区"
+   },
+   "narrative": "纳沙导致屏东沿海暴雨成灾，23人因淹水受困。",
+   "sources": [
+    "zh.wikipedia: 台风纳沙(2017年)"
+   ],
+   "quotes": [
+    "屏东沿海暴雨成灾，23人因淹水受困"
+   ],
+   "review": "pending",
+   "eventId": "201709-nesat-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "纳沙",
+    "enName": "NESAT",
+    "tfid": "201709"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "17万人撤离",
+    "note": "7月30日早上登陆福州福清市，大陆发布蓝色至黄色预警"
+   },
+   "narrative": "纳沙登陆福州福清市，大陆撤离17万人。中国大陆共121班航班取消。",
+   "sources": [
+    "zh.wikipedia: 台风纳沙(2017年)"
+   ],
+   "quotes": [
+    "30日上午7时登陆福建福州福清市",
+    "人员转移：17万人撤离",
+    "交通中断：121班航班取消"
+   ],
+   "review": "pending",
+   "eventId": "201709-nesat-福州"
+  },
+  {
+   "typhoon": {
+    "name": "塔巴",
+    "enName": "TAPAH",
+    "tfid": "202516"
+   },
+   "region": {
+    "province": "广东",
+    "city": "江门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "9月8日登陆台山大广海湾，珠海、深圳、江门全市学校停课，琼州海峡客滚运输停运，铁路列车停运"
+   },
+   "narrative": "塔巴登陆江门台山，11级风。珠海、深圳、江门全市停课，琼州海峡客滚停运，铁路停运。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴塔巴(2025年)"
+   ],
+   "quotes": [
+    "9月8日上午8时50分在江门市台山市大广海湾经济区海宴镇沿海登陆，中心最低气压978百帕",
+    "停课：珠海市、深圳市、江门市全市学校停课",
+    "琼州海峡客滚运输全线停运，铁路列车停运"
+   ],
+   "review": "pending",
+   "eventId": "202516-tapah-江门"
+  },
+  {
+   "typhoon": {
+    "name": "天鹅",
+    "enName": "GONI",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "广东",
+    "city": "江门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "超过80万人受灾，1000多间房屋倒塌，94000公顷农作物受灾",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "8月5日登陆，阳江最高降雨730毫米"
+   },
+   "narrative": "天鹅登陆台山，9级风导致80多万人受灾，1000多间房屋倒塌，94000公顷农田受灾，阳江降雨730毫米。",
+   "sources": [
+    "zh.wikipedia: 热带风暴天鹅(2009年)"
+   ],
+   "quotes": [
+    "天鹅8月5日6时20分在广东台山登陆，登陆时中心最大风力达9级",
+    "超过80万人受灾",
+    "1000多间房屋倒塌",
+    "阳江市最高降雨量达730毫米",
+    "94,000公顷农作物受灾"
+   ],
+   "review": "pending",
+   "eventId": "200908-goni-江门"
+  },
+  {
+   "typhoon": {
+    "name": "天鹅",
+    "enName": "GONI",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "广东",
+    "city": "阳江"
+   },
+   "hazard": {
+    "rainTotalMm": 730,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "阳江是最重灾区，700多间房屋倒塌，最高降雨730毫米",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "广东西部沿岸受9级风力影响"
+   },
+   "narrative": "天鹅导致阳江最高降雨730毫米，是重灾区，房屋倒塌700多间。",
+   "sources": [
+    "zh.wikipedia: 热带风暴天鹅(2009年)"
+   ],
+   "quotes": [
+    "阳江市最高降雨量达730毫米",
+    "700间房屋倒塌（阳江）",
+    "广东西部沿岸地区受9级风力影响"
+   ],
+   "review": "pending",
+   "eventId": "200908-goni-阳江"
+  },
+  {
+   "typhoon": {
+    "name": "天鹅",
+    "enName": "GONI",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "广东",
+    "city": "珠海"
+   },
+   "hazard": {
+    "rainTotalMm": 186,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "珠海金湾区降雨186毫米",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "珠海受暴雨影响"
+   },
+   "narrative": "天鹅导致珠海金湾区平沙镇降雨186毫米。",
+   "sources": [
+    "zh.wikipedia: 热带风暴天鹅(2009年)"
+   ],
+   "quotes": [
+    "珠海金湾区平沙镇降雨达186毫米"
+   ],
+   "review": "pending",
+   "eventId": "200908-goni-珠海"
+  },
+  {
+   "typhoon": {
+    "name": "天鹅",
+    "enName": "GONI",
+    "tfid": "200908"
+   },
+   "region": {
+    "province": "海南",
+    "city": "海口"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "海口市凌晨起路面水浸，多车受困",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "海南受外围影响"
+   },
+   "narrative": "天鹅导致海口市路面水浸，多车受困。",
+   "sources": [
+    "zh.wikipedia: 热带风暴天鹅(2009年)"
+   ],
+   "quotes": [
+    "海口市凌晨起路面水浸，很多车辆死火"
+   ],
+   "review": "pending",
+   "eventId": "200908-goni-海口"
+  },
+  {
+   "typhoon": {
+    "name": "伊布都",
+    "enName": "IMBUDO",
+    "tfid": "200307"
+   },
+   "region": {
+    "province": "广东",
+    "city": "茂名"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "大暴雨导致土崩，房屋近6000间倒塌，1000万公顷农作物被损，超过740万人受灾",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "7月24日早上登陆，12级飓风登陆风力最强"
+   },
+   "narrative": "伊布都登陆茂名电白县，12级风导致大暴雨、土崩，近6000间房屋倒塌，1000万公顷农田受损，740多万人受灾。",
+   "sources": [
+    "zh.wikipedia: 台风伊布都"
+   ],
+   "quotes": [
+    "登陆地点：茂名市电白县博贺镇附近（7月24日早上）",
+    "登陆时中心风力达12级飓风",
+    "导致接近6,000间房屋倒塌和超过1,000万公顷的农作物被损",
+    "受灾人数：超过740万"
+   ],
+   "review": "pending",
+   "eventId": "200307-imbudo-茂名"
+  },
+  {
+   "typhoon": {
+    "name": "伊布都",
+    "enName": "IMBUDO",
+    "tfid": "200307"
+   },
+   "region": {
+    "province": "广西",
+    "city": "北海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "395万人受灾，广西廉江和罗定地区暴雨导致农作物受损",
+    "power": "",
+    "water": "",
+    "evacuation": "3600人被紧急转移",
+    "note": "伊布都外围导致广西大灾"
+   },
+   "narrative": "伊布都导致广西395万人受灾，3600人转移。廉江、罗定暴雨和冰雹，农作物受损。",
+   "sources": [
+    "zh.wikipedia: 台风伊布都"
+   ],
+   "quotes": [
+    "灾情：12人因树木砸中或雷击身亡，395万人受灾，3600人被紧急转移",
+    "廉江和罗定地区下冰雹和暴雨，部分农作物受损"
+   ],
+   "review": "pending",
+   "eventId": "200307-imbudo-北海"
+  },
+  {
+   "typhoon": {
+    "name": "凤凰",
+    "enName": "FUNG-WONG",
+    "tfid": "201416"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "宁波"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "9月22日登陆象山县，浙江发布台风黄色预警"
+   },
+   "narrative": "凤凰登陆宁波象山，9月22日晚上，后向上海移动。",
+   "sources": [
+    "zh.wikipedia: 热带风暴凤凰(2014年)"
+   ],
+   "quotes": [
+    "9月22日晚上7时35分于浙江省宁波市象山县鹤浦镇沿海登陆"
+   ],
+   "review": "pending",
+   "eventId": "201416-fung-wong-宁波"
+  },
+  {
+   "typhoon": {
+    "name": "凤凰",
+    "enName": "FUNG-WONG",
+    "tfid": "201416"
+   },
+   "region": {
+    "province": "上海",
+    "city": "上海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "9月23日早上登陆，是自1949年以来第6个登陆上海的热带气旋，25年来首个登陆上海的热带气旋"
+   },
+   "narrative": "凤凰9月23日登陆上海奉贤区，是自1989年以来首个登陆上海的热带气旋。",
+   "sources": [
+    "zh.wikipedia: 热带风暴凤凰(2014年)"
+   ],
+   "quotes": [
+    "9月23日下午10时45分，凤凰于中国上海市奉贤区海湾镇沿海登陆",
+    "凤凰是自1989年强烈热带风暴肯恩-露娜以来，25年来首个登陆上海的热带气旋"
+   ],
+   "review": "pending",
+   "eventId": "201416-fung-wong-上海"
+  },
+  {
+   "typhoon": {
+    "name": "凤凰",
+    "enName": "FUNG-WONG",
+    "tfid": "201416"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 1008,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "屏东县西大武山降雨1008毫米（最高），大汉山670.5毫米，多地降雨超600毫米",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "9月19日-22日统计，屏东是台湾降雨最重的县市"
+   },
+   "narrative": "凤凰导致台湾屏东县西大武山降雨1008毫米，大汉山670毫米，是台湾最高降雨。",
+   "sources": [
+    "zh.wikipedia: 热带风暴凤凰(2014年)"
+   ],
+   "quotes": [
+    "西大武山(屏东县泰武乡)：1008毫米",
+    "大汉山(屏东县春日乡)：670.5毫米"
+   ],
+   "review": "pending",
+   "eventId": "201416-fung-wong-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "凤凰",
+    "enName": "FUNG-WONG",
+    "tfid": "201416"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台东县"
+   },
+   "hazard": {
+    "rainTotalMm": 671,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "台东县金峰乡671毫米降雨，太武乡599.5毫米，卑南乡579.5毫米",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "台东县也是受暴雨影响的地区"
+   },
+   "narrative": "凤凰导致台东县金峰乡降雨671毫米，太武乡599.5毫米，卑南乡579.5毫米。",
+   "sources": [
+    "zh.wikipedia: 热带风暴凤凰(2014年)"
+   ],
+   "quotes": [
+    "金峰(台东县金峰乡)：671毫米",
+    "大鸟(台东县太武乡)：599.5毫米",
+    "射马干(台东县卑南乡)：579.5毫米"
+   ],
+   "review": "pending",
+   "eventId": "201416-fung-wong-台东县"
+  },
+  {
+   "typhoon": {
+    "name": "纳莉",
+    "enName": "NARI",
+    "tfid": "200116"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台北市"
+   },
+   "hazard": {
+    "rainTotalMm": 425,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "台北市大面积水浸，捷运线路淹没",
+    "power": "约165万户停电",
+    "water": "约175万户停水",
+    "evacuation": "数百万人撤离到避难所",
+    "note": "台风中心滞留台北岛49小时20分钟，创台湾纪录"
+   },
+   "narrative": "台北市遭台风纳莉直击49小时，单日降雨425mm创纪录。大面积停电停水，城市交通和生活瘫痪，百万级人口转移避险。",
+   "sources": [
+    "zh.wikipedia: 颱風納莉_(2001年)"
+   ],
+   "quotes": [
+    "台风纳莉中心自登陆至出海共长达49个小时又20分钟",
+    "台北市单日降雨425mm",
+    "～165 million households lost power"
+   ],
+   "review": "pending",
+   "eventId": "200116-nari-台北市"
+  },
+  {
+   "typhoon": {
+    "name": "纳莉",
+    "enName": "NARI",
+    "tfid": "200116"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕头"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "沿海地区海水倒灌",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "风暴潮与天文大潮叠加加重灾情"
+   },
+   "narrative": "汕头沿海受风暴潮影响，海水倒灌加重水浸。大量农田进水，交通受阻。",
+   "sources": [
+    "zh.wikipedia: 颱風納莉_(2001年)"
+   ],
+   "quotes": [
+    "9至10级东北至东风、12级强阵风",
+    "风暴潮与天文大潮叠加，导致沿海地区海水倒灌"
+   ],
+   "review": "pending",
+   "eventId": "200116-nari-汕头"
+  },
+  {
+   "typhoon": {
+    "name": "纳莉",
+    "enName": "NARI",
+    "tfid": "200116"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕尾"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "部分房屋被淹",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "登陆点，房屋倒塌154间、损坏267间"
+   },
+   "narrative": "汕尾是纳莉登陆点，受风力最强冲击。多间房屋倒塌或损坏，交通中断。",
+   "sources": [
+    "zh.wikipedia: 颱風納莉_(2001年)"
+   ],
+   "quotes": [
+    "9至10级东北至东风",
+    "154间房屋完全倒塌，267间房屋部分倒塌"
+   ],
+   "review": "pending",
+   "eventId": "200116-nari-汕尾"
+  },
+  {
+   "typhoon": {
+    "name": "纳莉",
+    "enName": "NARI",
+    "tfid": "200116"
+   },
+   "region": {
+    "province": "广东",
+    "city": "揭阳"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "普遍暴雨致地方受灾",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "粤东地区普降大暴雨"
+   },
+   "narrative": "揭阳作为粤东主要城市，遭受暴雨侵袭。大量农田进水，部分地区交通受阻。",
+   "sources": [
+    "zh.wikipedia: 颱風納莉_(2001年)"
+   ],
+   "quotes": [
+    "粤东普降大到暴雨，局地大暴雨"
+   ],
+   "review": "pending",
+   "eventId": "200116-nari-揭阳"
+  },
+  {
+   "typhoon": {
+    "name": "艾云尼",
+    "enName": "EWINIAR",
+    "tfid": "201804"
+   },
+   "region": {
+    "province": "海南",
+    "city": "海口"
+   },
+   "hazard": {
+    "rainTotalMm": 218,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "多处街道、民居、商铺进水",
+    "power": "",
+    "water": "",
+    "evacuation": "4.7万人转移",
+    "note": "海口长流镇登陆点，持续暴雨"
+   },
+   "narrative": "海口登陆后暴雨持续，文昌市铁前镇218.8mm降雨导致大面积水浸。商业街、居民区积水，4万多人撤离到安全地带。",
+   "sources": [
+    "zh.wikipedia: 热带风暴艾云尼_(2018年)"
+   ],
+   "quotes": [
+    "6月6日下午2时50分在海南海口长流镇再次登陆",
+    "文昌市铁前镇：218.8毫米",
+    "广东、广西、福建、湖南合共超过21万人受灾，4万7千人撤离"
+   ],
+   "review": "pending",
+   "eventId": "201804-ewiniar-海口"
+  },
+  {
+   "typhoon": {
+    "name": "艾云尼",
+    "enName": "EWINIAR",
+    "tfid": "201804"
+   },
+   "region": {
+    "province": "广东",
+    "city": "广州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "34条路段淹水，交通多处瘫痪",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "市区多地积水，公交及出租停运"
+   },
+   "narrative": "广州市34条路段被淹，主干道交通瘫痪。多条主要街道积水堵车，学校停课，部分商铺歇业。",
+   "sources": [
+    "zh.wikipedia: 热带风暴艾云尼_(2018年)"
+   ],
+   "quotes": [
+    "广州34条路段淹水，多处交通瘫痪"
+   ],
+   "review": "pending",
+   "eventId": "201804-ewiniar-广州"
+  },
+  {
+   "typhoon": {
+    "name": "艾云尼",
+    "enName": "EWINIAR",
+    "tfid": "201804"
+   },
+   "region": {
+    "province": "广东",
+    "city": "阳江"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "海陵岛沿海地区水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "第三次登陆点"
+   },
+   "narrative": "阳江海陵岛是艾云尼第三登陆点。沿海民宅进水，渔港设施受损，渔民转移到陆地避险。",
+   "sources": [
+    "zh.wikipedia: 热带风暴艾云尼_(2018年)"
+   ],
+   "quotes": [
+    "6月7日晚上8时半在广东阳江海陵岛沿海作最后登陆"
+   ],
+   "review": "pending",
+   "eventId": "201804-ewiniar-阳江"
+  },
+  {
+   "typhoon": {
+    "name": "尤特",
+    "enName": "UTOR",
+    "tfid": "200104"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕尾"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "沿海地区海水倒灌",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "登陆点，风暴潮叠加天文大潮"
+   },
+   "narrative": "汕尾是尤特登陆点，受风暴潮影响严重。沿海民宅、农田进水，渔港设施受损。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴尤特_(2001年)"
+   ],
+   "quotes": [
+    "7月5日协调世界时23时50分，尤特在广东省汕尾市一带沿海地区登陆",
+    "风暴潮与天文大潮叠加，导致沿海地区海水倒灌"
+   ],
+   "review": "pending",
+   "eventId": "200104-utor-汕尾"
+  },
+  {
+   "typhoon": {
+    "name": "尤特",
+    "enName": "UTOR",
+    "tfid": "200104"
+   },
+   "region": {
+    "province": "广东",
+    "city": "惠州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 7,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "平海镇和周边地区被淹",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "港澳随后发布八号风球首次"
+   },
+   "narrative": "惠州平海地区大面积水浸。大量房屋受损，部分交通中断。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴尤特_(2001年)"
+   ],
+   "quotes": [
+    "尤特在广东省汕尾市惠州市一带沿海登陆"
+   ],
+   "review": "pending",
+   "eventId": "200104-utor-惠州"
+  },
+  {
+   "typhoon": {
+    "name": "尤特",
+    "enName": "UTOR",
+    "tfid": "200104"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": 150,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "大屿山及新界西北地区明显水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "首次发出八号烈风暴风信号（21世纪首次）"
+   },
+   "narrative": "香港首次在21世纪发出最高级风球。大屿山降雨超300mm，新界西北严重积水，港口航班大量取消。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴尤特_(2001年)"
+   ],
+   "quotes": [
+    "香港大部分地区约150毫米，大屿山超过300毫米",
+    "尤特令香港和澳门悬挂21世纪首次的八号烈风或暴风信号"
+   ],
+   "review": "pending",
+   "eventId": "200104-utor-香港"
+  },
+  {
+   "typhoon": {
+    "name": "天兔",
+    "enName": "USAGI",
+    "tfid": "201317"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕头"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "大面积农田被淹，民居进水",
+    "power": "",
+    "water": "",
+    "evacuation": "大量人员转移",
+    "note": "汕头等11市共979万人受灾，1.8万间房屋倒塌"
+   },
+   "narrative": "汕头及周边11个市县共979万人受灾。超强台风天兔登陆广东汕尾，随后北上影响汕头。大量房屋倒塌、农田淹没、道路中断。",
+   "sources": [
+    "zh.wikipedia: 超强台风天兔_(2013年)"
+   ],
+   "quotes": [
+    "天兔于9月22日晚上7时40分在汕尾市红海湾遮浪半岛登陆",
+    "汕头、汕尾、揭阳等11市65个县一共979万人受灾",
+    "多达1万8千间房屋倒塌"
+   ],
+   "review": "pending",
+   "eventId": "201317-usagi-汕头"
+  },
+  {
+   "typhoon": {
+    "name": "天兔",
+    "enName": "USAGI",
+    "tfid": "201317"
+   },
+   "region": {
+    "province": "广东",
+    "city": "揭阳"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "广泛农田进水",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "陆丰县录得74.7米/秒超强阵风"
+   },
+   "narrative": "揭阳境内大面积农田和大棚被狂风摧毁。部分地区停电停水，交通中断。",
+   "sources": [
+    "zh.wikipedia: 超强台风天兔_(2013年)"
+   ],
+   "quotes": [
+    "陆丰县甲东镇录得每秒70.4米阵风；牛角隆水库达每秒74.7米"
+   ],
+   "review": "pending",
+   "eventId": "201317-usagi-揭阳"
+  },
+  {
+   "typhoon": {
+    "name": "天兔",
+    "enName": "USAGI",
+    "tfid": "201317"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "屏东县"
+   },
+   "hazard": {
+    "rainTotalMm": 718,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大汉山地区大面积山洪",
+    "power": "",
+    "water": "",
+    "evacuation": "部分山区居民转移",
+    "note": "屏东春日乡大汉山降雨718mm"
+   },
+   "narrative": "屏东县山区遭暴雨侵袭，大汉山单日降雨718mm，造成山洪及土石流。部分山区交通中断，登山游客转移。",
+   "sources": [
+    "zh.wikipedia: 超强台风天兔_(2013年)"
+   ],
+   "quotes": [
+    "屏东县春日乡大汉山718毫米",
+    "花莲县秀林乡天祥785毫米"
+   ],
+   "review": "pending",
+   "eventId": "201317-usagi-屏东县"
+  },
+  {
+   "typhoon": {
+    "name": "天兔",
+    "enName": "USAGI",
+    "tfid": "201317"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "花莲县"
+   },
+   "hazard": {
+    "rainTotalMm": 785,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "山洪造成多地被淹",
+    "power": "",
+    "water": "",
+    "evacuation": "山区居民转移",
+    "note": "天祥地区累计降雨785mm，创台风纪录"
+   },
+   "narrative": "花莲县秀林乡天祥地区降雨785mm创纪录，山洪暴发。大量树木倒塌，山区道路毁损，数百人转移避险。",
+   "sources": [
+    "zh.wikipedia: 超强台风天兔_(2013年)"
+   ],
+   "quotes": [
+    "花莲县秀林乡天祥785毫米"
+   ],
+   "review": "pending",
+   "eventId": "201317-usagi-花莲县"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "SAOLA",
+    "tfid": "201209"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "宜兰县"
+   },
+   "hazard": {
+    "rainTotalMm": 1774,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "宜兰全县广泛积水，民居农田大量进水",
+    "power": "",
+    "water": "",
+    "evacuation": "1万人转移避难",
+    "note": "宜兰单日1774mm破记录，台风纪录排第七"
+   },
+   "narrative": "宜兰县单日降雨1774mm创纪录，全县被洪水包围。大量民居、商铺、农田淹没，1万多人紧急转移到避难所。",
+   "sources": [
+    "zh.wikipedia: 台风苏拉_(2012年)"
+   ],
+   "quotes": [
+    "宜兰县宜兰市单日降雨达1,774毫米，排名台湾台风降雨纪录第七位",
+    "疏散人数：10,016人"
+   ],
+   "review": "pending",
+   "eventId": "201209-saola-宜兰县"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "SAOLA",
+    "tfid": "201209"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "花莲县"
+   },
+   "hazard": {
+    "rainTotalMm": 1786,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "太平山地区暴雨引发山洪",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "太平山累计1786mm，创台湾台风纪录"
+   },
+   "narrative": "花莲太平山累计降雨1786mm创全台湾纪录。山洪暴发，部分登山道路毁损，游客转移撤离。",
+   "sources": [
+    "zh.wikipedia: 台风苏拉_(2012年)"
+   ],
+   "quotes": [
+    "太平山（1,786毫米）"
+   ],
+   "review": "pending",
+   "eventId": "201209-saola-花莲县"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "SAOLA",
+    "tfid": "201209"
+   },
+   "region": {
+    "province": "福建",
+    "city": "宁德"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "沿海地区和山区被淹",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "登陆点，福建境内有14人罹难"
+   },
+   "narrative": "宁德福鼎市是苏拉在福建登陆点。沿海及内陆地区降雨引发水浸和滑坡。交通受阻，部分民居被淹。",
+   "sources": [
+    "zh.wikipedia: 台风苏拉_(2012年)"
+   ],
+   "quotes": [
+    "苏拉在福建省宁德市福鼎市秦屿镇沿海一带登陆",
+    "记录死亡人数达14人"
+   ],
+   "review": "pending",
+   "eventId": "201209-saola-宁德"
+  },
+  {
+   "typhoon": {
+    "name": "海高斯",
+    "enName": "HIGOS",
+    "tfid": "200817"
+   },
+   "region": {
+    "province": "海南",
+    "city": "文昌"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "登陆地区农田进水",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "龙樓鎮登陸點，移动缓慢"
+   },
+   "narrative": "海高斯在海南文昌龙楼镇登陆后减弱为热带低气压，移动缓慢持续数日。沿海农田进水，部分养殖场受影响。",
+   "sources": [
+    "zh.wikipedia: 热带风暴海高斯_(2008年)"
+   ],
+   "quotes": [
+    "10月3日晚上10時15分前後在海南省文昌市龍樓鎮沿海登陸"
+   ],
+   "review": "pending",
+   "eventId": "200817-higos-文昌"
+  },
+  {
+   "typhoon": {
+    "name": "海高斯",
+    "enName": "HIGOS",
+    "tfid": "200817"
+   },
+   "region": {
+    "province": "广东",
+    "city": "江门"
+   },
+   "hazard": {
+    "rainTotalMm": 344,
+    "rainDurationH": null,
+    "peakPower": 7,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "新会大傲镇及周边广泛水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "第二登陆点，降雨集中"
+   },
+   "narrative": "江门新会大傲镇降雨344mm，大量积水。农田进水，部分低洼地带被淹，交通受阻。",
+   "sources": [
+    "zh.wikipedia: 热带风暴海高斯_(2008年)"
+   ],
+   "quotes": [
+    "最高：江门新會大傲鎮達343.95毫米",
+    "10月4日下午5時10分在廣東西部吳川市大山江鎮再次登陸"
+   ],
+   "review": "pending",
+   "eventId": "200817-higos-江门"
+  },
+  {
+   "typhoon": {
+    "name": "海高斯",
+    "enName": "HIGOS",
+    "tfid": "200817"
+   },
+   "region": {
+    "province": "广东",
+    "city": "广州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 7,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "珠江口地区明显水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "在珠江江面重新增强为热带低气压"
+   },
+   "narrative": "广州珠江口地区在海高斯影响下出现明显积水。部分低洼街道和工业区被淹，车辆通行受阻。",
+   "sources": [
+    "zh.wikipedia: 热带风暴海高斯_(2008年)"
+   ],
+   "quotes": [
+    "10月5日下午在珠江口重新增强为热带低气压",
+    "南沙建设指挥部展览馆录得28.9 m/s阵风"
+   ],
+   "review": "pending",
+   "eventId": "200817-higos-广州"
+  },
+  {
+   "typhoon": {
+    "name": "妮妲",
+    "enName": "NIDA",
+    "tfid": "201604"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": 200,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大鹏半岛地区普遍水浸",
+    "power": "16000户用户停电",
+    "water": "",
+    "evacuation": "",
+    "note": "穿越深圳大鹏半岛"
+   },
+   "narrative": "妮妲穿越深圳大鹏半岛，导致周边农田和民居水浸。16000多户停电，交通中断，港口作业暂停。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴妮妲_(2016年)"
+   ],
+   "quotes": [
+    "终在8月2日凌晨穿越深圳，是2009年台风莫拉菲以来首个登陆大鹏半岛的热带气旋",
+    "Power outages: Over 16,000 households affected"
+   ],
+   "review": "pending",
+   "eventId": "201604-nida-深圳"
+  },
+  {
+   "typhoon": {
+    "name": "妮妲",
+    "enName": "NIDA",
+    "tfid": "201604"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕尾"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "沿海地区风暴潮加重",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "预期登陆位置"
+   },
+   "narrative": "汕尾是妮妲预期登陆点，沿海地区遭风暴潮侵袭。渔港设施受损，养殖网箱被毁。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴妮妲_(2016年)"
+   ],
+   "quotes": [
+    "妮妲以台风强度直逼珠江口和港澳地区，并采取类似2009年台风莫拉菲的路径穿越深圳大鹏半岛一带"
+   ],
+   "review": "pending",
+   "eventId": "201604-nida-汕尾"
+  },
+  {
+   "typhoon": {
+    "name": "妮妲",
+    "enName": "NIDA",
+    "tfid": "201604"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": 200,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "大澳和鲤鱼门地区轻微水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "风暴潮叠加天文大潮"
+   },
+   "narrative": "香港大澳和鲤鱼门地区水位升高0.5-1米，出现轻微水浸。部分临海建筑物和设施受影响。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴妮妲_(2016年)"
+   ],
+   "quotes": [
+    "大澳和鯉魚門受風暴潮及天文大潮影響，水位較平常高0.5米至1米且有輕微洪涝",
+    "12 people injured; 403 fallen tree reports filed"
+   ],
+   "review": "pending",
+   "eventId": "201604-nida-香港"
+  },
+  {
+   "typhoon": {
+    "name": "黑格比",
+    "enName": "HAGUPIT",
+    "tfid": "202009"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": 230,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "温州全市广泛停电，111万户受影响",
+    "power": "111万户停电，部分地区停水",
+    "water": "部分地区停水",
+    "evacuation": "大量居民转移",
+    "note": "2020年首个影响浙江的台风，登陆时中心最低气压970百帕"
+   },
+   "narrative": "黑格比在温州乐清市登陆，风力17级创记录。温州全市大范围停电，111万户居民失电，部分地区停水。医院、超市等基本生活设施受影响。",
+   "sources": [
+    "zh.wikipedia: 台风黑格比_(2020年)"
+   ],
+   "quotes": [
+    "8月4日凌晨3时30分在浙江省温州乐清市翁垟街道登陆",
+    "玉环大麦屿雕鹰山最大阵风达60.2米每秒，风力17级",
+    "浙江全省567条输电线路停运，187.5万户用户的用电受到影响",
+    "温州市有111万余户用户供电受影响"
+   ],
+   "review": "pending",
+   "eventId": "202009-hagupit-温州"
+  },
+  {
+   "typhoon": {
+    "name": "黑格比",
+    "enName": "HAGUPIT",
+    "tfid": "202009"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "台州"
+   },
+   "hazard": {
+    "rainTotalMm": 202,
+    "rainDurationH": null,
+    "peakPower": 16,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "多县市降雨100mm以上，农田进水",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "黄岩、玉环、温岭多地超100mm降雨"
+   },
+   "narrative": "台州多地降雨超100mm，最高202mm。农田大棚被狂风摧毁，大量蔬菜大棚进水，草莓种植园损失严重。",
+   "sources": [
+    "zh.wikipedia: 台风黑格比_(2020年)"
+   ],
+   "quotes": [
+    "黄岩、玉环、温岭三地超100毫米",
+    "金山钱圩镇测得全市最大的202.7毫米"
+   ],
+   "review": "pending",
+   "eventId": "202009-hagupit-台州"
+  },
+  {
+   "typhoon": {
+    "name": "黑格比",
+    "enName": "HAGUPIT",
+    "tfid": "202009"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "嘉兴"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "边缘影响"
+   },
+   "narrative": "嘉兴受黑格比边缘影响，风力较弱，主要为降雨。部分低洼地区轻微积水。",
+   "sources": [
+    "zh.wikipedia: 台风黑格比_(2020年)"
+   ],
+   "quotes": [
+    "浙江全省567条输电线路停运"
+   ],
+   "review": "pending",
+   "eventId": "202009-hagupit-嘉兴"
+  },
+  {
+   "typhoon": {
+    "name": "马力斯",
+    "enName": "MALIKSI",
+    "tfid": "202402"
+   },
+   "region": {
+    "province": "广东",
+    "city": "阳江"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "阳西县沿海低洼地区水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "6月1日凌晨登陆"
+   },
+   "narrative": "马力斯在阳江阳西县登陆。沿海地区农田进水，渔港设施受损。交通运输暂停，学校停课。",
+   "sources": [
+    "zh.wikipedia: 热带风暴马力斯_(2024年)"
+   ],
+   "quotes": [
+    "6月1日凌晨12时55分在广东省阳江市阳西县沿海登陆",
+    "登陆时中心附近最大风力有8级(每秒18米)"
+   ],
+   "review": "pending",
+   "eventId": "202402-maliksi-阳江"
+  },
+  {
+   "typhoon": {
+    "name": "马力斯",
+    "enName": "MALIKSI",
+    "tfid": "202402"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "三号强风信号，最高风速48km/h"
+   },
+   "narrative": "香港发出三号强风信号。赤鱲角机场、长洲等地风速较强，部分户外活动取消，市民行动受阻。",
+   "sources": [
+    "zh.wikipedia: 热带风暴马力斯_(2024年)"
+   ],
+   "quotes": [
+    "赤鱲角48 km/h和长洲46 km/h"
+   ],
+   "review": "pending",
+   "eventId": "202402-maliksi-香港"
+  },
+  {
+   "typhoon": {
+    "name": "马力斯",
+    "enName": "MALIKSI",
+    "tfid": "202402"
+   },
+   "region": {
+    "province": "澳门",
+    "city": "澳门"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "部分低洼地区积水",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "三号风球，预计单日雨量超100mm"
+   },
+   "narrative": "澳门发出三号风球，预报单日降雨100mm以上。部分街道和低洼地段积水，交通受阻。",
+   "sources": [
+    "zh.wikipedia: 热带风暴马力斯_(2024年)"
+   ],
+   "quotes": [
+    "友谊大桥北峰51.5 km/h",
+    "并预计单日雨量可超过100毫米"
+   ],
+   "review": "pending",
+   "eventId": "202402-maliksi-澳门"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "HATO",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "广东",
+    "city": "珠海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 15,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "珠海全市大范围水浸，民居商业区进水",
+    "power": "大规模停电",
+    "water": "多地停水",
+    "evacuation": "74.1万人受灾",
+    "note": "登陆风力每秒45米，香港澳门首次同时发出最高风球"
+   },
+   "narrative": "天鸽在珠海金湾区以超强台风强度登陆。74万多人遭灾，大量房屋被毁、停电停水。珠江三角洲地带被摧毁性吹袭，港澳首次同时发出十号风球。",
+   "sources": [
+    "zh.wikipedia: 超强台风天鸽"
+   ],
+   "quotes": [
+    "8月23日中午12时50分在广东省珠海市金湾区登陆",
+    "中心附近最大风力达每秒45米（每小时162公里）",
+    "受灾人口：74.1万人",
+    "直接经济损失：121.8亿元人民币"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-珠海"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "HATO",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 14,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "深圳沿海地区风暴潮水浸",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "超强台风正面吹袭"
+   },
+   "narrative": "深圳沿海地区遭受风暴潮侵袭，部分临海建筑和工业区水浸。港口、机场临时关闭，航班大量取消。",
+   "sources": [
+    "zh.wikipedia: 超强台风天鸽"
+   ],
+   "quotes": [
+    "广东省的直接经济损失121.8亿元"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-深圳"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "HATO",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 15,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "全港广泛被淹，维港风暴潮异常高涨",
+    "power": "大规模停电停水",
+    "water": "多处停水",
+    "evacuation": "大量居民转移避险",
+    "note": "5年来首次十号飓风信号，创香港纪录"
+   },
+   "narrative": "香港发出5年首次十号飓风信号。全港被淹，维港风暴潮异常。大规模停电停水，百万级居民转移避险，港口航班全停。",
+   "sources": [
+    "zh.wikipedia: 超强台风天鸽"
+   ],
+   "quotes": [
+    "发布十号飓风信号（5年来首次）",
+    "最接近位置：距天文台总部西南偏南约60公里"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-香港"
+  },
+  {
+   "typhoon": {
+    "name": "天鸽",
+    "enName": "HATO",
+    "tfid": "201713"
+   },
+   "region": {
+    "province": "澳门",
+    "city": "澳门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 15,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "澳门全域水浸，建筑设施严重受损",
+    "power": "大规模停电",
+    "water": "多处停水",
+    "evacuation": "居民紧急转移",
+    "note": "18年来首次十号风球，成为港澳同时发出最高警告首例"
+   },
+   "narrative": "澳门18年来首次发出十号风球。全澳被淹，建筑物顶层被吹毁，树木大规模倒塌。大范围停电停水，港澳首次同时发出最高风球。",
+   "sources": [
+    "zh.wikipedia: 超强台风天鸽"
+   ],
+   "quotes": [
+    "悬挂十号风球（18年来首次）",
+    "成为自1999年强热带风暴約克之后，首次港澳两地之最高热带气旋警告信号同时生效的案例"
+   ],
+   "review": "pending",
+   "eventId": "201713-hato-澳门"
+  },
+  {
+   "typhoon": {
+    "name": "杜鹃",
+    "enName": "DUJUAN",
+    "tfid": "200313"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 13,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "市区大范围停电受淹",
+    "power": "逾九成地区停电",
+    "water": "",
+    "evacuation": "",
+    "note": "掠过珠江口正面袭击"
+   },
+   "narrative": "杜鹃于2003年9月2日登陆广东惠东县，掠过深圳。深圳逾九成地区停电，受灾范围广。",
+   "sources": [
+    "zh.wikipedia: 台风杜鹃(2003年)"
+   ],
+   "quotes": [
+    "深圳市逾九成地区停电"
+   ],
+   "review": "pending",
+   "eventId": "200313-dujuan-深圳"
+  },
+  {
+   "typhoon": {
+    "name": "杜鹃",
+    "enName": "DUJUAN",
+    "tfid": "200313"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "元朗多处停电",
+    "power": "广泛塌树",
+    "water": "",
+    "evacuation": "",
+    "note": "九号热带气旋警告信号"
+   },
+   "narrative": "杜鹃为香港1999年以来首个九号热带气旋，元朗多处地区停电约300户，全港多地塌树。",
+   "sources": [
+    "zh.wikipedia: 台风杜鹃(2003年)"
+   ],
+   "quotes": [
+    "元朗多处地区停电，约300户居民受影响",
+    "全港多个地区共有85宗塌树及数宗高空堕物报告"
+   ],
+   "review": "pending",
+   "eventId": "200313-dujuan-香港"
+  },
+  {
+   "typhoon": {
+    "name": "杜鹃",
+    "enName": "DUJUAN",
+    "tfid": "200313"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台湾南部"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "近59万户停电",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "台风杜鹃掠过台湾南部，导致近59万户停电，为主要灾情。",
+   "sources": [
+    "zh.wikipedia: 台风杜鹃(2003年)"
+   ],
+   "quotes": [
+    "近59万户停电"
+   ],
+   "review": "pending",
+   "eventId": "200313-dujuan-台湾南部"
+  },
+  {
+   "typhoon": {
+    "name": "珍珠",
+    "enName": "CHANCHU",
+    "tfid": "200601"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕头"
+   },
+   "hazard": {
+    "rainTotalMm": 187,
+    "rainDurationH": 36,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "汕头地区严重积水",
+    "power": "停电886700户",
+    "water": "",
+    "evacuation": "撤离32.7万余人",
+    "note": "5月20日仍未全部恢复电力"
+   },
+   "narrative": "珍珠2006年5月16-18日在汕头降雨187毫米，停电超88万户，撤离32万人。",
+   "sources": [
+    "zh.wikipedia: 超强台风珍珠(2006年)"
+   ],
+   "quotes": [
+    "汕头观测站降雨量：187.1毫米（5月16日20时至18日8时）",
+    "停电：886,700户受影响，至5月20日仍有小部分未恢复",
+    "撤离居民：32.7万余人"
+   ],
+   "review": "pending",
+   "eventId": "200601-chanchu-汕头"
+  },
+  {
+   "typhoon": {
+    "name": "珍珠",
+    "enName": "CHANCHU",
+    "tfid": "200601"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "60个县市425乡镇受灾，9600间房屋倒塌",
+    "power": "",
+    "water": "",
+    "evacuation": "撤离70.9万人",
+    "note": ""
+   },
+   "narrative": "珍珠过境福建，60个县市425个乡镇受灾，9600间房屋倒塌，转移70.9万人避险。",
+   "sources": [
+    "zh.wikipedia: 超强台风珍珠(2006年)"
+   ],
+   "quotes": [
+    "受灾：60个县市、425个乡镇",
+    "倒塌房屋：9,600间",
+    "撤离居民：709,000人"
+   ],
+   "review": "pending",
+   "eventId": "200601-chanchu-福州"
+  },
+  {
+   "typhoon": {
+    "name": "海葵",
+    "enName": "HAIKUI",
+    "tfid": "201211"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "宁波"
+   },
+   "hazard": {
+    "rainTotalMm": 224,
+    "rainDurationH": null,
+    "peakPower": 16,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "宁波等地严重积水",
+    "power": "",
+    "water": "",
+    "evacuation": "转移46万余人",
+    "note": "临安达541毫米"
+   },
+   "narrative": "海葵2012年8月8日在象山县登陆，宁波降雨224毫米，浙江省转移46万余人避险。",
+   "sources": [
+    "zh.wikipedia: 强台风海葵(2012年)"
+   ],
+   "quotes": [
+    "宁波市录得最大平均雨量224毫米",
+    "杭州临安市岭达541毫米",
+    "浙江省已转移46万馀人"
+   ],
+   "review": "pending",
+   "eventId": "201211-haikui-宁波"
+  },
+  {
+   "typhoon": {
+    "name": "海葵",
+    "enName": "HAIKUI",
+    "tfid": "201211"
+   },
+   "region": {
+    "province": "上海",
+    "city": "上海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 14,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "36.1万人受灾，房屋倒塌50余间",
+    "power": "",
+    "water": "",
+    "evacuation": "转移37.4万人",
+    "note": ""
+   },
+   "narrative": "海葵影响上海，36.1万人受灾，转移撤离37.4万人，50余间房屋倒塌。",
+   "sources": [
+    "zh.wikipedia: 强台风海葵(2012年)"
+   ],
+   "quotes": [
+    "截至7日下午9时已转移撤离共37.4万人",
+    "31.1万人紧急转移，36.1万人受灾，50馀间房屋倒塌"
+   ],
+   "review": "pending",
+   "eventId": "201211-haikui-上海"
+  },
+  {
+   "typhoon": {
+    "name": "海葵",
+    "enName": "HAIKUI",
+    "tfid": "201211"
+   },
+   "region": {
+    "province": "安徽",
+    "city": "黄山"
+   },
+   "hazard": {
+    "rainTotalMm": 678,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "山区降雨极端，房屋倒塌3000余间",
+    "power": "",
+    "water": "",
+    "evacuation": "转移20.4万人",
+    "note": "5天降678毫米"
+   },
+   "narrative": "黄山区8月6-11日5天累计降雨678毫米，安徽全省转移20.4万人，3000余间房屋倒塌。",
+   "sources": [
+    "zh.wikipedia: 强台风海葵(2012年)"
+   ],
+   "quotes": [
+    "黄山区自8月6日20时至8月11日6时降雨达678毫米",
+    "20.4万人紧急转移安置",
+    "3011间房屋倒塌"
+   ],
+   "review": "pending",
+   "eventId": "201211-haikui-黄山"
+  },
+  {
+   "typhoon": {
+    "name": "帕卡",
+    "enName": "PAKHAR",
+    "tfid": "201714"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "16宗水浸报告",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "2000宗塌树"
+   },
+   "narrative": "帕卡2017年8月掠过香港西南约90公里，全港收到2000宗塌树报告，16宗水浸事故。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴帕卡(2017年)"
+   ],
+   "quotes": [
+    "政府共收到2000宗塌树报告",
+    "16宗水浸报告"
+   ],
+   "review": "pending",
+   "eventId": "201714-pakhar-香港"
+  },
+  {
+   "typhoon": {
+    "name": "帕卡",
+    "enName": "PAKHAR",
+    "tfid": "201714"
+   },
+   "region": {
+    "province": "澳门",
+    "city": "澳门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "16宗水浸事故",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "共95宗事故"
+   },
+   "narrative": "帕卡吹袭澳门，共出现95宗事故，其中16宗水浸、10宗树木电线坠落。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴帕卡(2017年)"
+   ],
+   "quotes": [
+    "16宗水浸事故",
+    "10宗树木、电线坠落及倒塌事故"
+   ],
+   "review": "pending",
+   "eventId": "201714-pakhar-澳门"
+  },
+  {
+   "typhoon": {
+    "name": "鲇鱼",
+    "enName": "MEGI",
+    "tfid": "201617"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台北市"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 15,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "全台410万户停电",
+    "water": "",
+    "evacuation": "",
+    "note": "停班停课"
+   },
+   "narrative": "鲇鱼2016年9月登陆台湾，全台410万户停电，27日全台大部分县市停班停课。",
+   "sources": [
+    "zh.wikipedia: 超强台风鲇鱼(2016年)"
+   ],
+   "quotes": [
+    "全台超过410万户停电",
+    "27日全台大部分县市全日停班停课"
+   ],
+   "review": "pending",
+   "eventId": "201617-megi-台北市"
+  },
+  {
+   "typhoon": {
+    "name": "海高斯",
+    "enName": "HIGOS",
+    "tfid": "202007"
+   },
+   "region": {
+    "province": "澳门",
+    "city": "澳门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "192人入住避险中心",
+    "note": "树木损毁4656株，274宗事故"
+   },
+   "narrative": "海高斯2020年8月在珠海登陆，澳门共274宗事故，192人入住避险中心，处理4656株受损树木。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴海高斯(2020年)"
+   ],
+   "quotes": [
+    "事故报告: 274宗事故",
+    "避险中心: 192人入住"
+   ],
+   "review": "pending",
+   "eventId": "202007-higos-澳门"
+  },
+  {
+   "typhoon": {
+    "name": "启德",
+    "enName": "KAI-TAK",
+    "tfid": "200004"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台东县"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "农业受损",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "启德2000年7月登陆台湾台东县，台东县灾情较为严重，主要为农业损失。",
+   "sources": [
+    "zh.wikipedia: 台风启德(2000年)"
+   ],
+   "quotes": [
+    "台东县灾情较为严重"
+   ],
+   "review": "pending",
+   "eventId": "200004-kai-tak-台东县"
+  },
+  {
+   "typhoon": {
+    "name": "洛克",
+    "enName": "ROKE",
+    "tfid": "201707"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": 46,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "92人入住庇护中心",
+    "note": "风力结构不均，警告信号最弱"
+   },
+   "narrative": "洛克2017年7月登陆西贡东郊野公园，降雨46.5毫米，92人入住临时庇护中心，无明显灾情。",
+   "sources": [
+    "zh.wikipedia: 热带风暴洛克(2017年)"
+   ],
+   "quotes": [
+    "天文台总部录得46.5毫米",
+    "92人入住临时庇护中心"
+   ],
+   "review": "pending",
+   "eventId": "201707-roke-香港"
+  },
+  {
+   "typhoon": {
+    "name": "苗柏",
+    "enName": "MERBOK",
+    "tfid": "201702"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "19宗水浸事故",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "75宗塌树"
+   },
+   "narrative": "苗柏2017年6月接近香港珠江口，75宗塌树报告，19宗水浸事故，百余人就医。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴苗柏(2017年)"
+   ],
+   "quotes": [
+    "75宗塌树报告，19宗水浸报告",
+    "至少10人受伤送医"
+   ],
+   "review": "pending",
+   "eventId": "201702-merbok-香港"
+  },
+  {
+   "typhoon": {
+    "name": "苗柏",
+    "enName": "MERBOK",
+    "tfid": "201702"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": 110,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "地铁车公庙站大面积积水",
+    "power": "停电4.5万户",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "苗柏影响深圳，深圳累计降雨110毫米，汕尾21条线路停电4.5万户，地铁积水。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴苗柏(2017年)"
+   ],
+   "quotes": [
+    "累积录得110毫米的雨量",
+    "21条10千伏线路跳闸，停电用户达4.5万户"
+   ],
+   "review": "pending",
+   "eventId": "201702-merbok-深圳"
+  },
+  {
+   "typhoon": {
+    "name": "苗柏",
+    "enName": "MERBOK",
+    "tfid": "201702"
+   },
+   "region": {
+    "province": "广东",
+    "city": "梅州"
+   },
+   "hazard": {
+    "rainTotalMm": 179,
+    "rainDurationH": 72,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "550村受灾，受灾人口2.1万",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "农田受灾1.5万公顷"
+   },
+   "narrative": "梅州3县20个镇550个村受灾，2.1万多人受灾，茶阳镇72小时累计降雨179毫米。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴苗柏(2017年)"
+   ],
+   "quotes": [
+    "3县、20个镇550个村不同程度受灾，受灾人口共2.1万多人",
+    "茶阳镇12日至14日累计降雨量达179毫米"
+   ],
+   "review": "pending",
+   "eventId": "201702-merbok-梅州"
+  },
+  {
+   "typhoon": {
+    "name": "北冕",
+    "enName": "KAMMURI",
+    "tfid": "200212"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕头"
+   },
+   "hazard": {
+    "rainTotalMm": 200,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "民房稻谷浸泡，6810套房屋被毁",
+    "power": "",
+    "water": "",
+    "evacuation": "撤离10万多人",
+    "note": ""
+   },
+   "narrative": "北冕2002年8月在汕头降雨200毫米，广东超10万人因洪灾被迫撤离，民房和稻田被淹。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴北冕(2002年)"
+   ],
+   "quotes": [
+    "汕头观测站200毫米",
+    "超10万人因洪灾被迫撤离",
+    "6810套房屋被毁"
+   ],
+   "review": "pending",
+   "eventId": "200212-kammuri-汕头"
+  },
+  {
+   "typhoon": {
+    "name": "北冕",
+    "enName": "KAMMURI",
+    "tfid": "200212"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕尾"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "民房被淹，稻谷浸泡",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "北冕于8月5日凌晨在汕尾碣石湾登陆，风力30 m/s，民房和未收割稻谷浸泡在水中。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴北冕(2002年)"
+   ],
+   "quotes": [
+    "汕尾红海湾30.0m/s",
+    "民房和未收割稻谷浸泡在水中"
+   ],
+   "review": "pending",
+   "eventId": "200212-kammuri-汕尾"
+  },
+  {
+   "typhoon": {
+    "name": "北冕",
+    "enName": "KAMMURI",
+    "tfid": "200212"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "湖南"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "房屋倒塌12400套，农田60公顷被毁",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "总计245000套房屋受损"
+   },
+   "narrative": "北冕残留在湖南融合冷锋，摧毁12400套房屋，约60公顷农田被毁，总计245000套受损。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴北冕(2002年)"
+   ],
+   "quotes": [
+    "摧毁了1万2400套房屋",
+    "还摧毁了约60公顷农田",
+    "245000套房屋被毁或受损"
+   ],
+   "review": "pending",
+   "eventId": "200212-kammuri-湖南"
+  },
+  {
+   "typhoon": {
+    "name": "普拉桑",
+    "enName": "PULASAN",
+    "tfid": "202414"
+   },
+   "region": {
+    "province": "上海",
+    "city": "上海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "9月20日发布暴雨红色预警",
+    "power": "",
+    "water": "",
+    "evacuation": "约11.2万人撤离避险",
+    "note": "上海中心大楼受影响关闭，发布'六停'措施（停工停学停运停航停建停演）"
+   },
+   "narrative": "普拉桑在浙江和上海登陆，造成超11万人撤离。上海发布红色预警并启动'六停'措施，浙江防台响应，江苏多地停课。",
+   "sources": [
+    "zh.wikipedia: 热带风暴普拉桑_(2024年)"
+   ],
+   "quotes": [
+    "上海已有约11.2万人撤离避险",
+    "9月20日15时45分青浦区沿渝高速附近出现短时龙卷风",
+    "启动Ⅳ级防台应急响应",
+    "无锡、常州、靖江等地中小学、幼儿园停课一天"
+   ],
+   "review": "pending",
+   "eventId": "202414-pulasan-上海"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "SAOLA",
+    "tfid": "202309"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台东县"
+   },
+   "hazard": {
+    "rainTotalMm": 456.5,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "东部地区降雨达456.5mm",
+    "power": "10685户停电",
+    "water": "",
+    "evacuation": "213人撤离",
+    "note": "澎湖及金门岛超3300户停电，深圳机场停飞"
+   },
+   "narrative": "苏拉逼近港澳，造成台东最高降雨456.5mm。台湾撤离213人、停电万户；福建转移10万人；广东停课12城、4000树倒。",
+   "sources": [
+    "zh.wikipedia: 台风苏拉_(2023年)"
+   ],
+   "quotes": [
+    "东部地区降雨达456.5mm，是台湾最高",
+    "213人撤离",
+    "10685户停电",
+    "澳门需要发出首次十号热带气旋警告信号"
+   ],
+   "review": "pending",
+   "eventId": "202309-saola-台东县"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "SAOLA",
+    "tfid": "202309"
+   },
+   "region": {
+    "province": "广东",
+    "city": "深圳"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 13,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "21宗水浸报告，4000+树木倒塌",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "整个省份铁路停运、地铁关闭、75条公交停运、深圳机场所有航班停飞"
+   },
+   "narrative": "苏拉造成广东大范围停运，深圳机场9月1日中午停飞所有航班，滞留数千人。铁路全线停运、公交线路停运、4000树倒。",
+   "sources": [
+    "zh.wikipedia: 台风苏拉_(2023年)"
+   ],
+   "quotes": [
+    "整个省份铁路网停运9月1-2日",
+    "75条公交线路停运",
+    "4000+树倒塌",
+    "深圳机场于9月1日中午停飞所有航班"
+   ],
+   "review": "pending",
+   "eventId": "202309-saola-深圳"
+  },
+  {
+   "typhoon": {
+    "name": "苏拉",
+    "enName": "SAOLA",
+    "tfid": "202309"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "转移超100万人",
+    "note": "19条渡轮停运，102艘建筑船舶停泊"
+   },
+   "narrative": "苏拉逼近福建，造成超100万人撤离转移，19条渡轮停运，102艘建筑船舶停泊避风。",
+   "sources": [
+    "zh.wikipedia: 台风苏拉_(2023年)"
+   ],
+   "quotes": [
+    "福建省转移超过100万人",
+    "19条渡轮停运",
+    "102条建筑船舶停泊"
+   ],
+   "review": "pending",
+   "eventId": "202309-saola-福州"
+  },
+  {
+   "typhoon": {
+    "name": "龙王",
+    "enName": "LONGWANG",
+    "tfid": "200519"
+   },
+   "region": {
+    "province": "福建",
+    "city": "福州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "市区138平方公里受淹，最深达5米",
+    "power": "96个居民小区停电",
+    "water": "",
+    "evacuation": "紧急转移53.7万人",
+    "note": "倒塌房屋5400间，81条公交线路停运，农作物受灾超60万公顷"
+   },
+   "narrative": "龙王登陆福建，造成福州市区138平方公里受淹、最深5米。53万余人转移，5400房屋倒塌，96个小区停电，81条公交停运。",
+   "sources": [
+    "zh.wikipedia: 超强台风龙王"
+   ],
+   "quotes": [
+    "福州市区138平方公里受淹，最深达5米",
+    "紧急转移53.7万人",
+    "倒塌房屋0.54万间",
+    "96个居民小区停电",
+    "81条公交线路停运"
+   ],
+   "review": "pending",
+   "eventId": "200519-longwang-福州"
+  },
+  {
+   "typhoon": {
+    "name": "龙王",
+    "enName": "LONGWANG",
+    "tfid": "200519"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台北市"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "约76万户停电",
+    "water": "",
+    "evacuation": "",
+    "note": "花莲风速创站纪录"
+   },
+   "narrative": "龙王登陆台湾，造成76万户停电。为台湾自1965年以来首次在一年内有3个强台风登陆。",
+   "sources": [
+    "zh.wikipedia: 超强台风龙王"
+   ],
+   "quotes": [
+    "约76万户停电",
+    "龙王横过台湾造成多人伤亡",
+    "台湾本年继1994年后首次有3个台风陆警"
+   ],
+   "review": "pending",
+   "eventId": "200519-longwang-台北市"
+  },
+  {
+   "typhoon": {
+    "name": "山神",
+    "enName": "SON-TINH",
+    "tfid": "201809"
+   },
+   "region": {
+    "province": "海南",
+    "city": "东方"
+   },
+   "hazard": {
+    "rainTotalMm": 400,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "多地超100mm降雨，东方400mm+",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "7月18日登陆，东方首次记录台风登陆"
+   },
+   "narrative": "山神在海南东方登陆，登陆点创东方首次台风登陆纪录。多地降雨超100mm，东方等地400mm+。",
+   "sources": [
+    "zh.wikipedia: 热带风暴山神_(2018年)"
+   ],
+   "quotes": [
+    "东方班桥、昌江泣差超400mm",
+    "万宁录得264.2mm",
+    "首个登陆东方市的热带气旋"
+   ],
+   "review": "pending",
+   "eventId": "201809-son-tinh-东方"
+  },
+  {
+   "typhoon": {
+    "name": "山神",
+    "enName": "SON-TINH",
+    "tfid": "201809"
+   },
+   "region": {
+    "province": "广东",
+    "city": "广州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "发布四级台风应急响应"
+   },
+   "narrative": "山神逼近广东，导致广东和广西发布四级台风应急响应。强风袭击南方地区。",
+   "sources": [
+    "zh.wikipedia: 热带风暴山神_(2018年)"
+   ],
+   "quotes": [
+    "广东、广西发布四级应急响应"
+   ],
+   "review": "pending",
+   "eventId": "201809-son-tinh-广州"
+  },
+  {
+   "typhoon": {
+    "name": "米娜",
+    "enName": "MITAG",
+    "tfid": "202517"
+   },
+   "region": {
+    "province": "广东",
+    "city": "汕尾"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "学校停课，铁路停运（京九、杭深、甬广高铁等）"
+   },
+   "narrative": "米娜在广东汕尾登陆，10级风力。汕尾全市学校停课，中国铁路停运多条高铁和普铁线路。",
+   "sources": [
+    "zh.wikipedia: 热带风暴米娜_(2025年)"
+   ],
+   "quotes": [
+    "米娜在汕尾市沿海登陆，登陆时中心附近最大风力10级",
+    "停运多条铁路路段列车（京九、杭深、甬广高铁）"
+   ],
+   "review": "pending",
+   "eventId": "202517-mitag-汕尾"
+  },
+  {
+   "typhoon": {
+    "name": "米娜",
+    "enName": "MITAG",
+    "tfid": "202517"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "沙田马场草地凹陷，赛事取消，赛马会腰斩最后两场比赛"
+   },
+   "narrative": "米娜影响香港，沙田马场草地出现凹陷，赛马会取消最后两场赛事。",
+   "sources": [
+    "zh.wikipedia: 热带风暴米娜_(2025年)"
+   ],
+   "quotes": [
+    "沙田马场草地跑道有凹陷情况出现，香港赛马会于9月21日宣布腰斩，最后两场赛事取消"
+   ],
+   "review": "pending",
+   "eventId": "202517-mitag-香港"
+  },
+  {
+   "typhoon": {
+    "name": "莲花",
+    "enName": "LINFA",
+    "tfid": "200903"
+   },
+   "region": {
+    "province": "福建",
+    "city": "泉州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "晋江东石镇录得飓风程度阵风",
+    "power": "3300户停电（澎湖、金门）",
+    "water": "",
+    "evacuation": "20万人受灾",
+    "note": "农作物受损3.2万公顷"
+   },
+   "narrative": "莲花登陆福建泉州，晋江东石镇录得飓风程度风速。20万人受灾，3.2万公顷农作物受损，澎湖金门3300户停电。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴莲花_(2009年)"
+   ],
+   "quotes": [
+    "晋江市东石镇录得飓风程度阵风",
+    "20万人受灾",
+    "32000公顷农作物受损",
+    "澎湖及金门岛超3300户停电"
+   ],
+   "review": "pending",
+   "eventId": "200903-linfa-泉州"
+  },
+  {
+   "typhoon": {
+    "name": "莲花",
+    "enName": "LINFA",
+    "tfid": "200903"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台东县"
+   },
+   "hazard": {
+    "rainTotalMm": 367,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "台东土阪录得367mm最大累积雨量",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "高雄县223mm、花莲188mm、屏东183mm"
+   },
+   "narrative": "莲花造成台湾东部大雨，台东土阪367mm最高雨量，高雄、花莲、屏东均超180mm。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴莲花_(2009年)"
+   ],
+   "quotes": [
+    "台东县土阪降雨367毫米(最大累积)",
+    "高雄县南天池223毫米",
+    "花莲县高寮188毫米"
+   ],
+   "review": "pending",
+   "eventId": "200903-linfa-台东县"
+  },
+  {
+   "typhoon": {
+    "name": "莲花",
+    "enName": "LINFA",
+    "tfid": "200903"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": 100,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "梅窝录得超过100mm雨量",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "莲花对香港影响较轻，梅窝地区录得100mm以上雨量。",
+   "sources": [
+    "zh.wikipedia: 强热带风暴莲花_(2009年)"
+   ],
+   "quotes": [
+    "梅窝录得超过100毫米的雨量"
+   ],
+   "review": "pending",
+   "eventId": "200903-linfa-香港"
+  },
+  {
+   "typhoon": {
+    "name": "浣熊",
+    "enName": "NEOGURI",
+    "tfid": "200801"
+   },
+   "region": {
+    "province": "海南",
+    "city": "文昌"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "转移12万人，3000人滞留机场",
+    "note": "22000艘船回港，76班机停飞，创中国自1949年最早登陆台风纪录"
+   },
+   "narrative": "浣熊登陆海南文昌，11级风力。转移12万人，22000艘渔船回港，76班机停飞。创中国1949年以来最早登陆华南台风纪录。",
+   "sources": [
+    "zh.wikipedia: 台风浣熊_(2008年)"
+   ],
+   "quotes": [
+    "转移12万人",
+    "约22000艘船回港",
+    "76班机停飞",
+    "中心附近最大风力11级"
+   ],
+   "review": "pending",
+   "eventId": "200801-neoguri-文昌"
+  },
+  {
+   "typhoon": {
+    "name": "浣熊",
+    "enName": "NEOGURI",
+    "tfid": "200801"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": 237.4,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "单日237.4mm降雨，157宗水浸、13宗山泥倾泻、70宗塌树",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "航班延误200+班、取消30班、转飞66班"
+   },
+   "narrative": "浣熊造成香港大雨，单日237.4mm打破4月纪录。水浸157宗、山泥倾泻13宗、塌树70宗，航班延误200班。",
+   "sources": [
+    "zh.wikipedia: 台风浣熊_(2008年)"
+   ],
+   "quotes": [
+    "单日总雨量237.4毫米",
+    "157宗水浸、13宗山泥倾泻及70宗塌树",
+    "超200班延误、30班取消、66班转飞"
+   ],
+   "review": "pending",
+   "eventId": "200801-neoguri-香港"
+  },
+  {
+   "typhoon": {
+    "name": "浣熊",
+    "enName": "NEOGURI",
+    "tfid": "200801"
+   },
+   "region": {
+    "province": "澳门",
+    "city": "澳门"
+   },
+   "hazard": {
+    "rainTotalMm": 121.6,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 2,
+    "flood": "孙逸仙纪念公园121.6mm，大潭山114.6mm",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "澳门开埠以来最早悬挂八号风球"
+   },
+   "narrative": "浣熊造成澳门大雨，孙逸仙纪念公园121.6mm、大潭山114.6mm。创澳门开埠以来最早8号风球纪录。",
+   "sources": [
+    "zh.wikipedia: 台风浣熊_(2008年)"
+   ],
+   "quotes": [
+    "孙逸仙纪念公园121.6毫米、大潭山114.6毫米",
+    "澳门开埠以来最早悬挂的八号风球"
+   ],
+   "review": "pending",
+   "eventId": "200801-neoguri-澳门"
+  },
+  {
+   "typhoon": {
+    "name": "杜苏芮",
+    "enName": "DOKSURI",
+    "tfid": "201206"
+   },
+   "region": {
+    "province": "广东",
+    "city": "珠海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "登陆南水镇"
+   },
+   "narrative": "杜苏芮在广东珠海南水镇登陆，数据有限。",
+   "sources": [
+    "zh.wikipedia: 热带风暴杜苏芮_(2012年)"
+   ],
+   "quotes": [
+    "登陆珠海南水镇"
+   ],
+   "review": "pending",
+   "eventId": "201206-doksuri-珠海"
+  },
+  {
+   "typhoon": {
+    "name": "环高",
+    "enName": "VAMCO",
+    "tfid": "200311"
+   },
+   "region": {
+    "province": "浙江",
+    "city": "温州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 8,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "房屋损毁1000间"
+   },
+   "narrative": "环高登陆浙江温州苍南县，造成1000间房屋损毁。",
+   "sources": [
+    "zh.wikipedia: 台风环高"
+   ],
+   "quotes": [
+    "环高在浙江省导致接近1000间房屋损毁"
+   ],
+   "review": "pending",
+   "eventId": "200311-vamco-温州"
+  },
+  {
+   "typhoon": {
+    "name": "韦帕",
+    "enName": "WIPHA",
+    "tfid": "202506"
+   },
+   "region": {
+    "province": "台湾",
+    "city": "台东县"
+   },
+   "hazard": {
+    "rainTotalMm": 620,
+    "rainDurationH": null,
+    "peakPower": 11,
+    "landfall": false,
+    "approx": false
+   },
+   "impact": {
+    "level": 3,
+    "flood": "台东利奇溪680mm、城东镇495mm、太麻里金真山473mm",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "瑞源至关山铁路停运，南横公路、南回公路因山崩中断"
+   },
+   "narrative": "韦帕造成台湾东部极端降雨，台东利奇溪录620mm（部分记录680mm）。铁路停运、公路山崩中断。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴韦帕_(2025年)"
+   ],
+   "quotes": [
+    "台东利奇溪620mm",
+    "瑞源-关山区间铁路停运",
+    "南横、南回公路因山崩中断"
+   ],
+   "review": "pending",
+   "eventId": "202506-wipha-台东县"
+  },
+  {
+   "typhoon": {
+    "name": "韦帕",
+    "enName": "WIPHA",
+    "tfid": "202506"
+   },
+   "region": {
+    "province": "广东",
+    "city": "江门"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "7月20日17时50分登陆，12级风（33m/s），港珠澳大桥、深中通道等桥梁关闭"
+   },
+   "narrative": "韦帕在广东台山登陆，12级飓风，港珠澳大桥等多座桥梁关闭。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴韦帕_(2025年)"
+   ],
+   "quotes": [
+    "7月20日下午5时50分在台山登陆，12级风",
+    "港珠澳大桥、深中通道、广澳大桥等桥梁关闭"
+   ],
+   "review": "pending",
+   "eventId": "202506-wipha-江门"
+  },
+  {
+   "typhoon": {
+    "name": "韦帕",
+    "enName": "WIPHA",
+    "tfid": "202506"
+   },
+   "region": {
+    "province": "广东",
+    "city": "阳江"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 10,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "7月20日20时15分二次登陆，10级风（25m/s）"
+   },
+   "narrative": "韦帕在广东阳江二次登陆，10级风力。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴韦帕_(2025年)"
+   ],
+   "quotes": [
+    "7月20日20时15分在阳江登陆，中心附近最大风力10级"
+   ],
+   "review": "pending",
+   "eventId": "202506-wipha-阳江"
+  },
+  {
+   "typhoon": {
+    "name": "韦帕",
+    "enName": "WIPHA",
+    "tfid": "202506"
+   },
+   "region": {
+    "province": "香港",
+    "city": "香港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 12,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "7月20日9时20分至16时10分发布No.10信号，创2年来首次十号信号，长洲/赤鱲角等地飓风119 km/h"
+   },
+   "narrative": "韦帕逼近香港，创2年来首次十号信号。长洲、赤鱲角等地录飓风119 km/h，为当年最强风速。",
+   "sources": [
+    "zh.wikipedia: 强烈热带风暴韦帕_(2025年)"
+   ],
+   "quotes": [
+    "发出No.10信号（首次在2年内发出）",
+    "长洲、赤鱲角119 km/h飓风"
+   ],
+   "review": "pending",
+   "eventId": "202506-wipha-香港"
   }
  ]
 }
