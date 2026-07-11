@@ -453,18 +453,30 @@ const ImpactPanel = (() => {
 
   /* 对照严格同城优先：城市自己的历史才编码了它的排水、地形与基建。
      没有本地案例时只做「量级参考」，不做量化对比（异地不可比）。 */
-  function findAnalog(rain) {
+  function findAnalog(rain, power = 0) {
     const cityShort = (P.loc.city || "").replace(/(市|地区|自治州|盟)$/, "");
     const local = P.analogs.events.filter((e) => e.region.city === cityShort || e.region.city === P.loc.city);
     if (local.length) {
-      // 量化对比只在有雨量记录的条目中做；全无雨量则取影响最重的一条纯叙述展示
+      // 最强纪录：风力优先，其次影响等级，再次雨量——天花板锚点，永不隐身
+      const strongest = local.slice().sort((a, b) =>
+        (b.hazard.peakPower || 0) - (a.hazard.peakPower || 0) ||
+        (b.impact.level || 0) - (a.impact.level || 0) ||
+        (b.hazard.rainTotalMm || 0) - (a.hazard.rainTotalMm || 0))[0];
+      // 最相似：来袭为强风型（≥13级）且本地有风力记录 → 按登陆强度匹配；否则按雨量
+      if (power >= 13) {
+        const withWind = local.filter((e) => e.hazard.peakPower != null);
+        if (withWind.length) {
+          withWind.sort((a, b) => Math.abs(a.hazard.peakPower - power) - Math.abs(b.hazard.peakPower - power));
+          return { analog: withWind[0], local: true, quant: true, mode: "wind", strongest };
+        }
+      }
       const withRain = local.filter((e) => e.hazard.rainTotalMm != null);
       if (withRain.length) {
         withRain.sort((a, b) => Math.abs(a.hazard.rainTotalMm - rain) - Math.abs(b.hazard.rainTotalMm - rain));
-        return { analog: withRain[0], local: true, quant: true };
+        return { analog: withRain[0], local: true, quant: true, mode: "rain", strongest };
       }
       local.sort((a, b) => (b.impact.level || 0) - (a.impact.level || 0));
-      return { analog: local[0], local: true, quant: false };
+      return { analog: local[0], local: true, quant: false, strongest };
     }
     const provShort = (P.loc.province || "").replace(/(省|市|壮族自治区|回族自治区|维吾尔自治区|自治区|特别行政区)$/, "");
     const rest = P.analogs.events.filter((e) => e.hazard.rainTotalMm != null).sort((a, b) =>
@@ -635,9 +647,15 @@ const ImpactPanel = (() => {
     }
 
     // 历史对照：同城才做量化对比；异地只做量级参考并明说局限
-    const { analog, local, quant } = findAnalog(a.rain);
+    const inPower = parseInt(a.closest.power) || 0;
+    const { analog, local, quant, mode, strongest } = findAnalog(a.rain, inPower);
     let analogHTML = "";
-    if (analog && local && quant) {
+    if (analog && local && quant && mode === "wind") {
+      analogHTML = `
+        本次为强风型台风（约 ${inPower} 级），本地最接近的记忆：
+        <b>${analog.typhoon.tfid.slice(0, 4)}年${analog.typhoon.name}</b>（${analog.hazard.peakPower} 级）
+        <div class="quote">${analog.narrative}</div>`;
+    } else if (analog && local && quant) {
       const ratio = a.rain / analog.hazard.rainTotalMm;
       const compare = ratio > 1.3 ? "已超过" : ratio >= 0.7 ? "接近" : `约为其 ${Math.round(ratio * 100)}%，远小于`;
       analogHTML = `
@@ -660,6 +678,14 @@ const ImpactPanel = (() => {
       analogHTML = `
         <span class="muted">本地（${P.loc.city}）暂无历史对照案例${a.rain < 50 ? "，且本次预计雨量有限，无需对照" : "，且现有案例与本次量级差距过大，不作参考"}。
         欢迎依据《气象灾害年鉴》为本地补充案例（见仓库 CONTRIBUTING）。</span>`;
+    }
+    if (strongest && analog && strongest.eventId !== analog.eventId) {
+      const sp2 = strongest.hazard.peakPower ? `（${strongest.hazard.peakPower}级${strongest.hazard.landfall ? "登陆" : ""}）` : "";
+      analogHTML += `
+        <div style="border-top:1px solid var(--hairline);margin-top:8px;padding-top:8px">
+          本地最强纪录：<b>${strongest.typhoon.tfid.slice(0, 4)}年${strongest.typhoon.name}</b>${sp2}
+          <div class="quote">${strongest.narrative}</div>
+        </div>`;
     }
     document.querySelector("#d-analog > div").innerHTML = histHTML + analogHTML;
 
