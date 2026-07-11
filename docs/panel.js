@@ -904,7 +904,7 @@ const ImpactPanel = (() => {
     ctx.fillStyle = "#76726a";
     ctx.font = F(400, 18);
     ctx.textAlign = "center";
-    ctx.fillText("非官方预警 · 以气象部门发布为准 · 雨量为数值模式预报 · 温州台风网/Open-Meteo", W / 2, H - 22);
+    ctx.fillText("非官方预警 · 以气象部门发布为准 · 公益项目 by 日成Risen · typhoon-impact", W / 2, H - 22);
     ctx.textAlign = "left";
 
     document.getElementById("share-modal").style.display = "flex";
