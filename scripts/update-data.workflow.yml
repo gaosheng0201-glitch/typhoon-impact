@@ -1,0 +1,36 @@
+# GitHub Actions 定时更新台风数据（云端方案，机器不用开机）
+#
+# 使用方法：把本文件放到 .github/workflows/update-data.yml
+# （当前 token 无 workflow 权限推不上去，两种放置方式任选：
+#   a. 在 GitHub 网页端 Add file 粘贴本文件内容
+#   b. 本地执行 gh auth refresh -s workflow 补授权后，git mv 本文件到 .github/workflows/ 再 push）
+#
+# 注意：Actions 服务器在境外，若温州台风网接口对境外访问不稳定，
+# 请改用 scripts/update.sh + 本地定时任务。
+
+name: Update typhoon data
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"   # 每 30 分钟
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch typhoon data
+        run: python3 fetcher/fetch.py
+      - name: Commit & push if changed
+        run: |
+          if ! git diff --quiet docs/data; then
+            git config user.name "typhoon-data-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add docs/data
+            git commit -m "data: 自动更新台风数据"
+            git push
+          fi
