@@ -6409,7 +6409,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -6592,7 +6592,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -6770,7 +6770,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 4,
@@ -7091,7 +7091,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 4,
@@ -7126,7 +7126,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -7407,7 +7407,7 @@
     "rainDurationH": null,
     "peakPower": 10,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -7443,7 +7443,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -7479,7 +7479,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -7589,7 +7589,7 @@
     "rainDurationH": 24,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -7625,7 +7625,7 @@
     "rainDurationH": 24,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -7662,7 +7662,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -7699,7 +7699,7 @@
     "rainDurationH": null,
     "peakPower": 14,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -7773,7 +7773,7 @@
     "rainDurationH": 24,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -7920,7 +7920,7 @@
     "rainDurationH": 36,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -7957,7 +7957,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
@@ -8031,7 +8031,7 @@
     "rainDurationH": null,
     "peakPower": 15,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 4,
@@ -8182,7 +8182,7 @@
     "rainDurationH": 12,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 3,
