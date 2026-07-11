@@ -59,9 +59,39 @@ ImpactPanel.init();
 refresh();
 setInterval(refresh, REFRESH_MS);
 
+/* ---------- 左侧面板收缩 ---------- */
+
+const panelEl = document.getElementById("panel");
+document.getElementById("panel-head").onclick = () => panelEl.classList.toggle("collapsed");
+if (window.innerWidth <= 680) panelEl.classList.add("collapsed"); // 手机默认收起
+
+/* ---------- 风圈脉冲动画：静态的圆不像危险，扩散的环才像 ---------- */
+
+let pulseT = 0;
+function animatePulse() {
+  if (document.hidden || !state.storm || !map.getSource("pulse")) return;
+  const last = state.storm.track[state.storm.track.length - 1];
+  const rMax = last && last.r7 ? Math.max(...last.r7) : null;
+  if (!rMax) return;
+  pulseT = (pulseT + 0.018) % 1;
+  const r = rMax * (0.15 + 0.85 * pulseT);
+  const ring = [];
+  for (let ang = 0; ang <= 360; ang += 10) ring.push(destination(last.lat, last.lng, r, ang));
+  map.getSource("pulse").setData({
+    type: "FeatureCollection",
+    features: [feature("LineString", ring, {})],
+  });
+  map.setPaintProperty("pulse", "line-opacity", 0.55 * (1 - pulseT));
+  // 风圈呼吸
+  if (map.getLayer("wind-circles")) {
+    map.setPaintProperty("wind-circles", "fill-opacity", 0.15 + 0.06 * Math.sin(Date.now() / 600));
+  }
+}
+setInterval(animatePulse, 80); // setInterval 比 rAF 更抗节流，~12fps 对扩散环足够
+
 function addLayers() {
   const empty = { type: "FeatureCollection", features: [] };
-  for (const id of ["wind-circles", "track-lines", "track-points", "fc-lines", "fc-points"]) {
+  for (const id of ["wind-circles", "pulse", "track-lines", "track-points", "fc-lines", "fc-points"]) {
     map.addSource(id, { type: "geojson", data: empty });
   }
 
@@ -72,6 +102,10 @@ function addLayers() {
       "fill-opacity": 0.18,
       "fill-outline-color": ["get", "color"],
     },
+  });
+  map.addLayer({
+    id: "pulse", type: "line", source: "pulse",
+    paint: { "line-color": "#fadb14", "line-width": 2, "line-opacity": 0.5 },
   });
   map.addLayer({
     id: "track-lines", type: "line", source: "track-lines",

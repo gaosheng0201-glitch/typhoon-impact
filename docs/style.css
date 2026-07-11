@@ -4,22 +4,46 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
 
 #map { position: absolute; inset: 0; }
 
+/* ---------- 左上：台风数据面板（可收起） ---------- */
+
 #panel {
   position: absolute;
   top: 12px; left: 12px;
   width: 250px;
-  max-height: calc(100% - 24px);
-  overflow-y: auto;
+  max-height: calc(100% - 170px);
+  display: flex;
+  flex-direction: column;
   background: rgba(18, 22, 33, 0.92);
   color: #e8eaf0;
-  border-radius: 10px;
-  padding: 14px 16px;
+  border-radius: 12px;
   font-size: 13px;
   z-index: 10;
   backdrop-filter: blur(6px);
+  overflow: hidden;
 }
+#panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px 8px 16px;
+  cursor: pointer;
+  flex: none;
+}
+#panel-head h1 { font-size: 15px; }
+#panel-toggle {
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #9aa3b5;
+  border-radius: 7px;
+  width: 24px; height: 24px;
+  cursor: pointer;
+  font-size: 13px;
+}
+#panel-body { padding: 0 16px 12px; overflow-y: auto; }
+#panel.collapsed { width: auto; }
+#panel.collapsed #panel-body { display: none; }
+#panel.collapsed #panel-head { padding: 8px 12px; }
 
-#panel h1 { font-size: 17px; margin-bottom: 10px; }
 #panel h2 { font-size: 12px; color: #9aa3b5; margin: 12px 0 6px; font-weight: 600; }
 
 .storm-item {
@@ -34,22 +58,6 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
 .storm-item .name { font-weight: 700; font-size: 14px; }
 .storm-item .sub { color: #9aa3b5; font-size: 12px; margin-top: 2px; }
 
-#impact-link {
-  display: block;
-  margin: 6px 0 2px;
-  padding: 8px 10px;
-  border-radius: 8px;
-  background: rgba(76, 141, 255, 0.15);
-  color: #8ab0ff;
-  text-decoration: none;
-  font-weight: 600;
-}
-#impact-link:hover { background: rgba(76, 141, 255, 0.25); }
-
-.toggle-row { display: flex; align-items: center; gap: 7px; padding: 3px 0; cursor: pointer; }
-.toggle-row input { accent-color: #4c8dff; }
-.swatch { width: 18px; height: 4px; border-radius: 2px; display: inline-block; }
-
 .residual-tag {
   display: inline-block;
   padding: 0 6px;
@@ -59,84 +67,114 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
   font-size: 11px;
 }
 
+.toggle-row { display: flex; align-items: center; gap: 7px; padding: 3px 0; cursor: pointer; }
+.toggle-row input { accent-color: #4c8dff; }
+.swatch { width: 18px; height: 4px; border-radius: 2px; display: inline-block; }
+
 .legend-row { display: flex; align-items: center; gap: 7px; padding: 2px 0; color: #c6ccd9; }
 .legend-row .dot { width: 10px; height: 10px; border-radius: 50%; }
 
 #meta { margin-top: 12px; color: #6b7386; font-size: 11px; line-height: 1.6; }
 
-.maplibregl-popup-content {
+/* ---------- 底部：我会不会受灾（分步向导） ---------- */
+
+#impact-dock {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14px;
+  width: 580px;
+  max-width: calc(100% - 16px);
+  z-index: 12;
+}
+#dock-bar {
+  width: 100%;
+  border: 1px solid rgba(76, 141, 255, 0.45);
   background: rgba(18, 22, 33, 0.95);
   color: #e8eaf0;
-  border-radius: 8px;
-  padding: 10px 12px;
-  font-size: 12px;
-  line-height: 1.7;
+  border-radius: 14px;
+  padding: 11px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
 }
-.maplibregl-popup-tip { border-top-color: rgba(18, 22, 33, 0.95) !important; }
-.popup-title { font-weight: 700; font-size: 13px; margin-bottom: 3px; }
+#dock-bar .bar-right { color: #8ab0ff; font-weight: 400; font-size: 12px; white-space: nowrap; }
+#dock-bar .mini-lv { font-weight: 800; }
+#impact-dock.open #dock-bar { border-radius: 14px 14px 0 0; }
 
-/* ---------- 内嵌影响评估面板 ---------- */
-
-#impact-card {
-  position: absolute;
-  top: 12px; right: 12px;
-  width: 340px;
-  max-height: calc(100% - 24px);
-  overflow-y: auto;
-  background: rgba(18, 22, 33, 0.94);
-  color: #e8eaf0;
+#dock-body {
+  background: rgba(16, 20, 31, 0.97);
   border: 1px solid rgba(76, 141, 255, 0.35);
-  border-radius: 12px;
+  border-top: none;
+  border-radius: 0 0 14px 14px;
   padding: 14px 16px;
+  max-height: min(52vh, 460px);
+  overflow-y: auto;
+  color: #e8eaf0;
   font-size: 13px;
-  z-index: 11;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
 }
-#impact-title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
 
-.storm-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 7px 0 2px; }
-.storm-chip b { margin-left: 3px; }
+.wiz-title { font-size: 15px; font-weight: 800; margin-bottom: 10px; }
+.wiz-num { color: #6b7386; font-weight: 400; font-size: 12px; margin-left: 8px; }
+.wiz-nav { display: flex; justify-content: space-between; gap: 10px; margin-top: 12px; }
+.wiz-next, .wiz-back {
+  border: none;
+  border-radius: 9px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.wiz-next { background: #4c8dff; color: #fff; }
+.wiz-next:hover { background: #3a7bef; }
+.wiz-back { background: rgba(255,255,255,0.08); color: #9aa3b5; }
 
-
-
-#loc-row { display: flex; gap: 4px; margin: 6px 0; }
+#loc-row { display: flex; gap: 6px; }
 #loc-row select {
   flex: 1;
   min-width: 0;
   background: #1a2030;
   color: #e8eaf0;
   border: 1px solid #2c3550;
-  border-radius: 7px;
-  font-size: 12px;
-  padding: 5px 3px;
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 8px 4px;
 }
 #btn-geo {
   border: 1px solid #2c3550;
   background: #1a2030;
-  border-radius: 7px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 13px;
-  padding: 0 7px;
+  font-size: 14px;
+  padding: 0 10px;
 }
 #btn-geo:hover { background: #232b42; }
 
-#persona-row { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 2px; }
+#persona-row { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip {
   border: 1px solid #2c3550;
   background: #1a2030;
   color: #9aa3b5;
-  border-radius: 14px;
-  padding: 3px 9px;
-  font-size: 12px;
+  border-radius: 16px;
+  padding: 7px 13px;
+  font-size: 13px;
   cursor: pointer;
 }
 .chip.on { background: rgba(76, 141, 255, 0.18); border-color: #4c8dff; color: #cfe0ff; }
 
-#situation-row { display: flex; flex-wrap: wrap; gap: 4px 12px; margin: 2px 0 6px; }
-.sit { display: flex; align-items: center; gap: 4px; font-size: 12px; color: #9aa3b5; cursor: pointer; }
+#situation-row { display: flex; flex-wrap: wrap; gap: 8px 16px; min-height: 24px; }
+.sit { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #c6ccd9; cursor: pointer; }
 .sit input { accent-color: #4c8dff; }
+.sit-none { color: #6b7386; font-size: 12.5px; }
 
-#impact-summary { margin: 8px 0; }
+#impact-summary { margin-bottom: 8px; }
 .lv-badge {
   display: inline-block;
   padding: 4px 12px;
@@ -148,8 +186,12 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
 .lv-2 { background: #3a331d; color: #f0c743; }
 .lv-3 { background: #3a2a1d; color: #ff9d4d; }
 .lv-4 { background: #3a1d22; color: #ff6470; }
-.headline { font-size: 15px; font-weight: 800; margin: 7px 0 3px; line-height: 1.4; }
+.headline { font-size: 16px; font-weight: 800; margin: 7px 0 3px; line-height: 1.4; }
 .timebrief { color: #9aa3b5; font-size: 12px; }
+
+.storm-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: 7px 0 2px; }
+.storm-chip { padding: 4px 10px; font-size: 12px; }
+.storm-chip b { margin-left: 3px; }
 
 .slow-badge {
   margin: 7px 0 0;
@@ -162,7 +204,7 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
   line-height: 1.55;
 }
 
-#impact-card details {
+#dock-body details {
   border: 1px solid #232b42;
   border-radius: 9px;
   margin: 6px 0;
@@ -170,8 +212,8 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
   font-size: 12.5px;
   line-height: 1.7;
 }
-#impact-card summary { cursor: pointer; font-weight: 600; color: #c6ccd9; font-size: 12.5px; }
-#impact-card details[open] summary { margin-bottom: 5px; }
+#dock-body summary { cursor: pointer; font-weight: 600; color: #c6ccd9; font-size: 12.5px; }
+#dock-body details[open] summary { margin-bottom: 5px; }
 
 .tl-row { display: flex; gap: 8px; align-items: baseline; padding: 1px 0; }
 .tl-row .t { color: #8ab0ff; font-variant-numeric: tabular-nums; min-width: 62px; font-weight: 600; }
@@ -183,9 +225,8 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
 .check-row.done span { text-decoration: line-through; color: #6b7386; }
 
 #share-btn {
-  width: 100%;
+  flex: 1;
   padding: 9px;
-  margin-top: 4px;
   border: none;
   border-radius: 9px;
   background: #4c8dff;
@@ -198,19 +239,23 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
 
 #disclaimer-mini { margin-top: 8px; color: #565e70; font-size: 10.5px; line-height: 1.6; }
 
+/* ---------- 分享弹窗 ---------- */
+
 #share-modal {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.78);
   z-index: 100;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 16px;
 }
 #share-box { max-width: 400px; width: 100%; }
 #share-canvas {
   width: 100%;
+  max-height: calc(100vh - 110px);
+  object-fit: contain;
   border-radius: 14px;
   display: block;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
@@ -227,3 +272,27 @@ html, body { height: 100%; font-family: -apple-system, "PingFang SC", "Microsoft
 }
 #share-save { background: #4c8dff; color: #fff; }
 #share-close { background: #2c3550; color: #c6ccd9; }
+
+/* ---------- 地图弹窗 ---------- */
+
+.maplibregl-popup-content {
+  background: rgba(18, 22, 33, 0.95);
+  color: #e8eaf0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.maplibregl-popup-tip { border-top-color: rgba(18, 22, 33, 0.95) !important; }
+.popup-title { font-weight: 700; font-size: 13px; margin-bottom: 3px; }
+
+/* ---------- 移动端 ---------- */
+
+@media (max-width: 680px) {
+  #panel { max-width: calc(100% - 24px); max-height: 55%; }
+  #impact-dock { left: 8px; right: 8px; transform: none; width: auto; bottom: 8px; }
+  #dock-body { max-height: 62vh; }
+  #loc-row { flex-wrap: wrap; }
+  #loc-row select { flex: 1 1 40%; }
+  .maplibregl-ctrl-attrib { font-size: 9px; }
+}
