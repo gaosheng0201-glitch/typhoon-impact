@@ -453,9 +453,17 @@ const ImpactPanel = (() => {
 
   /* 对照严格同城优先：城市自己的历史才编码了它的排水、地形与基建。
      没有本地案例时只做「量级参考」，不做量化对比（异地不可比）。 */
+  /* 行政区名规范化：儋州市→儋州、陵水黎族自治县→陵水、湘西…自治州→湘西、屏东县→屏东。
+     与 scripts/validate_analogs.py 的规则保持一致。 */
+  function canonCity(x) {
+    const m = /^(.*?)(?:(?:黎族|苗族|土家族|侗族|仡佬族|各族)*自治[县州]|市|县|地区|盟)$/.exec(x || "");
+    return m && m[1] ? m[1] : (x || "");
+  }
+
   function findAnalog(rain, power = 0) {
-    const cityShort = (P.loc.city || "").replace(/(市|地区|自治州|盟)$/, "");
-    const local = P.analogs.events.filter((e) => e.region.city === cityShort || e.region.city === P.loc.city);
+    const cityShort = canonCity(P.loc.city);
+    const local = P.analogs.events.filter((e) =>
+      canonCity(e.region.city) === cityShort || e.region.city === P.loc.city);
     if (local.length) {
       // 最强纪录：风力优先，其次影响等级，再次雨量——天花板锚点，永不隐身
       const strongest = local.slice().sort((a, b) =>

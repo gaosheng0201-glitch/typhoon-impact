@@ -30,8 +30,11 @@ def load_city_names():
         short = re.sub(r"(省|市|壮族自治区|回族自治区|维吾尔自治区|自治区|特别行政区)$", "", pn)
         provinces.add(short)
         for cn in prov["cities"]:
-            names.add(re.sub(r"(市|地区|自治州|盟)$", "", cn))
             names.add(cn)  # 台湾县市等全名
+            # 规范短名：儋州市→儋州、陵水黎族自治县→陵水、湘西土家族苗族自治州→湘西、屏东县→屏东
+            m = re.match(r"^(.*?)(?:(?:黎族|苗族|土家族|侗族|仡佬族|各族)*自治[县州]|市|县|地区|盟)$", cn)
+            if m and m.group(1):
+                names.add(m.group(1))
     return names, provinces
 
 

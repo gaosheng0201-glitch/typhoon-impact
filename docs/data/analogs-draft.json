@@ -51,7 +51,7 @@
     "rainDurationH": 24,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 4,
@@ -90,7 +90,7 @@
     "rainDurationH": 24,
     "peakPower": null,
     "landfall": true,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 4,
@@ -131,7 +131,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -170,7 +170,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -409,7 +409,7 @@
     "rainDurationH": 24,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 1,
@@ -531,7 +531,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 4,
@@ -576,7 +576,7 @@
     "rainDurationH": 48,
     "peakPower": 9,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -651,7 +651,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -688,7 +688,7 @@
     "rainDurationH": null,
     "peakPower": null,
     "landfall": false,
-    "approx": false
+    "approx": true
    },
    "impact": {
     "level": 2,
@@ -1125,7 +1125,7 @@
    },
    "region": {
     "province": "湖南",
-    "city": "湘西州"
+    "city": "湘西"
    },
    "hazard": {
     "rainTotalMm": null,
@@ -1149,7 +1149,7 @@
    "quotes": [
     "张家界中南部、怀化、长沙西部、娄底中西部、邵阳西部、永州南部部分暴雨，怀化（沅陵、辰溪、溆浦）、湘西州（泸溪）、张家界（永定区）、常德（桃源）、益阳（安化）、岳阳（华容）大暴雨"
    ],
-   "eventId": "202610-maysak-湘西州",
+   "eventId": "202610-maysak-湘西",
    "review": "pending"
   },
   {
