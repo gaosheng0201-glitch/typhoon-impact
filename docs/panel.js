@@ -398,6 +398,8 @@ const ImpactPanel = (() => {
           nowWx.rain < 1.5 && nowWx.gust < 62;
       }
     }
+    // 已过峰值且未来24h雨量有限：档位回落——「正在减弱」与「戒备」不该同屏
+    if (easing && postRain24 !== null && postRain24 < 30) level = Math.min(level, 2);
     let postRain24 = null;
     if (fdata) {
       postRain24 = 0;
@@ -741,6 +743,10 @@ const ImpactPanel = (() => {
     ctx.scale(SCALE, SCALE);
     const F = (w, px) => `${w} ${px}px Georgia, "Songti SC", "STSong", "SimSun", serif`;
 
+    // 整卡圆角（导出 PNG 四角透明）
+    roundRect(ctx, 0, 0, W, H, 28);
+    ctx.clip();
+
     // 背景
     const bg = ctx.createLinearGradient(0, 0, 0, H);
     bg.addColorStop(0, "#25231f");
@@ -756,140 +762,102 @@ const ImpactPanel = (() => {
     ctx.fillText(last.time.slice(5, 16), W - 36, 52);
     ctx.textAlign = "left";
 
-    /* ---- 示意图 hero：你和台风的空间关系 ---- */
-    const hx = 36, hy = 76, hw = W - 72, hh = 400;
+    /* ---- 示意图 hero：固定优雅构图；风圈按比例，保留「是否在圈内」的物理真实 ---- */
+    const hx = 36, hy = 76, hw = W - 72, hh = 380;
     ctx.fillStyle = "#191814";
-    roundRect(ctx, hx, hy, hw, hh, 18);
+    roundRect(ctx, hx, hy, hw, hh, 16);
     ctx.fill();
     ctx.save();
-    roundRect(ctx, hx, hy, hw, hh, 18);
+    roundRect(ctx, hx, hy, hw, hh, 16);
     ctx.clip();
 
-    // 经纬网底纹
-    ctx.strokeStyle = "rgba(238,236,230,0.05)";
+    // 细网格
+    ctx.strokeStyle = "rgba(238,236,230,0.04)";
     ctx.lineWidth = 1;
-    for (let gx = hx; gx < hx + hw; gx += 56) {
-      ctx.beginPath(); ctx.moveTo(gx, hy); ctx.lineTo(gx, hy + hh); ctx.stroke();
-    }
-    for (let gy = hy; gy < hy + hh; gy += 56) {
-      ctx.beginPath(); ctx.moveTo(hx, gy); ctx.lineTo(hx + hw, gy); ctx.stroke();
-    }
+    for (let gx = hx; gx < hx + hw; gx += 56) { ctx.beginPath(); ctx.moveTo(gx, hy); ctx.lineTo(gx, hy + hh); ctx.stroke(); }
+    for (let gy = hy; gy < hy + hh; gy += 56) { ctx.beginPath(); ctx.moveTo(hx, gy); ctx.lineTo(hx + hw, gy); ctx.stroke(); }
 
-    // 布局比例：让台风+风圈+用户都装进 hero
-    const rMax = maxRadius(last) || 300;
-    const span = Math.max(dist + rMax * 0.4, rMax * 2.1, 250);
-    const scalePx = (hw - 190) / span;
-    const cy = hy + hh / 2 + 14;
-    const stormX = hx + 96 + rMax * scalePx * 0.25;
-    const userX = Math.min(stormX + Math.max(dist, 40) * scalePx, hx + hw - 80);
+    const cy = hy + hh * 0.44;
+    const stormX = hx + hw * 0.30;
+    const RING = 116; // 7级风圈固定显示半径
+    const pxKm = RING / a.galeR;
+    const userX = stormX + Math.max(46, Math.min(dist * pxKm, hw * 0.56));
+    const closeLbl = userX - stormX < 180; // 标签防重叠
 
-    // 风圈（7/10/12 级）
-    const rings = [
-      { r: last.r7 ? Math.max(...last.r7) : null, c: "170, 166, 159", label: "7级风圈" },
-      { r: last.r10 ? Math.max(...last.r10) : null, c: "201, 169, 97", label: "10级" },
-      { r: last.r12 ? Math.max(...last.r12) : null, c: "234, 134, 64", label: "12级" },
-    ];
-    for (const ring of rings) {
-      if (!ring.r) continue;
-      const rp = ring.r * scalePx;
-      ctx.fillStyle = `rgba(${ring.c}, 0.10)`;
-      ctx.beginPath(); ctx.arc(stormX, cy, rp, 0, Math.PI * 2); ctx.fill();
-      ctx.strokeStyle = `rgba(${ring.c}, 0.55)`;
-      ctx.setLineDash([5, 5]);
-      ctx.beginPath(); ctx.arc(stormX, cy, rp, 0, Math.PI * 2); ctx.stroke();
-      ctx.setLineDash([]);
-    }
-    // 7级风圈标注（限制在画框内）
-    if (rings[0].r) {
-      ctx.fillStyle = "rgba(170,166,159,0.9)";
-      ctx.font = F(400, 19);
-      const lx = Math.max(hx + 16, stormX - rings[0].r * scalePx * 0.72);
-      const ly = Math.max(hy + 30, cy - rings[0].r * scalePx * 0.72);
-      ctx.fillText(`7级风圈 ${Math.round(rings[0].r)}km`, lx, ly);
-    }
+    // 风圈三层同心（内实外虚，暖调渐淡）
+    ctx.setLineDash([]);
+    ctx.strokeStyle = "rgba(234,134,64,0.30)"; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.arc(stormX, cy, RING * 0.42, 0, Math.PI * 2); ctx.stroke();
+    ctx.strokeStyle = "rgba(234,134,64,0.18)";
+    ctx.beginPath(); ctx.arc(stormX, cy, RING * 0.72, 0, Math.PI * 2); ctx.stroke();
+    ctx.setLineDash([6, 6]);
+    ctx.strokeStyle = "rgba(201,169,97,0.55)"; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.arc(stormX, cy, RING, 0, Math.PI * 2); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = "rgba(201,169,97,0.75)";
+    ctx.font = F(400, 18);
+    ctx.textAlign = "center";
+    ctx.fillText(`7级风圈 ${Math.round(a.galeR)} km`, stormX, cy - RING - 12);
 
-    // 台风本体：旋涡
-    const core = ctx.createRadialGradient(stormX, cy, 2, stormX, cy, 30);
-    core.addColorStop(0, "#ffffff");
-    core.addColorStop(0.25, "#ea8640");
+    // 台风核心：辉光 + 旋臂
+    const core = ctx.createRadialGradient(stormX, cy, 2, stormX, cy, 42);
+    core.addColorStop(0, "#fff7ef");
+    core.addColorStop(0.3, "#ea8640");
     core.addColorStop(1, "rgba(208,68,44,0)");
     ctx.fillStyle = core;
-    ctx.beginPath(); ctx.arc(stormX, cy, 30, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = "rgba(238,236,230,0.8)";
-    ctx.lineWidth = 2.5;
+    ctx.beginPath(); ctx.arc(stormX, cy, 42, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = "rgba(29,28,24,0.85)";
+    ctx.lineWidth = 3;
     for (const off of [0, Math.PI]) {
       ctx.beginPath();
-      for (let t = 0; t < 1.9; t += 0.08) {
-        const rr = 8 + t * 13, ang = off + t * 2.4;
+      let first = true;
+      for (let t = 0.15; t < 1.75; t += 0.06) {
+        const rr = 4 + t * 14, ang = off + t * 2.6;
         const px2 = stormX + rr * Math.cos(ang), py2 = cy + rr * Math.sin(ang);
-        t === 0 ? ctx.moveTo(px2, py2) : ctx.lineTo(px2, py2);
+        first ? ctx.moveTo(px2, py2) : ctx.lineTo(px2, py2);
+        first = false;
       }
       ctx.stroke();
     }
-    // 距离近时标签错行，避免与用户标签重叠
-    const labelsClose = userX - stormX < 170;
+
+    // 连线（避开两端图形）+ 距离数字
+    const lineA = stormX + 50, lineB = userX - 26;
+    if (lineB > lineA + 16) {
+      ctx.strokeStyle = "rgba(238,236,230,0.35)";
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([2, 7]);
+      ctx.beginPath(); ctx.moveTo(lineA, cy); ctx.lineTo(lineB, cy); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    ctx.fillStyle = "#eeece6";
+    ctx.font = F(800, 30);
+    ctx.fillText(`${Math.round(dist)} km`, Math.max((stormX + userX) / 2, stormX + 96), cy - 18);
+
+    // 你的位置：光环 + 骨白点
+    ctx.fillStyle = "rgba(238,236,230,0.14)";
+    ctx.beginPath(); ctx.arc(userX, cy, 19, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = "#eeece6";
+    ctx.beginPath(); ctx.arc(userX, cy, 7.5, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = "#1d1c18"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.arc(userX, cy, 7.5, 0, Math.PI * 2); ctx.stroke();
     ctx.lineWidth = 1;
-    ctx.fillStyle = "#eeece6";
-    ctx.font = F(700, 22);
-    ctx.textAlign = "center";
-    ctx.fillText(`${s.name} ${last.power}级`, stormX, labelsClose ? cy - 44 : cy + 56);
-    ctx.textAlign = "left";
 
-    // 连线 + 距离
-    ctx.strokeStyle = "rgba(238,236,230,0.5)";
-    ctx.setLineDash([7, 6]);
-    ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(stormX + 34, cy); ctx.lineTo(userX - 20, cy); ctx.stroke();
-    ctx.setLineDash([]);
-    const midX = (stormX + userX) / 2;
-    ctx.fillStyle = "#25231f";
-    roundRect(ctx, midX - 62, cy - 42, 124, 34, 17);
-    ctx.fill();
-    ctx.strokeStyle = "#3a3733";
-    roundRect(ctx, midX - 62, cy - 42, 124, 34, 17);
-    ctx.stroke();
+    // 标签：固定基线；距离近时用户标签换行避让
+    ctx.font = F(700, 23);
+    ctx.fillStyle = "#eeb28f";
+    ctx.fillText(`${s.name} · ${last.power}级`, stormX, cy + RING + 34);
     ctx.fillStyle = "#eeece6";
-    ctx.font = F(800, 22);
-    ctx.textAlign = "center";
-    ctx.fillText(`${Math.round(dist)} km`, midX, cy - 18);
+    ctx.fillText(`你 · ${locLabel()}`, closeLbl ? userX + 40 : userX, closeLbl ? cy + RING + 64 : cy + RING + 34);
+    if (dist <= a.galeR) {
+      ctx.fillStyle = "rgba(234,134,64,0.9)";
+      ctx.font = F(400, 19);
+      ctx.fillText("你在其 7 级风圈范围内", (stormX + userX) / 2, cy + 40);
+    }
     ctx.textAlign = "left";
-
-    // 用户位置
-    ctx.fillStyle = "rgba(238,236,230,0.16)";
-    ctx.beginPath(); ctx.arc(userX, cy, 17, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = "#eeece6";
-    ctx.beginPath(); ctx.arc(userX, cy, 8, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = "#1a1916";
-    ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.arc(userX, cy, 8, 0, Math.PI * 2); ctx.stroke();
-    ctx.lineWidth = 1;
-    ctx.fillStyle = "#eeece6";
-    ctx.font = F(700, 22);
-    ctx.textAlign = "center";
-    ctx.fillText(`你 · ${locLabel()}`, Math.min(userX, hx + hw - 90), cy + 56);
-    ctx.textAlign = "left";
-
-    // hero 角标
-    ctx.fillStyle = "rgba(238,236,230,0.35)";
-    ctx.font = F(400, 17);
-    ctx.fillText("示意图 · 非精确比例", hx + 16, hy + hh - 14);
+    ctx.fillStyle = "rgba(238,236,230,0.3)";
+    ctx.font = F(400, 16);
+    ctx.fillText("示意图 · 风圈与距离同比例", hx + 16, hy + hh - 14);
     ctx.restore();
-
-    // 等级徽章（hero 右上角，压边）
-    const pillText = `${LEVELS[a.level].name} ${"●".repeat(a.level)}${"○".repeat(4 - a.level)}`;
-    ctx.font = F(800, 24);
-    const pw = ctx.measureText(pillText).width + 44;
-    ctx.fillStyle = "#1a1916";
-    roundRect(ctx, W - 36 - pw, hy + 14, pw, 46, 23);
-    ctx.fill();
-    ctx.fillStyle = accent + "33";
-    roundRect(ctx, W - 36 - pw, hy + 14, pw, 46, 23);
-    ctx.fill();
-    ctx.strokeStyle = accent;
-    roundRect(ctx, W - 36 - pw, hy + 14, pw, 46, 23);
-    ctx.stroke();
-    ctx.fillStyle = accent;
-    ctx.fillText(pillText, W - 36 - pw + 22, hy + 46);
 
     /* ---- 结论 ---- */
     ctx.fillStyle = "#eeece6";
@@ -904,7 +872,7 @@ const ImpactPanel = (() => {
     const stats = [
       { v: `${Math.round(dist)}`, u: "km", k: "当前距离" },
       { v: `${last.power}`, u: "级", k: "台风强度" },
-      { v: `${a.rain}`, u: "mm", k: "预计雨量" },
+      { v: `${a.rain}`, u: "mm", k: a.phase === "approach" ? "预计雨量" : "过程雨量" },
       { v: a.endPoint ? fmtTime(a.endPoint.time) : "—", u: "", k: "预计结束" },
     ];
     const gw = (W - 72 - 3 * 12) / 4;

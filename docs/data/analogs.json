@@ -1,5 +1,5 @@
 {
- "version": "1.0",
+ "version": "1.1",
  "note": "历史台风影响对照库（人工终审通过）。内容准则：只写对生活的影响，不写死伤人数与经济损失。数值为约数，供相对对照用。扩充流程见 CONTRIBUTING：新条目先进 analogs-draft.json 待审。",
  "events": [
   {
@@ -7546,6 +7546,1220 @@
     "zh.wikipedia: 台风梅花 (2022年)"
    ],
    "eventId": "202212-muifa-舟山"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "南宁"
+   },
+   "hazard": {
+    "rainTotalMm": 713.3,
+    "rainDurationH": 24,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "横州六蓝水库、云表水库漫顶及缺口，宾阳六旺水库漫坝，城乡内涝",
+    "power": "",
+    "water": "",
+    "evacuation": "5.5万人受灾，已疏散4.8万人；被淹群众转移至自家楼上或临时应急帐篷安置",
+    "note": "宾阳露圩镇八凤村24小时降水量713.3毫米，特大暴雨"
+   },
+   "narrative": "南宁宾阳、横州遭特大暴雨，多座水库漫顶缺口，5.5万人受灾，4.8万人紧急转移。",
+   "sources": [
+    "新浪新闻: https://www.sina.cn/news/detail/5317788734593278.html",
+    "新浪财经: https://finance.sina.com.cn/jjxw/2026-07-06/doc-inifwwmn1764698.shtml"
+   ],
+   "eventId": "202610-maysak-南宁"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "防城港"
+   },
+   "hazard": {
+    "rainTotalMm": 533.2,
+    "rainDurationH": 24,
+    "peakPower": null,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "防城区珠河街道、滩营乡等地严重内涝，积水最深处约1.2米（半层楼高）",
+    "power": "部分居民区停电，江平镇一居民称10时左右突然停电后水位迅速上涨",
+    "water": "",
+    "evacuation": "已成功转移被困群众137人，其中老人、儿童等重点人群42名",
+    "note": "海岸多处防护堤海水倒灌，防城河全线超警2-5米，多条道路积水、树木倒伏交通中断"
+   },
+   "narrative": "防城港东兴市江平镇降雨破纪录，防城区多地被淹，海水倒灌、停电，137名被困群众获救转移。",
+   "sources": [
+    "腾讯新闻: https://news.qq.com/rain/a/20260705A06APU00",
+    "新浪新闻: https://finance.sina.com.cn/wm/2026-07-06/doc-inifvuyc1880451.shtml"
+   ],
+   "eventId": "202610-maysak-防城港"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "来宾"
+   },
+   "hazard": {
+    "rainTotalMm": 211.4,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "金秀瑶族自治县山洪突袭，浑浊泥水灌入民房",
+    "power": "",
+    "water": "",
+    "evacuation": "金秀一名村民被困，派出所民辅警蹚过泥水将其救出",
+    "note": "兴宾区石陵陈村最大累计降雨211.4毫米，石陵镇最大小时降水量63.3毫米"
+   },
+   "narrative": "来宾兴宾区、金秀遭强降雨引发山洪，一名被困村民经民警蹚水救出。",
+   "sources": [
+    "新浪新闻: https://www.sina.cn/news/detail/5317755297601773.html",
+    "澎湃新闻: https://m.thepaper.cn/newsDetail_forward_33528441"
+   ],
+   "eventId": "202610-maysak-来宾"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "柳州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "柳北区石碑坪镇、沙塘镇、长塘镇受不同程度影响；都柳江三江县洋溪乡勇伟村河段预计涨水1.5米左右",
+    "power": "",
+    "water": "",
+    "evacuation": "融安县大良镇黄峒村撤离7户8人；融安完全转移群众120人",
+    "note": ""
+   },
+   "narrative": "柳州融安、柳北等地强降雨引发山洪风险，融安撤离群众上百人，柳州随后解除台风四级预警。",
+   "sources": [
+    "网易新闻: https://www.163.com/dy/article/L162KBUK0514R23C.html",
+    "央广网: https://news.cnr.cn/native/gd/20260706/t20260706_527694359.shtml"
+   ],
+   "eventId": "202610-maysak-柳州"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "钦州"
+   },
+   "hazard": {
+    "rainTotalMm": 1080.6,
+    "rainDurationH": 72,
+    "peakPower": 186.2,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "海棠村民房浸水已3天，水深处有一米多；弓背山居民门前耕地成'汪洋'",
+    "power": "因灾停电、用水困难，部分村民临时投靠亲戚；城区还有一些居民区处于停电状态",
+    "water": "因灾停电、用水困难",
+    "evacuation": "安全避险转移民众2万余人（截至7月6日18时）；尖山街道7个社区累计受灾民众达9200多人",
+    "note": "约2000亩虾塘大部分被淹，损失惨重；钦南久隆3天累计雨量突破1080.6毫米，最大小时降雨186.2毫米（5日20-21时）"
+   },
+   "narrative": "钦州钦南区遭持续强降雨，民房浸水3天，2万余人转移，部分居民区停电停水。",
+   "sources": [
+    "中新网广西: http://www.gx.chinanews.com.cn/sh/2026-07-08/detail-ihfhcvui3802671.shtml",
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-08/doc-inihckrs7962686.shtml"
+   ],
+   "eventId": "202610-maysak-钦州"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "崇左"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "宁明县24条供电线路跳闸停运，累计停电台区668个，停电用户23482户；后续新增1条线路、14个台区、557户用户停电",
+    "water": "",
+    "evacuation": "",
+    "note": "强降雨导致江河水位暴涨，县域电网遭受冲击，宁明供电公司组建党员突击队121人放弃双休全力抢修"
+   },
+   "narrative": "崇左宁明县电网遭强降雨冲击，2.3万余户停电，供电公司组建抢修队全力恢复供电。",
+   "sources": [
+    "中新网广西: http://www.gx.chinanews.com.cn/gxgd/news/2026-07-07/detail-ihfhcvui3801826.shtml"
+   ],
+   "eventId": "202610-maysak-崇左"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "桂林"
+   },
+   "hazard": {
+    "rainTotalMm": 200,
+    "rainDurationH": 24,
+    "peakPower": 80,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "桂林启动防汛四级应急响应，防范中小河流洪水、城市暴雨积涝、山洪、泥石流、滑坡等灾害"
+   },
+   "narrative": "桂林龙胜、资源、兴安等地遭强降雨，局部超350毫米，市防汛四级应急响应启动。",
+   "sources": [
+    "桂林晚报: https://epaper.guilinlife.com/glwbh5/glwb/20260706/Articel08001NR.htm",
+    "腾讯新闻: https://news.qq.com/rain/a/20260705A043N600"
+   ],
+   "eventId": "202610-maysak-桂林"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "北海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "涠洲岛旅游区完成12380名游客及8540名渔民的撤离工作",
+    "note": "北海往返涠洲岛航班全线停航，涠洲岛各景区景点、浴场同步关闭"
+   },
+   "narrative": "北海涠洲岛提前疏运，12380名游客及8540名渔民全部撤离，航班全线停航。",
+   "sources": [
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-06/doc-inifwscu8576236.shtml"
+   ],
+   "eventId": "202610-maysak-北海"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "贵港"
+   },
+   "hazard": {
+    "rainTotalMm": 652.7,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "港北区严重内涝，城区多处低洼路段积水深度约一米，不少居民受积水围困无法自行撤离",
+    "power": "",
+    "water": "",
+    "evacuation": "多支救援队伍开展拉网式搜救，全力转移被困群众",
+    "note": "贵港甘道水库涉险累计雨量652.7毫米（南宁横州、宾阳水库涉险统计口径）"
+   },
+   "narrative": "贵港港北区严重内涝，低洼路段积水约一米，多支救援队开展拉网式搜救转移被困群众。",
+   "sources": [
+    "新浪新闻: https://www.sina.cn/news/detail/5318470528926672.html",
+    "新华网: https://www.news.cn/local/20260706/57803e8644c94ffa9e1251a77e066909/c.html"
+   ],
+   "eventId": "202610-maysak-贵港"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "玉林"
+   },
+   "hazard": {
+    "rainTotalMm": 142.5,
+    "rainDurationH": 24,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "北流河、南流江及丽江等11条江河出现1.00-2.98米涨水，博白县江宁河超警戒水位0.24米"
+   },
+   "narrative": "玉林博白、北流等地普降大雨到暴雨，11条江河明显涨水，江宁河超警戒。",
+   "sources": [
+    "新浪新闻: https://www.sina.cn/news/detail/5317632391644318.html"
+   ],
+   "eventId": "202610-maysak-玉林"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "广西",
+    "city": "梧州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "万秀区夏郢镇保安村河段水位持续攀升，漫堤风险迫在眉睫",
+    "power": "",
+    "water": "",
+    "evacuation": "全市转移8023人，其中集中安置149人（截至8日11时）",
+    "note": "西江梧州水文站7月8日23时25分出现21.71米洪峰水位（警戒水位18.5米），超警3.21米；防汛应急响应提升为三级"
+   },
+   "narrative": "梧州西江水位超警3.21米，全市提前转移沿江低洼群众8023人，防汛应急响应升至三级。",
+   "sources": [
+    "华声在线: https://m.voc.com.cn/xhn/news/202607/33100665.html"
+   ],
+   "eventId": "202610-maysak-梧州"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "陵水"
+   },
+   "hazard": {
+    "rainTotalMm": 350,
+    "rainDurationH": null,
+    "peakPower": 9,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "椰林镇转移244名重点人员，新村镇1824名渔排人员上岸避风，全县共转移风险群众3991人",
+    "note": "椰林镇组织42支应急抢险队伍摸排82户，新村镇1977艘渔船全部回港加固，全县314处在建工地全部停工"
+   },
+   "narrative": "美莎克在陵水椰林镇沿海登陆，全县转移风险群众3991人，渔排渔民1824人上岸避风，学校停课。",
+   "sources": [
+    "新华网: https://www.news.cn/politics/20260703/1c4e8319840241fb854791efd2a929f6/c.html",
+    "新华网: https://www.news.cn/local/20260704/f39da99e78124a6c857fc0cfcae8ea02/c.html",
+    "中华网: https://news.china.com/socialgd/10000169/20260707/49595112.html",
+    "中新网: https://www.chinanews.com.cn/sh/2026/07-03/10652439.shtml"
+   ],
+   "eventId": "202610-maysak-陵水"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "三亚"
+   },
+   "hazard": {
+    "rainTotalMm": 401.7,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "榆亚路、凤凰路、学院路、荔枝沟路等多处路段积水，部分路段积水深至大腿处；一社区海水倒灌，街道积水淹没至膝盖高度，居民住宅内电视、沙发等家具被浸泡",
+    "power": "",
+    "water": "",
+    "evacuation": "涉山涉海涉空景区已于3日12时前暂停营业，大东海旅游区3日12时起暂停营业，机场停飞",
+    "note": "消防救出因暴雨积水熄火车内被困的5人；一人被强风雨吹落桥面坠河后获救；大东海榆亚路一棵约五六米高榕树被大风吹倒横亘马路"
+   },
+   "narrative": "三亚市区多条主干道严重积水，部分路段深至大腿，一社区海水倒灌进屋，景区、机场全部关停，消防救出被困车辆人员。",
+   "sources": [
+    "中新网: https://www.chinanews.com.cn/sh/2026/07-04/10652600.shtml",
+    "中华网: https://news.china.com/socialgd/10000169/20260709/49598067.html",
+    "新浪新闻: https://www.sina.cn/news/detail/5316695330656593.html",
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-04/doc-inifrxry9320016.shtml"
+   ],
+   "eventId": "202610-maysak-三亚"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "五指山"
+   },
+   "hazard": {
+    "rainTotalMm": 162.4,
+    "rainDurationH": 48,
+    "peakPower": 9,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "南圣镇雨量最大达177.7毫米，山顶阿陀岭电视塔测得9级(24.2米/秒)大风"
+   },
+   "narrative": "五指山两日平均降雨162.4毫米，南圣镇最高177.7毫米，山顶阿陀岭测得9级大风。",
+   "sources": [
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-04/doc-inifrhua3355576.shtml"
+   ],
+   "eventId": "202610-maysak-五指山"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "保亭"
+   },
+   "hazard": {
+    "rainTotalMm": 300,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "保城镇民族风情街部分路段出现严重积水，消防利用抽水泵进行排涝，积水被成功排空",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "与三亚、乐东共有6个乡镇实况雨量超过300毫米"
+   },
+   "narrative": "保亭保城镇民族风情街出现严重积水，消防连夜抽排；全县部分乡镇实况雨量超过300毫米。",
+   "sources": [
+    "中新网: https://www.chinanews.com.cn/sh/2026/07-04/10652600.shtml",
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-04/doc-inifrxry9320016.shtml"
+   ],
+   "eventId": "202610-maysak-保亭"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "乐东"
+   },
+   "hazard": {
+    "rainTotalMm": 300,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "全县各幼儿园于3日10点前由家长接回",
+    "note": "与三亚共有4个乡镇实况雨量超过300毫米"
+   },
+   "narrative": "乐东与三亚共有4个乡镇实况雨量超过300毫米；全县幼儿园提前接回，中小学下午停课半天。",
+   "sources": [
+    "海口本地宝: https://m.haikou.bendibao.com/news/83407.shtm",
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-04/doc-inifrxry9320016.shtml"
+   ],
+   "eventId": "202610-maysak-乐东"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "琼中"
+   },
+   "hazard": {
+    "rainTotalMm": 200,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "与三亚、乐东、保亭、陵水共5市县22个乡镇实况雨量超过200毫米"
+   },
+   "narrative": "琼中与三亚、乐东、保亭、陵水等5市县共22个乡镇实况雨量超过200毫米，中小学、幼儿园停课。",
+   "sources": [
+    "海口本地宝: https://m.haikou.bendibao.com/news/83407.shtm",
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-04/doc-inifrxry9320016.shtml"
+   ],
+   "eventId": "202610-maysak-琼中"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "万宁"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "万城镇海云轩附近一棵大树倒塌，树干重重压在停放的车辆上，经过30多分钟处置，受困车辆脱困",
+    "power": "",
+    "water": "",
+    "evacuation": "全市幼儿园停课1天，中小学校及校外培训机构停课半天",
+    "note": ""
+   },
+   "narrative": "万宁万城镇一棵大树被风刮倒压中停放车辆，消防历时30余分钟排除；全市幼儿园停课1天，中小学停课半天。",
+   "sources": [
+    "中新网: https://www.chinanews.com.cn/sh/2026/07-04/10652600.shtml",
+    "海口本地宝: https://m.haikou.bendibao.com/news/83407.shtm"
+   ],
+   "eventId": "202610-maysak-万宁"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "儋州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "全市幼儿园从3日12:00开始停课",
+    "note": "预计7月3-4日累积雨量150-250毫米，局地350毫米以上"
+   },
+   "narrative": "儋州预测两日雨量150-250毫米，全市幼儿园7月3日中午起停课一天。",
+   "sources": [
+    "海口本地宝: https://m.haikou.bendibao.com/news/83407.shtm",
+    "海口本地宝: https://m.haikou.bendibao.com/news/83411.shtm"
+   ],
+   "eventId": "202610-maysak-儋州"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "昌江"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 1,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "全县各幼儿园于3日12点前由家长接回，3日下午停课半天",
+    "note": "预计7月3-4日累积雨量150-250毫米，局地350毫米以上"
+   },
+   "narrative": "昌江预测两日雨量150-250毫米，全县幼儿园7月3日中午前接回，下午停课半天。",
+   "sources": [
+    "海口本地宝: https://m.haikou.bendibao.com/news/83407.shtm",
+    "海口本地宝: https://m.haikou.bendibao.com/news/83411.shtm"
+   ],
+   "eventId": "202610-maysak-昌江"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "海南",
+    "city": "海南"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "7月4日24时，海南受台风影响的用户实现全面复电，抢修复电时长较往年同量级台风大幅缩短",
+    "water": "",
+    "evacuation": "全省累计安全转移群众16000余人；1700余艘船舶已撤离人员2910人，其中海上平台撤离1059人、无动力船舶撤离239人、其他船舶撤离1612人",
+    "note": "进出岛列车、环岛高铁、三乐旅游铁路、海口市域列车全部停运；三亚凤凰机场17时起停飞、博鳌机场进港航班取消；琼州海峡客滚运输3日2时起全线停航"
+   },
+   "narrative": "美莎克登陆前后海南全省转移群众超1.6万人，船舶撤离2910人，进出岛列车、海峡轮渡、三亚机场全部停运，7月4日24时全面复电。",
+   "sources": [
+    "证券时报: https://www.stcn.com/article/detail/3998627.html",
+    "新华网: https://www.news.cn/local/20260704/f39da99e78124a6c857fc0cfcae8ea02/c.html",
+    "中新网: https://www.chinanews.com.cn/sh/2026/07-03/10652439.shtml",
+    "海口本地宝: https://m.haikou.bendibao.com/news/83411.shtm"
+   ],
+   "eventId": "202610-maysak-海南"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "邵阳"
+   },
+   "hazard": {
+    "rainTotalMm": 130.8,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "局地大暴雨引发山洪风险",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "局地阵风8～10级"
+   },
+   "narrative": "台风美莎克减弱后残涡影响邵阳，城步长安营镇累计雨量达130.8毫米，局地大暴雨伴8～10级阵风。",
+   "sources": [
+    "中国天气网: http://news.weather.com.cn/2026/07/4704759.shtml"
+   ],
+   "eventId": "202610-maysak-邵阳"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "永州"
+   },
+   "hazard": {
+    "rainTotalMm": 150,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "局地雨量超250毫米，短时强降水明显",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "最大小时雨强40～70毫米"
+   },
+   "narrative": "美莎克残涡北上影响永州，市区、东安、道县等地出现大暴雨，局地雨量超250毫米，最大小时雨强达40～70毫米。",
+   "sources": [
+    "中国天气网: http://news.weather.com.cn/2026/07/4704759.shtml",
+    "新湖南: https://www.hunantoday.cn/news/xhn/202607/33074740.html"
+   ],
+   "eventId": "202610-maysak-永州"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "娄底"
+   },
+   "hazard": {
+    "rainTotalMm": 60,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "新化多座水库溢洪，山洪、山体滑坡频发",
+    "power": "",
+    "water": "",
+    "evacuation": "紧急转移群众1952户5683人",
+    "note": ""
+   },
+   "narrative": "美莎克残涡携强降雨袭击娄底新化，3小时雨量超60毫米，多座水库溢洪引发山洪，当地紧急转移群众5683人。",
+   "sources": [
+    "中国新闻网湖南: https://www.hn.chinanews.com.cn/news/sxdt/2026/0708/530868.html"
+   ],
+   "eventId": "202610-maysak-娄底"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "怀化"
+   },
+   "hazard": {
+    "rainTotalMm": 180,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大暴雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "局地阵风8～10级"
+   },
+   "narrative": "美莎克残涡影响怀化，6日出现大暴雨，雨量120～180毫米，局地阵风8～10级。",
+   "sources": [
+    "新湖南: https://www.hunantoday.cn/news/xhn/202607/33072970.html"
+   ],
+   "eventId": "202610-maysak-怀化"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "常德"
+   },
+   "hazard": {
+    "rainTotalMm": 180,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大暴雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "局地阵风8～10级"
+   },
+   "narrative": "受美莎克残涡影响，常德6日遭遇大暴雨，雨量120～180毫米，局地阵风达8～10级。",
+   "sources": [
+    "新湖南: https://www.hunantoday.cn/news/xhn/202607/33072970.html"
+   ],
+   "eventId": "202610-maysak-常德"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "益阳"
+   },
+   "hazard": {
+    "rainTotalMm": 180,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "大暴雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": "局地阵风8～10级"
+   },
+   "narrative": "美莎克残涡北上，益阳部分地区6日出现大暴雨，雨量120～180毫米，局地阵风8～10级。",
+   "sources": [
+    "新湖南: https://www.hunantoday.cn/news/xhn/202607/33072970.html"
+   ],
+   "eventId": "202610-maysak-益阳"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "张家界"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "大暴雨级降雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "美莎克残涡持续北上，张家界永定区6日晚至7日出现大暴雨级降雨。",
+   "sources": [
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-05/doc-inifskfr9891174.shtml"
+   ],
+   "eventId": "202610-maysak-张家界"
+  },
+  {
+   "typhoon": {
+    "name": "美莎克",
+    "enName": "Maysak",
+    "tfid": "202610"
+   },
+   "region": {
+    "province": "湖南",
+    "city": "湘西"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": null,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "大暴雨级降雨",
+    "power": "",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "美莎克残涡影响湘西州，泸溪等地6日晚至7日出现大暴雨级降雨。",
+   "sources": [
+    "新浪财经: https://finance.sina.com.cn/wm/2026-07-05/doc-inifskfr9891174.shtml"
+   ],
+   "eventId": "202610-maysak-湘西"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "海南",
+    "city": "文昌"
+   },
+   "hazard": {
+    "rainTotalMm": 267.8,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "文昌市出现内涝积水2处（全省海口、文昌、琼海共22处）",
+    "power": "文昌电网遭受毁灭性打击，几乎要重建一个文昌配网；通信基站退服率一度超80%，9日仍达54.2%",
+    "water": "清澜水厂9月6日16时因停电停产，城市供水管道受损约5公里，台风过境后组织抢修恢复生产",
+    "evacuation": "18个镇（场）受台风正面袭击，道路、水、电、通信等设施损毁严重",
+    "note": "登陆点：翁田镇沿海，登陆时中心附近最大风力17级以上（62米/秒），是1949年以来登陆我国第二强风暴；文昌日降雨量267.8毫米破当地历史9月日最大降雨量极值"
+   },
+   "narrative": "摩羯以17级以上强度正面登陆文昌翁田镇，18镇受袭，电网几近重建，通信一度大面积中断，水厂停产。",
+   "sources": [
+    "zh.wikipedia: 超强台风摩羯 (2024年)",
+    "南海网: https://m.gmw.cn/2024-09/10/content_1303844005.htm",
+    "新浪科技: https://finance.sina.com.cn/tech/roll/2024-09-14/doc-incpcqhk1504283.shtml",
+    "大众网: https://www.dzwww.com/xinwen/shehuixinwen/202409/t20240912_14791698.htm"
+   ],
+   "eventId": "202411-yagi-文昌"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "海南",
+    "city": "澄迈"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "受损电力线路超过1000公里，通信基站退服率一度超60%；全县256条停电线路，9日18时仅恢复105条",
+    "water": "13个供水厂因断电、设备损坏无法制水，全县供水一度中断，9日18时已有10个水厂恢复供水",
+    "evacuation": "紧急转移人口1.3万余人，房屋受损超1万间；台风过境后全县复课、22家农贸市场及18家超市恢复营业",
+    "note": "超强台风正面袭击澄迈，12级风圈影响持续约5小时，最大风力17级以上；停电用户占全省1/3中'尤为严重'的市县之一"
+   },
+   "narrative": "摩羯正面袭击澄迈，12级风圈持续5小时，全县供水一度中断、逾千公里电力线路受损，通信基站退服超六成。",
+   "sources": [
+    "南海网: https://m.gmw.cn/2024-09/10/content_1303844005.htm",
+    "新浪科技: https://finance.sina.com.cn/tech/roll/2024-09-14/doc-incpcqhk1504283.shtml",
+    "中国新闻网: http://www.hi.chinanews.com.cn/hnnew/2024-09-08/710551.html"
+   ],
+   "eventId": "202411-yagi-澄迈"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "海南",
+    "city": "临高"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "停电用户占全省总数1/3中'尤为严重'的市县之一，电力队伍9月10日仍在临高奋力抢修受损线路",
+    "water": "城市供水管道受损长度30公里，为海口、文昌、儋州、临高、澄迈5市县中受损最严重",
+    "evacuation": "临高南站因部分站内设备设施未修复一度暂停运营；临高大桥（原一号桥）附近出现塌方",
+    "note": "临高与海口、文昌、澄迈同为电网破坏'尤为严重'的市县，属海南12个雨量超300毫米市县之一"
+   },
+   "narrative": "摩羯致临高停电严重、供水管道受损30公里居各县之首，临高南站一度停运，铁路桥附近发生塌方。",
+   "sources": [
+    "中国新闻网: http://www.hi.chinanews.com.cn/hnnew/2024-09-08/710551.html",
+    "中国新闻网: https://www.chinanews.com.cn/sh/2024/09-29/10294501.shtml",
+    "南海网: https://m.gmw.cn/2024-09/10/content_1303844005.htm",
+    "zh.wikipedia: 超强台风摩羯 (2024年)"
+   ],
+   "eventId": "202411-yagi-临高"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "海南",
+    "city": "定安"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "黄竹镇等区域停电，南方电网抢修人员冒风雨为断电居民送去应急电源",
+    "water": "",
+    "evacuation": "",
+    "note": "通信抢修力量驰援文昌、澄迈、定安、琼海、万宁一线，属海南12个雨量超300毫米市县之一"
+   },
+   "narrative": "摩羯致定安黄竹镇等地停电，通信基站退服需外省支援抢修，南方电网紧急为居民送去应急电源。",
+   "sources": [
+    "国务院国资委: http://www.sasac.gov.cn/n2588025/n2641611/c32652082/content.html",
+    "新浪科技: https://finance.sina.com.cn/tech/roll/2024-09-14/doc-incpcqhk1504283.shtml"
+   ],
+   "eventId": "202411-yagi-定安"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "海南",
+    "city": "琼海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "琼海市出现内涝积水1处（全省海口、文昌、琼海共22处）",
+    "power": "通信基站退服，需外省通信抢修力量驰援",
+    "water": "",
+    "evacuation": "",
+    "note": ""
+   },
+   "narrative": "摩羯波及琼海，出现内涝积水1处，通信基站退服需跨省支援抢修恢复信号。",
+   "sources": [
+    "南海网: https://m.gmw.cn/2024-09/10/content_1303844005.htm",
+    "新浪科技: https://finance.sina.com.cn/tech/roll/2024-09-14/doc-incpcqhk1504283.shtml"
+   ],
+   "eventId": "202411-yagi-琼海"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "海南",
+    "city": "儋州"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 3,
+    "flood": "",
+    "power": "全市停电用户经两天抢修恢复84305户，停运变电站恢复4座、输电线路恢复6条、10千伏配网线路恢复57条，停电居民小区恢复130个",
+    "water": "16座规模化水厂因供电线路受损影响正常供水，9月8日17时仍有7座水厂无法正常供水；城市供水管道受损约1公里",
+    "evacuation": "那大、洋浦、白马井镇约190所中小学（占全市81.5%）9月9日率先复学，其余视水电抢修情况分批开学",
+    "note": "儋州供电局出动513名抢修队员，南方电网跨海调配650人应急队伍支援"
+   },
+   "narrative": "摩羯致儋州16座水厂供电受损、逾8万户停电，供电局连夜抢修，多数中小学延后数日复课。",
+   "sources": [
+    "网易（儋州市政府新闻发布会实录）: https://www.163.com/dy/article/JBJS0J8V0550I46A.html",
+    "南海网: https://m.gmw.cn/2024-09/10/content_1303844005.htm"
+   ],
+   "eventId": "202411-yagi-儋州"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "广东",
+    "city": "湛江"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": true,
+    "approx": true
+   },
+   "impact": {
+    "level": 4,
+    "flood": "",
+    "power": "徐闻县多地停电断网，酒店住客靠蜡烛照明，居民停电停水断网",
+    "water": "徐闻县居民家中停水停电断网，靠此前囤积食物维持基本生活",
+    "evacuation": "全市安全转移群众近8万人；徐闻县二次登陆前累计转移并安置危险区域群众10.86万人，疏导5184艘渔船回港避风；湛江组织788支队伍、13572人参与应急救援",
+    "note": "摩羯于9月6日22时20分在广东省徐闻县角尾乡二次登陆，登陆时中心附近最大风力17级（58米/秒）"
+   },
+   "narrative": "摩羯在徐闻角尾乡二次登陆，湛江多地停电断网，近8万群众紧急转移，逾10万人转移安置。",
+   "sources": [
+    "极目新闻: https://www.ctdsb.net/c1716_202409/2247590.html",
+    "zh.wikipedia: 超强台风摩羯 (2024年)"
+   ],
+   "eventId": "202411-yagi-湛江"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "广西",
+    "city": "北海"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "启动'停课、停工、停游、停市、停运'五停措施，涠洲岛航线停航，两日内运送约1.57万人次离岛",
+    "note": "9月6日启动五停措施，至9月7日17时解除；预计13级以上大风并伴大暴雨、风暴潮"
+   },
+   "narrative": "摩羯逼近北部湾，北海启动停课停工停游停市停运'五停'措施，涠洲岛航线停航，万余人紧急离岛。",
+   "sources": [
+    "新华网: http://www.news.cn/20240906/dfb7180633814804be8fa398712c3f0b/c.html",
+    "zh.wikipedia: 超强台风摩羯 (2024年)"
+   ],
+   "eventId": "202411-yagi-北海"
+  },
+  {
+   "typhoon": {
+    "name": "摩羯",
+    "enName": "Yagi",
+    "tfid": "202411"
+   },
+   "region": {
+    "province": "广西",
+    "city": "防城港"
+   },
+   "hazard": {
+    "rainTotalMm": null,
+    "rainDurationH": null,
+    "peakPower": 17,
+    "landfall": false,
+    "approx": true
+   },
+   "impact": {
+    "level": 2,
+    "flood": "",
+    "power": "",
+    "water": "",
+    "evacuation": "公交、客运车、出租车，娱乐场所、餐饮店、商场超市、农贸市场，产业园及工厂，在建工地，中小学幼儿园此前一度全部停运停业停课，9月7日晚至9月8日晨分批恢复",
+    "note": "广西防汛抗旱（防台风）应急响应9月6日18时由二级提升至一级"
+   },
+   "narrative": "摩羯影响防城港，全市公交客运出租、商超娱乐、产业园工地及学校一度停运停课，7日晚起分批恢复。",
+   "sources": [
+    "央视新闻（网易转载）: https://m.163.com/dy/article/JBGUCEJ20514R9OJ.html"
+   ],
+   "eventId": "202411-yagi-防城港"
   }
  ]
 }
