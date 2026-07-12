@@ -817,7 +817,16 @@ const ImpactPanel = (() => {
 
     // 清单（按阶段：备灾 / 避险 / 恢复期）
     const items = phaseChecklist(a);
+    // 财产处置风险提示：仅在登陆前、清单真出现「折价抢收/起捕/出栏」这类不可逆
+    // 花钱决策时显示——预报会变，别单凭它把家当低价处理了；备料囤货这类不提示
+    const rn = (P.checklists.risk_note || {})[P.persona];
+    const preImpact = a.phase !== "during" && a.phase !== "after";
+    const hasDisposal = /抢收|起捕|出栏|折价|抛售/.test(items.join(""));
+    const riskHTML = (rn && preImpact && hasDisposal)
+      ? `<div class="risk-note"><span class="rn-ico">⚖️</span><span>${rn}</span></div>`
+      : "";
     document.querySelector("#d-checklist > div").innerHTML =
+      riskHTML +
       items.map((item) => `
         <label class="check-row"><input type="checkbox"><span>${item}</span></label>`).join("") +
       `<div class="muted" style="margin-top:6px">依据气象部门防御指引与历史灾害经验整理 · 非官方预警</div>`;

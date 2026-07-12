@@ -284,6 +284,18 @@ button, select, input { font-family: var(--serif); }
 .check-row input { margin-top: 5px; accent-color: var(--ink); }
 .check-row.done span { text-decoration: line-through; color: var(--ink-3); }
 
+/* 财产处置风险提示：折价抢收/出手前的一句「账你自己算」 */
+.risk-note {
+  display: flex; gap: 8px; align-items: flex-start;
+  margin: 2px 0 8px; padding: 9px 11px;
+  border: 1px solid rgba(234, 134, 64, 0.42);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  background: rgba(234, 134, 64, 0.09);
+  color: var(--ink-2); font-size: 12.5px; line-height: 1.65;
+}
+.risk-note .rn-ico { flex: none; font-size: 14px; line-height: 1.5; }
+
 #share-btn {
   flex: 1;
   padding: 10px;
