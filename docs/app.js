@@ -644,18 +644,17 @@ document.getElementById("time-play").onclick = () => { if (wind.on) togglePlay()
    一眼看清自己和台风的关系。用 HTML Marker（本站底图无 glyphs，符号文字用不了）。 */
 let userMarker = null;
 window.onUserLoc = (lat, lng, label) => {
+  // Marker 创建后随时可放，无需等 style load——不能用 map.loaded()/once("load") 门控：
+  // loaded() 在加载图层/瓦片时会瞬时为 false，而 load 事件只触发一次，会丢失更新。
   if (!window.map || lat == null || lng == null) return;
-  const place = () => {
-    if (!userMarker) {
-      const el = document.createElement("div");
-      el.className = "user-marker";
-      el.innerHTML = '<span class="um-dot"></span><span class="um-label"></span>';
-      userMarker = new maplibregl.Marker({ element: el, anchor: "bottom" });
-    }
-    userMarker.getElement().querySelector(".um-label").textContent = label || "你";
-    userMarker.setLngLat([lng, lat]).addTo(map);
-  };
-  map.loaded() ? place() : map.once("load", place);
+  if (!userMarker) {
+    const el = document.createElement("div");
+    el.className = "user-marker";
+    el.innerHTML = '<span class="um-dot"></span><span class="um-label"></span>';
+    userMarker = new maplibregl.Marker({ element: el, anchor: "bottom" });
+  }
+  userMarker.getElement().querySelector(".um-label").textContent = label || "你";
+  userMarker.setLngLat([lng, lat]).addTo(map);
 };
 
 /* ---------- helpers ---------- */
