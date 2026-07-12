@@ -456,7 +456,7 @@ document.getElementById("layer-radar").onclick = () => toggleRadar(!rv.on);
 /* ---------- 风场图层（风羽箭头，数据 Open-Meteo 网格快照，零额外依赖） ----------
    箭头指向"风的去向"（风向是来向，故 +180）；靠 icon-allow-overlap:false 自动稀释密度，
    放大才显更多箭头。按风速着色/微调大小。置于台风图层之下。 */
-const wind = { on: false, updatedAt: null };
+const wind = { on: false, updatedAt: null, times: [], grid: [], frames: [], stepH: 3, idx: 0 };
 const WIND_LAYERS = ["wind-arrows"];
 // 风速(km/h)→颜色：微风→强风，与图例一致；绿→石灰→沙金→橙→焦红。箭头本身按此上色。
 const WIND_COLOR = ["interpolate", ["linear"], ["get", "spd"],
@@ -475,8 +475,20 @@ function makeArrowImage() {
 async function loadWind() {
   const d = await fetchJSON(`data/wind.json?t=${Date.now()}`);
   wind.updatedAt = d.updatedAt;
-  const feats = (d.points || []).map(([lat, lon, spd, dir]) =>
-    feature("Point", [lon, lat], { spd, dir }));
+  wind.times = d.times || [];
+  wind.grid = d.grid || [];
+  wind.frames = d.frames || [];
+  wind.stepH = d.stepH || 3;
+  if (wind.idx >= wind.times.length) wind.idx = 0;
+}
+
+/* 某一帧 → 箭头 GeoJSON */
+function windFrameFC(idx) {
+  const fr = wind.frames[idx] || [];
+  const feats = wind.grid.map(([lat, lon], i) => {
+    const p = fr[i] || [0, 0];
+    return feature("Point", [lon, lat], { spd: p[0], dir: p[1] });
+  });
   return { type: "FeatureCollection", features: feats };
 }
 
@@ -506,29 +518,95 @@ async function toggleWind(on) {
   wind.on = on;
   document.getElementById("layer-wind").classList.toggle("on", on);
   document.getElementById("wind-legend").hidden = !on;
+  document.getElementById("time-slider").hidden = !on;
   if (!on) {
     for (const id of WIND_LAYERS) if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", "none");
+    if (map.getLayer("storm-at-time")) map.setLayoutProperty("storm-at-time", "visibility", "none");
     return;
   }
-  let fc;
-  try { fc = await loadWind(); }
+  try { await loadWind(); }
   catch (e) { document.getElementById("wind-time").textContent = "暂无风力数据"; return; }
-  if (!ensureWindLayer(fc)) { map.once("load", () => wind.on && toggleWind(true)); return; }
+  if (!ensureWindLayer(windFrameFC(wind.idx))) { map.once("load", () => wind.on && toggleWind(true)); return; }
+  ensureStormMarker();
   for (const id of WIND_LAYERS) map.setLayoutProperty(id, "visibility", "visible");
+  const range = document.getElementById("time-range");
+  range.max = String(Math.max(0, wind.times.length - 1));
+  range.value = String(Math.min(wind.idx, wind.times.length - 1));
+  applyFrame(+range.value);
   document.getElementById("wind-time").textContent = wind.updatedAt ? `更新于 ${wind.updatedAt}` : "";
+}
+
+/* 应用某一帧：风场箭头 + 台风该时刻位置标记 + 时间标签 */
+function applyFrame(idx) {
+  wind.idx = idx;
+  if (map.getSource("wind-src")) map.getSource("wind-src").setData(windFrameFC(idx));
+  updateStormMarker(idx);
+  const lead = idx * wind.stepH;
+  const t = wind.times[idx] ? new Date(new Date(wind.times[idx].replace("Z", "+00:00")).getTime() + 8 * 3.6e6) : null;
+  const when = t ? `${t.getUTCDate()}日${String(t.getUTCHours()).padStart(2, "0")}时` : "";
+  document.getElementById("time-label").innerHTML = lead === 0
+    ? `现在 · ${when}（北京时）`
+    : `<span class="lead">+${lead}h</span> · ${when}（北京时，预报）`;
+}
+
+/* 台风时刻标记：把选中台风的实况+中国预报轨迹插值到该帧时刻，画一个空心环 */
+function stormTimeline() {
+  const s = state.storm;
+  if (!s) return [];
+  const bjEp = (str) => new Date(str.replace(" ", "T") + "+08:00").getTime();
+  const tl = s.track.map((p) => [bjEp(p.time), p.lat, p.lng]);
+  const fc = s.forecasts["中国"] || Object.values(s.forecasts)[0];
+  if (fc) for (const p of fc.points) tl.push([bjEp(p.time), p.lat, p.lng]);
+  tl.sort((a, b) => a[0] - b[0]);
+  return tl;
+}
+function interpAt(tl, ep) {
+  if (!tl.length) return null;
+  if (ep <= tl[0][0]) return [tl[0][1], tl[0][2]];
+  if (ep >= tl[tl.length - 1][0]) return [tl[tl.length - 1][1], tl[tl.length - 1][2]];
+  for (let i = 1; i < tl.length; i++) {
+    if (tl[i][0] >= ep) {
+      const [e0, la0, lo0] = tl[i - 1], [e1, la1, lo1] = tl[i];
+      const f = e1 > e0 ? (ep - e0) / (e1 - e0) : 0;
+      return [la0 + (la1 - la0) * f, lo0 + (lo1 - lo0) * f];
+    }
+  }
+  return null;
+}
+function ensureStormMarker() {
+  if (map.getSource("storm-at-time") || !map.getLayer("wind-circles")) return;
+  map.addSource("storm-at-time", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
+  map.addLayer({
+    id: "storm-at-time", type: "circle", source: "storm-at-time",
+    layout: { visibility: "none" },
+    paint: {
+      "circle-radius": 11, "circle-color": "rgba(234,134,64,0.15)",
+      "circle-stroke-width": 2.5, "circle-stroke-color": "#ea8640",
+    },
+  }); // 顶层，标记盖在最上
+}
+function updateStormMarker(idx) {
+  if (!map.getLayer("storm-at-time")) return;
+  const ep = wind.times[idx] ? new Date(wind.times[idx].replace("Z", "+00:00")).getTime() : null;
+  const pos = ep ? interpAt(stormTimeline(), ep) : null;
+  map.setLayoutProperty("storm-at-time", "visibility", wind.on ? "visible" : "none");
+  map.getSource("storm-at-time").setData({
+    type: "FeatureCollection",
+    features: pos ? [feature("Point", [pos[1], pos[0]], {})] : [],
+  });
 }
 
 async function refreshWind() {
   if (!wind.on) return;
   try {
-    const fc = await loadWind();
-    if (map.getSource("wind-src")) map.getSource("wind-src").setData(fc);
-
+    await loadWind();
+    if (map.getSource("wind-src")) applyFrame(Math.min(wind.idx, Math.max(0, wind.times.length - 1)));
     document.getElementById("wind-time").textContent = wind.updatedAt ? `更新于 ${wind.updatedAt}` : "";
   } catch (e) { /* 保留上一帧 */ }
 }
 
 document.getElementById("layer-wind").onclick = () => toggleWind(!wind.on);
+document.getElementById("time-range").oninput = (e) => { if (wind.on) applyFrame(+e.target.value); };
 
 /* ---------- helpers ---------- */
 

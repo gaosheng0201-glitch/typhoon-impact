@@ -430,3 +430,14 @@ button, select, input { font-family: var(--serif); }
   background: linear-gradient(90deg, #8a867e, #aaa69f, #c9a961, #ea8640, #d0442c);
 }
 @media (max-width: 680px) { #layer-wind { font-size: 12px; padding: 6px 10px; } #wind-legend { width: 150px; } }
+
+/* ---------- 时间轴滑块 ---------- */
+#time-slider {
+  position: fixed; left: 50%; transform: translateX(-50%); bottom: 82px; z-index: 5;
+  width: min(560px, 88vw); background: var(--bg-panel); border: 1px solid var(--hairline);
+  border-radius: 10px; padding: 10px 16px 12px; backdrop-filter: blur(6px); text-align: center;
+}
+#time-range { width: 100%; accent-color: var(--accent); cursor: pointer; }
+#time-label { font-family: var(--serif); font-size: 13px; color: var(--ink); margin-top: 4px; letter-spacing: .02em; }
+#time-label .lead { color: var(--accent); font-weight: 600; }
+@media (max-width: 680px) { #time-slider { bottom: 74px; padding: 8px 12px 10px; } #time-label { font-size: 12px; } }

@@ -45,7 +45,7 @@
   }
   </script>
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-  <link href="style.css?v=47" rel="stylesheet">
+  <link href="style.css?v=48" rel="stylesheet">
 </head>
 <body>
   <div id="map"></div>
@@ -143,6 +143,12 @@
     </div>
   </section>
 
+  <!-- 时间轴滑块：拖动让风场与台风位置沿同一时间轴联动（风力层开启时显示） -->
+  <div id="time-slider" hidden>
+    <input type="range" id="time-range" min="0" max="16" value="0" step="1" aria-label="时间">
+    <div id="time-label">现在</div>
+  </div>
+
   <div id="share-modal">
     <div id="share-box">
       <canvas id="share-canvas"></canvas>
@@ -154,9 +160,9 @@
   </div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script src="data.js?v=47"></script>
-  <script src="panel.js?v=47"></script>
-  <script src="app.js?v=47"></script>
-  <script src="hindcast.js?v=47"></script>
+  <script src="data.js?v=48"></script>
+  <script src="panel.js?v=48"></script>
+  <script src="app.js?v=48"></script>
+  <script src="hindcast.js?v=48"></script>
 </body>
 </html>
