@@ -3,6 +3,7 @@
 cd "$(dirname "$0")/.." || exit 1
 python3 fetcher/fetch.py || exit 1
 python3 fetcher/fetch_metar.py || true
+python3 fetcher/fetch_fnv3.py || true
 if ! git diff --quiet docs/data; then
   git add docs/data
   git commit --quiet -m "data: 自动更新台风数据 $(date -u +%Y-%m-%dT%H:%MZ)"

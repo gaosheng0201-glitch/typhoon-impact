@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>台风影响</title>
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-  <link href="style.css?v=30" rel="stylesheet">
+  <link href="style.css?v=33" rel="stylesheet">
 </head>
 <body>
   <div id="map"></div>
@@ -25,6 +25,10 @@
       <section>
         <h2>强度图例</h2>
         <div id="legend"></div>
+      </section>
+      <section id="hindcast-section" hidden>
+        <h2>AI 预报复盘</h2>
+        <div id="hindcast"></div>
       </section>
       <footer id="meta"></footer>
     </div>
@@ -92,8 +96,9 @@
   </div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script src="data.js?v=30"></script>
-  <script src="panel.js?v=30"></script>
-  <script src="app.js?v=30"></script>
+  <script src="data.js?v=33"></script>
+  <script src="panel.js?v=33"></script>
+  <script src="app.js?v=33"></script>
+  <script src="hindcast.js?v=33"></script>
 </body>
 </html>

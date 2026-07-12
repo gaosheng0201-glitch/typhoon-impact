@@ -364,3 +364,24 @@ button, select, input { font-family: var(--serif); }
   #loc-row select { flex: 1 1 40%; }
   .maplibregl-ctrl-attrib { font-size: 9px; }
 }
+
+/* ---------- AI 预报复盘 ---------- */
+#hindcast { font-size: 12.5px; line-height: 1.5; }
+.hc-model { color: var(--ink-3); font-size: 11px; letter-spacing: .02em; margin-bottom: 6px; }
+.hc-take { color: var(--ink); margin-bottom: 9px; }
+.hc-take b { color: var(--accent); font-weight: 700; }
+.hc-chart { display: flex; flex-direction: column; gap: 4px; margin-bottom: 7px; }
+.hc-row { display: flex; align-items: center; gap: 7px; }
+.hc-lead { width: 34px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.hc-bar { flex: 1; height: 8px; background: var(--bg-raise); border-radius: 4px; overflow: hidden; }
+.hc-bar i { display: block; height: 100%; background: linear-gradient(90deg, #c9a961, var(--accent)); border-radius: 4px; }
+.hc-km { width: 46px; text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; }
+.hc-hint { color: var(--ink-3); font-size: 11px; margin-bottom: 8px; }
+.hc-btn {
+  width: 100%; padding: 7px 10px; font-family: var(--serif); font-size: 12.5px;
+  color: var(--ink); background: var(--bg-raise); border: 1px solid var(--hairline);
+  border-radius: 7px; cursor: pointer;
+}
+.hc-btn:hover { border-color: var(--accent); color: var(--accent); }
+.hc-attr { color: var(--ink-3); font-size: 10.5px; margin-top: 8px; line-height: 1.45; }
+.hc-attr a { color: var(--ink-2); }
