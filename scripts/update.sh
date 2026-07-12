@@ -3,6 +3,7 @@
 cd "$(dirname "$0")/.." || exit 1
 python3 fetcher/fetch.py || exit 1
 python3 fetcher/fetch_metar.py || true
+python3 fetcher/fetch_wind.py || true
 python3 fetcher/fetch_fnv3.py || true
 if ! git diff --quiet docs/data; then
   git add docs/data

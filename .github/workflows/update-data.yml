@@ -23,6 +23,8 @@ jobs:
         run: python3 fetcher/fetch.py
       - name: Fetch METAR observations (此刻实测锚点)
         run: python3 fetcher/fetch_metar.py || true
+      - name: Fetch wind grid (风场图层)
+        run: python3 fetcher/fetch_wind.py || true
       - name: Commit & push if changed
         run: |
           if ! git diff --quiet docs/data; then

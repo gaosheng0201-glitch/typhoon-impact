@@ -411,3 +411,22 @@ button, select, input { font-family: var(--serif); }
   #layer-radar { font-size: 12px; padding: 6px 10px; }
   #radar-legend { width: 150px; }
 }
+
+/* 图层控件：两个开关并排 + 风场图例 */
+.ml-btns { display: flex; gap: 6px; justify-content: flex-end; }
+#layer-wind {
+  font-family: var(--serif); font-size: 13px; color: var(--ink-2);
+  background: var(--bg-panel); border: 1px solid var(--hairline);
+  border-radius: 8px; padding: 7px 12px; cursor: pointer; backdrop-filter: blur(6px);
+}
+#layer-wind:hover { color: var(--ink); }
+#layer-wind.on { color: var(--paper); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+#wind-legend {
+  margin-top: 8px; background: var(--bg-panel); border: 1px solid var(--hairline);
+  border-radius: 8px; padding: 9px 11px; width: 168px; backdrop-filter: blur(6px);
+}
+.wl-bar {
+  height: 8px; border-radius: 4px;
+  background: linear-gradient(90deg, #8a867e, #aaa69f, #c9a961, #ea8640, #d0442c);
+}
+@media (max-width: 680px) { #layer-wind { font-size: 12px; padding: 6px 10px; } #wind-legend { width: 150px; } }

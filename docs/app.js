@@ -150,6 +150,7 @@ function addLayers() {
 
 async function refresh() {
   refreshRadar(); // 降水实况独立刷新，不受台风数据成败影响
+  refreshWind();
   try {
     state.index = await TyphoonData.loadIndex();
   } catch (e) {
@@ -451,6 +452,84 @@ async function refreshRadar() {
 }
 
 document.getElementById("layer-radar").onclick = () => toggleRadar(!rv.on);
+
+/* ---------- 风场图层（风羽箭头，数据 Open-Meteo 网格快照，零额外依赖） ----------
+   箭头指向"风的去向"（风向是来向，故 +180）；靠 icon-allow-overlap:false 自动稀释密度，
+   放大才显更多箭头。按风速着色/微调大小。置于台风图层之下。 */
+const wind = { on: false, loaded: false, updatedAt: null };
+
+/* SDF 箭头图标：一根杆 + 三角头，指向正北；由 icon-color 按风速上色 */
+function makeArrowImage() {
+  const s = 34, c = document.createElement("canvas"); c.width = c.height = s;
+  const x = c.getContext("2d");
+  x.strokeStyle = "#fff"; x.fillStyle = "#fff"; x.lineWidth = 3; x.lineCap = "round";
+  x.beginPath(); x.moveTo(17, 28); x.lineTo(17, 11); x.stroke();
+  x.beginPath(); x.moveTo(17, 5); x.lineTo(11, 15); x.lineTo(23, 15); x.closePath(); x.fill();
+  return x.getImageData(0, 0, s, s);
+}
+
+async function loadWind() {
+  const d = await fetchJSON(`data/wind.json?t=${Date.now()}`);
+  wind.updatedAt = d.updatedAt;
+  const feats = (d.points || []).map(([lat, lon, spd, dir]) =>
+    feature("Point", [lon, lat], { spd, dir }));
+  return { type: "FeatureCollection", features: feats };
+}
+
+function ensureWindLayer(fc) {
+  if (map.getSource("wind-src")) { map.getSource("wind-src").setData(fc); return true; }
+  if (!map.getLayer("wind-circles")) return false;
+  if (!map.hasImage("wind-arrow")) {
+    const img = makeArrowImage();
+    if (img) map.addImage("wind-arrow", img, { sdf: true });
+  }
+  map.addSource("wind-src", { type: "geojson", data: fc });
+  map.addLayer({
+    id: "wind-arrows", type: "symbol", source: "wind-src",
+    layout: {
+      "icon-image": "wind-arrow",
+      "icon-rotate": ["+", ["get", "dir"], 180],
+      "icon-rotation-alignment": "map",
+      "icon-allow-overlap": false,   // 自动稀释：重叠的箭头不画，放大才逐渐显现
+      "icon-padding": 6,
+      "icon-size": ["interpolate", ["linear"], ["get", "spd"], 0, 0.5, 60, 1.0],
+      "visibility": "none",
+    },
+    paint: {
+      "icon-color": ["interpolate", ["linear"], ["get", "spd"],
+        2, "#8a867e", 20, "#aaa69f", 40, "#c9a961", 62, "#ea8640", 90, "#d0442c"],
+      "icon-opacity": 0.9,
+    },
+  }, "wind-circles");
+  return true;
+}
+
+async function toggleWind(on) {
+  wind.on = on;
+  document.getElementById("layer-wind").classList.toggle("on", on);
+  document.getElementById("wind-legend").hidden = !on;
+  if (!on) {
+    if (map.getLayer("wind-arrows")) map.setLayoutProperty("wind-arrows", "visibility", "none");
+    return;
+  }
+  let fc;
+  try { fc = await loadWind(); }
+  catch (e) { document.getElementById("wind-time").textContent = "暂无风场数据"; return; }
+  if (!ensureWindLayer(fc)) { map.once("load", () => wind.on && toggleWind(true)); return; }
+  map.setLayoutProperty("wind-arrows", "visibility", "visible");
+  document.getElementById("wind-time").textContent = wind.updatedAt ? `更新于 ${wind.updatedAt}` : "";
+}
+
+async function refreshWind() {
+  if (!wind.on) return;
+  try {
+    const fc = await loadWind();
+    if (map.getSource("wind-src")) map.getSource("wind-src").setData(fc);
+    document.getElementById("wind-time").textContent = wind.updatedAt ? `更新于 ${wind.updatedAt}` : "";
+  } catch (e) { /* 保留上一帧 */ }
+}
+
+document.getElementById("layer-wind").onclick = () => toggleWind(!wind.on);
 
 /* ---------- helpers ---------- */
 
