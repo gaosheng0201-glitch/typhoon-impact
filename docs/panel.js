@@ -39,7 +39,7 @@ const ImpactPanel = (() => {
   async function init() {
     [P.regions, P.checklists, P.analogs, P.history] = await Promise.all([
       fetchJSON2("data/regions.json"),
-      fetchJSON2("data/checklists.json"),
+      fetchJSON2(`data/checklists.json?t=${Date.now()}`),
       fetchJSON2(`data/analogs.json?t=${Date.now()}`),
       fetchJSON2("data/history.json").catch(() => null), // 历史档案缺失时降级
     ]);
@@ -260,14 +260,28 @@ const ImpactPanel = (() => {
      进行中=避险，过境后=恢复期（含人群补充） */
   function phaseChecklist(a) {
     const ph = P.checklists.phases || {};
+    // 减弱期：峰值已过、风雨在退——用过渡清单（避险→恢复的中间态），不再是满血避险
+    if (a.phase === "during" && a.easing && ph.easing) {
+      return ph.easing.concat((ph.after_extra || {})[P.persona] || []);
+    }
     if (a.phase === "during" && ph.during) return ph.during;
-    if (a.phase === "after" && ph.after) {
-      return ph.after.concat((ph.after_extra || {})[P.persona] || []);
+    if (a.phase === "after") {
+      // 按本地「实际」影响强度分档：擦肩而过给轻恢复，正面重创才给全套
+      const base = (localImpactHeavy(a) ? ph.after : (ph.after_light || ph.after)) || [];
+      return base.concat((ph.after_extra || {})[P.persona] || []);
     }
     if (a.phase === "approach" && !a.win && a.closing && ph.watch) {
       return ph.watch.concat((ph.watch_extra || {})[P.persona] || []);
     }
     return checklistItems(a.level);
+  }
+
+  /* 本地实际影响是否达到「重档」：按真实落地的雨量/阵风/后续降雨判定，
+     擦肩而过（外围影响）走轻档恢复，别拿山洪滑坡吓一个没被淹的城市 */
+  function localImpactHeavy(a) {
+    const gustPk = a.peakGust ? a.peakGust.v : 0;      // km/h
+    return (a.rain || 0) >= 100 || gustPk >= 88 /* ~10级 */ ||
+      (a.postRain24 || 0) >= 30 || a.level >= 4;
   }
 
   /* ---------- 评估 ---------- */
@@ -448,9 +462,10 @@ const ImpactPanel = (() => {
   function headlineFor(a) {
     if (a.phase === "during") return a.easing ? "风雨已过峰值，正在减弱" : "风雨影响进行中，减少外出";
     if (a.phase === "after") {
-      return a.postRain24 !== null && a.postRain24 >= 30
-        ? "台风已过境，但雨还没停——警惕滞后内涝与山洪"
-        : "台风已过境，恢复期注意安全";
+      if (a.postRain24 !== null && a.postRain24 >= 30)
+        return "台风已过境，但雨还没停——警惕滞后内涝与山洪";
+      return localImpactHeavy(a) ? "台风已过境，恢复期注意安全"
+        : "台风已过境，本地以外围影响为主，可逐步恢复";
     }
     if (!a.win && a.closing) return "台风还远，是否影响你尚无法判断";
     return LV_STYLE[a.level].headline;
