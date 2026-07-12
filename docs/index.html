@@ -45,7 +45,7 @@
   }
   </script>
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-  <link href="style.css?v=45" rel="stylesheet">
+  <link href="style.css?v=46" rel="stylesheet">
 </head>
 <body>
   <div id="map"></div>
@@ -54,7 +54,7 @@
   <div id="map-layers">
     <div class="ml-btns">
       <button id="layer-radar" title="叠加降水实况（RainViewer 雷达观测）">降水实况</button>
-      <button id="layer-wind" title="叠加风场（Open-Meteo 10m 风）">风场</button>
+      <button id="layer-wind" title="叠加风力大小 + 风向（Open-Meteo 10m 风）">风力</button>
     </div>
     <div id="radar-legend" hidden>
       <div class="rl-bar"></div>
@@ -64,7 +64,7 @@
     <div id="wind-legend" hidden>
       <div class="wl-bar"></div>
       <div class="rl-lab"><span>微风</span><span>风力</span><span>强风</span></div>
-      <div class="rl-attr">箭头指向风的去向 · 10m 风 · <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a><br><span id="wind-time"></span></div>
+      <div class="rl-attr">颜色＝风力大小，箭头＝风向 · 10m 风 · <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a><br><span id="wind-time"></span></div>
     </div>
   </div>
 
@@ -154,9 +154,9 @@
   </div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script src="data.js?v=45"></script>
-  <script src="panel.js?v=45"></script>
-  <script src="app.js?v=45"></script>
-  <script src="hindcast.js?v=45"></script>
+  <script src="data.js?v=46"></script>
+  <script src="panel.js?v=46"></script>
+  <script src="app.js?v=46"></script>
+  <script src="hindcast.js?v=46"></script>
 </body>
 </html>
