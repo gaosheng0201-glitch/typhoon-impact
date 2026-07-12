@@ -457,8 +457,8 @@ document.getElementById("layer-radar").onclick = () => toggleRadar(!rv.on);
    箭头指向"风的去向"（风向是来向，故 +180）；靠 icon-allow-overlap:false 自动稀释密度，
    放大才显更多箭头。按风速着色/微调大小。置于台风图层之下。 */
 const wind = { on: false, updatedAt: null };
-const WIND_LAYERS = ["wind-strength", "wind-arrows"];
-// 风速(km/h)→颜色：微风→强风，与图例一致；绿→石灰→沙金→橙→焦红
+const WIND_LAYERS = ["wind-arrows"];
+// 风速(km/h)→颜色：微风→强风，与图例一致；绿→石灰→沙金→橙→焦红。箭头本身按此上色。
 const WIND_COLOR = ["interpolate", ["linear"], ["get", "spd"],
   2, "#5a9e7a", 20, "#aaa69f", 40, "#c9a961", 62, "#ea8640", 90, "#d0442c"];
 
@@ -480,37 +480,24 @@ async function loadWind() {
   return { type: "FeatureCollection", features: feats };
 }
 
-/* 风：色块场（风力大小，一眼看哪里风大）+ 箭头（风向）叠加。纯 MapLibre、零依赖。 */
+/* 风：箭头（羽毛图）——指向风的去向、按风速上色，方向与大小都在箭头上。
+   靠 icon-allow-overlap:false 自动稀释密度，放大才显更多。纯 MapLibre、零依赖。 */
 function ensureWindLayer(fc) {
   if (map.getSource("wind-src")) { map.getSource("wind-src").setData(fc); return true; }
   if (!map.getLayer("wind-circles")) return false;
   if (!map.hasImage("wind-arrow")) map.addImage("wind-arrow", makeArrowImage(), { sdf: true });
   map.addSource("wind-src", { type: "geojson", data: fc });
-  // 底层：柔和色块场——大半径、高模糊、半透明圆盘相邻叠成连续色毯
-  map.addLayer({
-    id: "wind-strength", type: "circle", source: "wind-src",
-    layout: { visibility: "none" },
-    paint: {
-      "circle-radius": ["interpolate", ["linear"], ["zoom"], 3, 16, 5, 42, 7, 120, 9, 400],
-      "circle-color": WIND_COLOR, "circle-blur": 1, "circle-opacity": 0.3,
-    },
-  }, "wind-circles");
-  // 上层：方向箭头——指向风的去向(dir+180)，碰撞自动稀释密度，浅色不抢色块
   map.addLayer({
     id: "wind-arrows", type: "symbol", source: "wind-src",
     layout: {
       "icon-image": "wind-arrow",
-      "icon-rotate": ["+", ["get", "dir"], 180],
+      "icon-rotate": ["+", ["get", "dir"], 180],   // 指向风的去向（风向是来向）
       "icon-rotation-alignment": "map",
       "icon-allow-overlap": false, "icon-padding": 6,
-      "icon-size": ["interpolate", ["linear"], ["get", "spd"], 0, 0.45, 60, 0.9],
+      "icon-size": ["interpolate", ["linear"], ["get", "spd"], 0, 0.5, 60, 1.0],
       "visibility": "none",
     },
-    paint: {
-      "icon-color": ["interpolate", ["linear"], ["get", "spd"],
-        2, "#cfcbc2", 40, "#eeece6", 90, "#ffffff"],
-      "icon-opacity": 0.85,
-    },
+    paint: { "icon-color": WIND_COLOR, "icon-opacity": 0.92 },
   }, "wind-circles");
   return true;
 }
