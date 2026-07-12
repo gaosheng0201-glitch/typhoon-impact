@@ -45,10 +45,20 @@
   }
   </script>
   <link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
-  <link href="style.css?v=40" rel="stylesheet">
+  <link href="style.css?v=42" rel="stylesheet">
 </head>
 <body>
   <div id="map"></div>
+
+  <!-- 右上：地图图层开关（降水实况等） -->
+  <div id="map-layers">
+    <button id="layer-radar" title="叠加降水实况（RainViewer 雷达观测）">降水实况</button>
+    <div id="radar-legend" hidden>
+      <div class="rl-bar"></div>
+      <div class="rl-lab"><span>小</span><span>雨强</span><span>大</span></div>
+      <div class="rl-attr">雷达实况 · <a href="https://www.rainviewer.com/" target="_blank" rel="noopener">RainViewer</a><br><span id="radar-time"></span></div>
+    </div>
+  </div>
 
   <!-- 左上：台风数据面板（可收起） -->
   <aside id="panel">
@@ -136,9 +146,9 @@
   </div>
 
   <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
-  <script src="data.js?v=40"></script>
-  <script src="panel.js?v=40"></script>
-  <script src="app.js?v=40"></script>
-  <script src="hindcast.js?v=40"></script>
+  <script src="data.js?v=42"></script>
+  <script src="panel.js?v=42"></script>
+  <script src="app.js?v=42"></script>
+  <script src="hindcast.js?v=42"></script>
 </body>
 </html>

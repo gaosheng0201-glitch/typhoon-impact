@@ -385,3 +385,29 @@ button, select, input { font-family: var(--serif); }
 .hc-btn:hover { border-color: var(--accent); color: var(--accent); }
 .hc-attr { color: var(--ink-3); font-size: 10.5px; margin-top: 8px; line-height: 1.45; }
 .hc-attr a { color: var(--ink-2); }
+
+/* ---------- 地图图层开关（降水实况） ---------- */
+#map-layers { position: fixed; top: 14px; right: 14px; z-index: 5; text-align: right; }
+#layer-radar {
+  font-family: var(--serif); font-size: 13px; color: var(--ink-2);
+  background: var(--bg-panel); border: 1px solid var(--hairline);
+  border-radius: 8px; padding: 7px 12px; cursor: pointer; backdrop-filter: blur(6px);
+}
+#layer-radar:hover { color: var(--ink); }
+#layer-radar.on { color: var(--paper); background: var(--accent); border-color: var(--accent); font-weight: 600; }
+#radar-legend {
+  margin-top: 8px; background: var(--bg-panel); border: 1px solid var(--hairline);
+  border-radius: 8px; padding: 9px 11px; width: 168px; backdrop-filter: blur(6px);
+  text-align: left;
+}
+.rl-bar {
+  height: 8px; border-radius: 4px;
+  background: linear-gradient(90deg, #2ecc71, #7ed957, #f7e733, #f5a623, #e8452a, #b02a8f);
+}
+.rl-lab { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--ink-3); margin-top: 3px; }
+.rl-attr { font-size: 10px; color: var(--ink-3); margin-top: 7px; line-height: 1.5; }
+.rl-attr a { color: var(--ink-2); }
+@media (max-width: 680px) {
+  #layer-radar { font-size: 12px; padding: 6px 10px; }
+  #radar-legend { width: 150px; }
+}

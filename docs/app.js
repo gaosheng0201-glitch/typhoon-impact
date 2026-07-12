@@ -149,6 +149,7 @@ function addLayers() {
 }
 
 async function refresh() {
+  refreshRadar(); // 降水实况独立刷新，不受台风数据成败影响
   try {
     state.index = await TyphoonData.loadIndex();
   } catch (e) {
@@ -375,6 +376,78 @@ function renderMeta() {
     ...(rp && rp.est ? [`风圈半径官方已停发（系统减弱），图中为按当前强度的估算圈`] : []),
   ].join("<br>");
 }
+
+/* ---------- 降水实况图层（RainViewer 免费雷达观测） ----------
+   实况观测（非预报），每 10 分钟更新、与真实台风自动对齐；实测覆盖大陆真实回波。
+   免费免 key，条款要求署名。tilecache.rainviewer.com 大陆可达性待实测，失败则静默无图。 */
+const rv = { on: false, host: null, path: null, time: null };
+
+async function loadRainviewerMeta() {
+  const d = await (await fetch("https://api.rainviewer.com/public/weather-maps.json")).json();
+  const past = d.radar && d.radar.past;
+  if (!past || !past.length) throw new Error("no radar frames");
+  rv.host = d.host;
+  rv.path = past[past.length - 1].path;
+  rv.time = past[past.length - 1].time;
+}
+
+/* 配色方案 1（绿→黄→红，强度直观）；smooth=1 snow=1；256px */
+function rvTileUrl() { return `${rv.host}${rv.path}/256/{z}/{x}/{y}/1/1_1.png`; }
+
+function ensureRadarLayer() {
+  if (map.getSource("rv-radar")) return true;
+  // wind-circles 由 addLayers() 在 map 'load' 时创建——它存在＝样式就绪、可安全加层
+  // （比 isStyleLoaded() 可靠：后者要求 sprite/所有源都就绪，底图慢时会长期为 false）
+  if (!map.getLayer("wind-circles")) return false;
+  map.addSource("rv-radar", { type: "raster", tiles: [rvTileUrl()], tileSize: 256 });
+  // 置于台风图层之下、底图之上——降水不遮挡路径/风圈
+  const before = map.getLayer("wind-circles") ? "wind-circles" : undefined;
+  map.addLayer({
+    id: "rv-radar", type: "raster", source: "rv-radar",
+    paint: { "raster-opacity": 0.6 }, layout: { visibility: "none" },
+  }, before);
+  return true;
+}
+
+function radarTimeLabel() {
+  if (!rv.time) return "";
+  const d = new Date(rv.time * 1000);
+  const p = (n) => String(n).padStart(2, "0");
+  return `观测于 ${p(d.getHours())}:${p(d.getMinutes())}`;
+}
+
+async function toggleRadar(on) {
+  rv.on = on;
+  document.getElementById("layer-radar").classList.toggle("on", on);
+  document.getElementById("radar-legend").hidden = !on;
+  if (!on) {
+    if (map.getLayer("rv-radar")) map.setLayoutProperty("rv-radar", "visibility", "none");
+    return;
+  }
+  try {
+    if (!rv.host) await loadRainviewerMeta();
+  } catch (e) {
+    document.getElementById("radar-time").textContent = "暂无降水数据";
+    return;
+  }
+  if (!ensureRadarLayer()) { map.once("load", () => rv.on && toggleRadar(true)); return; }
+  map.getSource("rv-radar").setTiles([rvTileUrl()]);
+  map.setLayoutProperty("rv-radar", "visibility", "visible");
+  document.getElementById("radar-time").textContent = radarTimeLabel();
+}
+
+async function refreshRadar() {
+  if (!rv.on) return;
+  try {
+    await loadRainviewerMeta();
+    if (map.getSource("rv-radar")) {
+      map.getSource("rv-radar").setTiles([rvTileUrl()]);
+      document.getElementById("radar-time").textContent = radarTimeLabel();
+    }
+  } catch (e) { /* 保留上一帧 */ }
+}
+
+document.getElementById("layer-radar").onclick = () => toggleRadar(!rv.on);
 
 /* ---------- helpers ---------- */
 
