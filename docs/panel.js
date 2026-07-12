@@ -1070,14 +1070,16 @@ const ImpactPanel = (() => {
     }
     ctx.restore();
 
-    /* ---- 结论 ---- */
+    /* ---- 结论（流式布局：标题可能折两行，后续内容跟着下移，绝不重叠） ---- */
     ctx.fillStyle = "#eeece6";
     ctx.font = F(800, 40);
-    wrapText(ctx, headlineFor(a), 36, 540, W - 72, 52);
+    const hLines = wrapText(ctx, headlineFor(a), 36, 540, W - 72, 52);
+    let yy = 540 + (hLines - 1) * 52; // 标题最后一行基线
     ctx.fillStyle = "#aaa69f";
     ctx.font = F(400, 22);
+    yy += 56;
     ctx.fillText(a.slowMover ? "停留型台风：移速慢、下得久，危险在雨不在风"
-      : "台风强度 ≠ 你受影响的程度，距离和路径才是关键", 36, 596);
+      : "台风强度 ≠ 你受影响的程度，距离和路径才是关键", 36, yy);
 
     /* ---- 数据宫格 ---- */
     const stats = [
@@ -1087,8 +1089,9 @@ const ImpactPanel = (() => {
       { v: a.endPoint ? fmtTime(a.endPoint.time) : "—", u: "", k: "预计结束" },
     ];
     const gw = (W - 72 - 3 * 12) / 4;
+    const gy = yy + 32;
     stats.forEach((st2, i) => {
-      const gx = 36 + i * (gw + 12), gy = 628;
+      const gx = 36 + i * (gw + 12);
       ctx.fillStyle = "#26241e";
       roundRect(ctx, gx, gy, gw, 108, 14);
       ctx.fill();
@@ -1105,13 +1108,14 @@ const ImpactPanel = (() => {
       ctx.fillText(st2.k, gx + 16, gy + 86);
     });
 
-    /* ---- 行动建议 ---- */
+    /* ---- 行动建议：分享卡是海报不是文档——标题占两行时只放 2 条，保住留白 ---- */
+    const ty = gy + 108 + 60;
     ctx.fillStyle = "#eeece6";
     ctx.font = F(800, 26);
-    ctx.fillText("现在该做的", 36, 796);
-    const items = phaseChecklist(a).slice(0, 3);
+    ctx.fillText("现在该做的", 36, ty);
+    const items = phaseChecklist(a).slice(0, hLines > 1 ? 2 : 3);
     items.forEach((item, i) => {
-      const iy = 830 + i * 74;
+      const iy = ty + 34 + i * 74;
       ctx.fillStyle = "#26241e";
       roundRect(ctx, 36, iy, W - 72, 60, 12);
       ctx.fill();
@@ -1120,7 +1124,11 @@ const ImpactPanel = (() => {
       ctx.fill();
       ctx.fillStyle = "#c9c5bc";
       ctx.font = F(400, 23);
-      const text = item.length > 26 ? item.slice(0, 25) + "…" : item;
+      // 按像素宽截断，避免定长截字导致过早或过晚出现省略号
+      const maxTw = W - 72 - 54 - 34;
+      let text = item;
+      while (text.length > 1 && ctx.measureText(text).width > maxTw) text = text.slice(0, -1);
+      if (text !== item) text = text.slice(0, -1) + "…";
       ctx.fillText(text, 90, iy + 39);
     });
 
@@ -1138,17 +1146,19 @@ const ImpactPanel = (() => {
   }
 
   function wrapText(ctx, text, x, y, maxWidth, lineHeight) {
-    let line = "", cy = y;
+    let line = "", cy = y, lines = 0;
     for (const ch of text) {
       if (ctx.measureText(line + ch).width > maxWidth) {
         ctx.fillText(line, x, cy);
         line = ch;
         cy += lineHeight;
+        lines++;
       } else {
         line += ch;
       }
     }
-    if (line) ctx.fillText(line, x, cy);
+    if (line) { ctx.fillText(line, x, cy); lines++; }
+    return lines;
   }
 
   /* ---------- utils ---------- */
