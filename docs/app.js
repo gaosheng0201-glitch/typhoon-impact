@@ -391,15 +391,18 @@ async function loadRainviewerMeta() {
   rv.time = past[past.length - 1].time;
 }
 
-/* 配色方案 1（绿→黄→红，强度直观）；smooth=1 snow=1；256px */
-function rvTileUrl() { return `${rv.host}${rv.path}/256/{z}/{x}/{y}/1/1_1.png`; }
+/* 配色方案 1（绿→黄→红，强度直观）；smooth=1 snow=1；512px 更清晰。
+   RainViewer 雷达瓦片最高只到 z=7（再高返回「zoom level not supported」占位图），
+   故源设 RV_MAXZOOM，超过后 MapLibre 自动拉伸最后一级、不再请求占位层。 */
+const RV_MAXZOOM = 7;
+function rvTileUrl() { return `${rv.host}${rv.path}/512/{z}/{x}/{y}/1/1_1.png`; }
 
 function ensureRadarLayer() {
   if (map.getSource("rv-radar")) return true;
   // wind-circles 由 addLayers() 在 map 'load' 时创建——它存在＝样式就绪、可安全加层
   // （比 isStyleLoaded() 可靠：后者要求 sprite/所有源都就绪，底图慢时会长期为 false）
   if (!map.getLayer("wind-circles")) return false;
-  map.addSource("rv-radar", { type: "raster", tiles: [rvTileUrl()], tileSize: 256 });
+  map.addSource("rv-radar", { type: "raster", tiles: [rvTileUrl()], tileSize: 512, maxzoom: RV_MAXZOOM });
   // 置于台风图层之下、底图之上——降水不遮挡路径/风圈
   const before = map.getLayer("wind-circles") ? "wind-circles" : undefined;
   map.addLayer({
