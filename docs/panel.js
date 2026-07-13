@@ -1022,16 +1022,6 @@ const ImpactPanel = (() => {
 
     // 清单（按阶段：备灾 / 避险 / 恢复期）
     const items = phaseChecklist(a);
-    // 官方预警对应动作：本地有生效官方预警时，把该预警的针对性动作插进来——
-    // 即便台风没影响到你，这条暴雨/雷暴大风等预警该做的也要给（去重，不与已有项重复）
-    const ows = officialWarnings();
-    if (ows.length && P.checklists.warning_extra) {
-      const seen = new Set(items), wItems = [];
-      for (const w of ows) for (const it of (P.checklists.warning_extra[w.type] || [])) {
-        if (!seen.has(it)) { seen.add(it); wItems.push(it); }
-      }
-      items.unshift(...wItems);
-    }
     // 海浪清单：沿海/海岛 + 外海浪高达提示级时，置于最前（对海边人，海才是即时危险）
     if (wave && !wave.none && P.checklists.wave_extra) {
       const we = P.checklists.wave_extra;
