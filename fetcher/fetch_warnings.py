@@ -19,9 +19,11 @@ import json
 import re
 import urllib.request
 from pathlib import Path
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from email.utils import parsedate_to_datetime
 from xml.etree import ElementTree as ET
+
+BJT = timezone(timedelta(hours=8))   # 北京时（官方预警发布时刻用）
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "data" / "warnings.json"
@@ -143,12 +145,22 @@ def main():
         pub = dt(it.findtext("pubDate") or "")
         exp = dt(it.findtext(CAP + "expires") or "")
         area = (it.findtext(CAP + "areaDesc") or "").strip()
+        # guid 尾部 _YYYYMMDDHHMMSS 是官方原始发布时刻（北京时）——比 pubDate（WMO
+        # 转发时刻，晚约十分钟）更准。核对台山两条与中央气象台页面一致。
+        m = re.search(r"_(\d{14})$", guid)
+        issued = None
+        if m:
+            try:
+                issued = datetime.strptime(m.group(1), "%Y%m%d%H%M%S").replace(tzinfo=BJT)
+            except ValueError:
+                pass
         k = (adcode, typ)
         cur = latest.get(k)
         if cur is None or (pub and cur["_pub"] and pub > cur["_pub"]):
             latest[k] = {
                 "adcode": adcode, "type": typ, "color": color_of(title),
-                "area_en": area, "expires": exp, "lift": is_lift(title), "_pub": pub,
+                "area_en": area, "expires": exp, "lift": is_lift(title),
+                "_pub": pub, "_issued": issued or pub,
             }
 
     # 合并：上一份快照打底，本轮 feed 覆盖其涉及的 (adcode,type)
@@ -161,7 +173,7 @@ def main():
         merged[k] = {
             "adcode": x["adcode"], "type": x["type"], "color": color,
             "level": COLOR_LEVEL.get(color, ""),
-            "issued": iso(x["_pub"]),          # 发布时间：无失效时间时用它兜底
+            "issued": iso(x["_issued"]),       # 官方发布时刻（guid，北京时）；无失效时间时用它兜底
             "expires": iso(x["expires"]),
             "name": names.get(x["adcode"]) or x["area_en"],
         }
