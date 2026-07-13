@@ -370,7 +370,7 @@ const ImpactPanel = (() => {
     }
     if (a.phase === "during") {
       // 停留型台风：追加「被困数天怎么撑」——项目缘起（美莎克）场景
-      const stall = (a.slowMover && ph.during_stall) ? ph.during_stall : [];
+      const stall = (a.slowThreat && ph.during_stall) ? ph.during_stall : [];
       return (ph.during || []).concat(stall, ex("during_extra"));
     }
     if (a.phase === "after") {
@@ -587,9 +587,13 @@ const ImpactPanel = (() => {
     const anteRec = P.antecedent[`${P.loc.lat},${P.loc.lng}`];
     const soilW = (anteRec && typeof anteRec === "object") ? anteRec.w : 0;
 
+    // 停留型是「威胁」描述，只在台风确实会缓慢碾过你所在区域时才成立——
+    // 刚生成、远在洋面上移速慢的弱台风（海神教训）不算停留威胁，别贴标签
+    const slowThreat = slowMover && closest.dist < wr;
+
     return { closest, galeR, galeREst, inRange, win, rain, rainSrc, peakRain, peakGust, phase, postRain24,
              nowWx, easing, closing, fcEndTs, relevant, soilW,
-             level, moveKmh, slowMover, durationH, endPoint, stillInRangeAtEnd };
+             level, moveKmh, slowMover, slowThreat, durationH, endPoint, stillInRangeAtEnd };
   }
 
   /* 此刻天气的人话描述（小时雨强口径：<2.5 小雨 / <8 中雨 / <16 大雨 / ≥16 暴雨强度） */
@@ -902,7 +906,7 @@ const ImpactPanel = (() => {
       ${a.nowWx ? `<div class="timebrief">此刻本地：${nowWxDesc(a.nowWx)}<span class="muted">（${a.nowWx.obs ? `最近气象站 ${a.nowWx.distKm}km · ${a.nowWx.ageMin} 分钟前实测` : "模式实况，以体感为准"}）</span></div>` : ""}
       ${waveBanner}
       ${s.active === false ? `<div class="slow-badge"><b>残余环流</b> —— 已停编，但残涡仍可能强降雨，雨的风险未结束</div>` : ""}
-      ${a.slowMover ? `<div class="slow-badge"><b>停留型台风</b> —— 移速仅约 ${Math.round(a.moveKmh)} km/h，危险在雨不在风</div>` : ""}`;
+      ${a.slowThreat ? `<div class="slow-badge"><b>停留型台风</b> —— 移速仅约 ${Math.round(a.moveKmh)} km/h，危险在雨不在风</div>` : ""}`;
     box.querySelectorAll(".storm-chip").forEach((b) => {
       b.onclick = () => { P.focusTfid = b.dataset.tf; renderResult(); };
     });
@@ -924,7 +928,7 @@ const ImpactPanel = (() => {
           ? `<b>未来24小时预计仍有约 ${a.postRain24} mm 降雨</b>——过境不等于结束（模式预报）`
           : `<span class="muted">未来24小时残余降雨约 ${a.postRain24} mm（模式预报）</span>`]);
       }
-      if (a.durationH && a.phase === "approach") tl.push(["", `影响持续约 <b>${Math.round(a.durationH)} 小时</b>${a.slowMover ? "（停留型，明显偏长）" : ""}`]);
+      if (a.durationH && a.phase === "approach") tl.push(["", `影响持续约 <b>${Math.round(a.durationH)} 小时</b>${a.slowThreat ? "（停留型，明显偏长）" : ""}`]);
       tl.push(["", `<span class="muted">时间窗来源：${a.win.src === "模式" ? "本地逐时数值预报" : "官方路径几何推算"}</span>`]);
     }
     if (a.win) {
@@ -1458,7 +1462,7 @@ const ImpactPanel = (() => {
     ctx.fillStyle = "#aaa69f";
     ctx.font = F(400, 22);
     yy += 56;
-    ctx.fillText(a.slowMover ? "停留型台风：移速慢、下得久，危险在雨不在风"
+    ctx.fillText(a.slowThreat ? "停留型台风：移速慢、下得久，危险在雨不在风"
       : "台风强度 ≠ 你受影响的程度，距离和路径才是关键", 36, yy);
 
     /* ---- 数据宫格 ---- */
