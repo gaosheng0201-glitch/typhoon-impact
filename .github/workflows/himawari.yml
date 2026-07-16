@@ -1,0 +1,36 @@
+# 定时抓取葵花9号（Himawari-9）实况云图的帧列表（NICT 公开中继，无需 key）。
+# 只存「帧时刻 + 瓦片地址」，图片本身由前端直接向 NICT 取。见 fetcher/fetch_himawari.py。
+# 每 20 分钟一次：原始产品 10 分钟一帧，帧列表覆盖最近 2 小时，20 分钟足够跟上，
+# 又不必像预警那样压到 10 分钟。要更实时就把 cron 调成 */10。
+name: Update satellite frames
+
+on:
+  schedule:
+    - cron: "*/20 * * * *"   # 每 20 分钟
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 避免与 update-data.yml / warnings.yml 并发 push docs/data 撞车
+concurrency:
+  group: push-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch Himawari frames
+        run: python3 -u fetcher/fetch_himawari.py
+      - name: Commit & push if changed
+        run: |
+          if ! git diff --quiet docs/data/satellite.json; then
+            git config user.name "typhoon-data-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add docs/data/satellite.json
+            git commit -m "data: 自动更新卫星云图帧（葵花9号 / NICT 中继）"
+            git pull --rebase --autostash
+            git push
+          fi
