@@ -6,6 +6,7 @@ python3 fetcher/fetch_metar.py || true
 python3 fetcher/fetch_wind.py || true
 python3 fetcher/fetch_fnv3.py || true
 python3 fetcher/build_impact.py || true
+python3 fetcher/build_consensus.py || true   # 吃 docs/data/verify/（fetch.py 产出），云端同样可跑
 python3 fetcher/fetch_himawari.py || true
 if ! git diff --quiet docs/data; then
   git add docs/data

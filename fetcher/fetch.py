@@ -107,6 +107,45 @@ def latest_forecasts(points):
     return seen
 
 
+def build_verify(tfid, points, now):
+    """瘦身检验集 → docs/data/verify/{tfid}.json（供 build_consensus 云端使用）。
+
+    原始返回里每个历史轨迹点都挂着「当时」各机构的预报，一份最新详情 = 一场台风
+    的完整检验集（谁、何时、报了什么、实际走到哪）。archive/ 未入库（太重），
+    这里只留 时刻/经纬 三元组：obs=[[epoch,lat,lng]...]，
+    issues={机构: [[发布epoch, [[valid_epoch,lat,lng]...]], ...]}。时间统一 UTC 秒。"""
+    bjt = timezone(timedelta(hours=8))
+
+    def ep(s):
+        return int(datetime.strptime(s, "%Y-%m-%d %H:%M:%S").replace(tzinfo=bjt).timestamp())
+
+    obs, issues = [], {}
+    for p in points:
+        try:
+            t = ep(p["time"])
+            obs.append([t, round(float(p["lat"]), 2), round(float(p["lng"]), 2)])
+        except (KeyError, ValueError):
+            continue
+        for f in p.get("forecast") or []:
+            src = (f.get("tm") or "").strip()
+            fps = []
+            for q in f.get("forecastpoints") or []:
+                try:
+                    vt = ep(q["time"])
+                    if vt > t:
+                        fps.append([vt, round(float(q["lat"]), 2), round(float(q["lng"]), 2)])
+                except (KeyError, ValueError):
+                    continue
+            if src and fps:
+                issues.setdefault(src, []).append([t, sorted(fps)])
+    vdir = DATA_DIR / "verify"
+    vdir.mkdir(parents=True, exist_ok=True)
+    (vdir / f"{tfid}.json").write_text(
+        json.dumps({"tfid": tfid, "updatedAt": now, "obs": sorted(obs),
+                    "issues": {k: sorted(v) for k, v in issues.items()}},
+                   ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 RESIDUAL_MAX_H = 72   # 停编后继续追踪的硬上限（防呆）
 RESIDUAL_RAIN_MM = 30  # 残涡下游 24h 模式预报雨量门槛：雨还在，就继续盯
 
@@ -183,6 +222,7 @@ def fetch_once():
         (DATA_DIR / f"typhoon_{tfid}.json").write_text(
             json.dumps(out, ensure_ascii=False), encoding="utf-8"
         )
+        build_verify(tfid, points, now)
 
         last = out["track"][-1] if out["track"] else {}
         index["typhoons"].append({
