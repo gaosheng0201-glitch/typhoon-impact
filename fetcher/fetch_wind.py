@@ -61,24 +61,35 @@ def main():
     pts = grid()
     per_point = {}      # (lat,lon) -> {"time":[...], "spd":[...], "dir":[...]}
     axis = None
+    failed = 0
     for i in range(0, len(pts), BATCH):
-        if i > 0:
-            time.sleep(1.5)
         chunk = pts[i:i + BATCH]
-        try:
-            for x in fetch_batch(chunk):
-                h = x.get("hourly", {})
-                t, sp, dr = h.get("time"), h.get("wind_speed_10m"), h.get("wind_direction_10m")
-                if not t or not sp:
-                    continue
-                per_point[(round(x["latitude"], 2), round(x["longitude"], 2))] = (t, sp, dr)
-                if axis is None:
-                    axis = t
-        except Exception as e:
-            print(f"[wind] 批 {i//BATCH} 失败: {e}", file=sys.stderr)
+        for attempt in range(3):                 # 批级重试 + 退避（Open-Meteo 偶发 429）
+            if i > 0 or attempt > 0:
+                time.sleep(1.5 * (attempt + 1))
+            try:
+                for x in fetch_batch(chunk):
+                    h = x.get("hourly", {})
+                    t, sp, dr = h.get("time"), h.get("wind_speed_10m"), h.get("wind_direction_10m")
+                    if not t or not sp:
+                        continue
+                    per_point[(round(x["latitude"], 2), round(x["longitude"], 2))] = (t, sp, dr)
+                    if axis is None:
+                        axis = t
+                break
+            except Exception as e:
+                print(f"[wind] 批 {i//BATCH} 第{attempt+1}次失败: {e}", file=sys.stderr)
+        else:
+            failed += 1                          # 3 次都失败
 
     if not per_point or axis is None:
         print("[wind] 无数据，保留旧快照", file=sys.stderr)
+        return 0
+    # 完整性守卫：任一批彻底失败 / 点数明显不足 → 保留旧的完整快照，绝不写带洞的
+    # （宁可风场晚半小时更新，也不让地图中间空一条纬度带）
+    if failed or len(per_point) < len(pts) * 0.98:
+        print(f"[wind] {failed} 批失败、仅 {len(per_point)}/{len(pts)} 点——"
+              f"保留旧完整快照，不写带洞快照", file=sys.stderr)
         return 0
 
     idxs = frame_indices(axis, now_utc)
