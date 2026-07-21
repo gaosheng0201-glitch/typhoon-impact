@@ -1,6 +1,5 @@
 # 台风与蝉 Typhoon & Cicada — 公益台风影响查询，欢迎收录
-# 注：项目 Pages 位于子路径时，本文件仅在自定义域名 typhoonandcicada.com 生效后成为站点根 robots。
 User-agent: *
 Allow: /
 
-Sitemap: https://gaosheng0201-glitch.github.io/typhoonandcicada/sitemap.xml
+Sitemap: https://typhoonandcicada.com/sitemap.xml
