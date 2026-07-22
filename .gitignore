@@ -2,3 +2,5 @@
 __pycache__/
 archive/
 宣传稿.md
+fetcher/.cache/
+docs/data/extract-queue/

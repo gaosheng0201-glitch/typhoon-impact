@@ -1,22 +1,15 @@
 # 城市记忆对照库 · 缺口优先级报告
 
 由 IBTrACS v04r01(1949 年以来)与现有 analogs.json 交叉得出。
-覆盖地级市 **336**，已有叙事对照 **88**（26%），
-有台风活动却无对照的缺口 **216**（沿海暴露 9）。
+覆盖地级市 **336**，已有叙事对照 **100**（29%），
+有台风活动却无对照的缺口 **204**（沿海暴露 2）。
 
 排序：沿海暴露优先 × 近 100km 过境频次。代表台风取各市最近距离的著名系统（供策展时定锚点）。
 
 | 城市 | 省 | 近100km | 沿海 | 代表台风（年·最近km） |
 |---|---|---|---|---|
 | 三沙 | 海南省 | 163 | ● | FORREST1992·69km / ANGELA1995·75km / HAIYAN2013·183km |
-| 威海 | 山东省 | 26 | ● | MUIFA2011·130km / FENGSHEN2002·164km / WINNIE1997·232km |
-| 连云港 | 江苏省 | 22 | ● | WINNIE1997·115km / FENGSHEN2002·135km / SOUDELOR2015·194km |
-| 东营 | 山东省 | 18 | ● | WINNIE1997·27km / FENGSHEN2002·54km / LEKIMA2019·66km |
-| 丹东 | 辽宁省 | 15 | ● | MUIFA2011·26km / WINNIE1997·153km / HAISHEN2020·156km |
-| 沧州 | 河北省 | 13 | ● | FENGSHEN2002·117km / WINNIE1997·149km / LEKIMA2019·169km |
-| 唐山 | 河北省 | 11 | ● | FENGSHEN2002·79km / TIM1994·119km / WINNIE1997·124km |
 | 锦州 | 辽宁省 | 11 | ● | TIM1994·72km / WINNIE1997·80km / HAISHEN2020·160km |
-| 秦皇岛 | 河北省 | 8 | ● | WINNIE1997·106km / FENGSHEN2002·130km / LEKIMA2019·195km |
 | 陵水黎族自治县 | 海南省 | 147 |  | ANGELA1995·82km / HAIYAN2013·120km / RAI2021·141km |
 | 定安县 | 海南省 | 145 |  | ANGELA1995·211km / HAIYAN2013·229km / MANGKHUT2018·292km |
 | 澄迈县 | 海南省 | 140 |  | ANGELA1995·195km / HAIYAN2013·203km / MANGKHUT2018·292km |
@@ -38,11 +31,6 @@
 | 彰化县 | 台湾省 | 101 |  | MERANTI2016·163km / ZEB1998·164km / MEGI2010·254km |
 | 云林县 | 台湾省 | 101 |  | MERANTI2016·131km / ZEB1998·157km / MEGI2010·247km |
 | 金门县 | 台湾省 | 94 |  | MERANTI2016·17km / MEGI2010·52km / SOUDELOR2015·100km |
-| 云浮 | 广东省 | 92 |  | MANGKHUT2018·74km / RAGASA2025·123km / SAOLA2023·128km |
-| 三明 | 福建省 | 85 |  | MERANTI2016·9km / SOUDELOR2015·18km / MEGI2010·31km |
-| 肇庆 | 广东省 | 85 |  | MANGKHUT2018·117km / SAOLA2023·149km / RAGASA2025·161km |
-| 龙岩 | 福建省 | 82 |  | MERANTI2016·21km / SOUDELOR2015·59km / MEGI2010·73km |
-| 河源 | 广东省 | 79 |  | HAIMA2016·19km / PEGGY1986·115km / RAI2021·227km |
 | 连江县 | 台湾省 | 73 |  | MEGI2010·143km / SOUDELOR2015·149km / MERANTI2016·245km |
 | 南平 | 福建省 | 63 |  | MERANTI2016·18km / MEGI2010·58km / SOUDELOR2015·88km |
 | 韶关 | 广东省 | 62 |  | HAIMA2016·68km / PEGGY1986·95km / SAOLA2023·229km |
@@ -68,3 +56,15 @@
 | 九江 | 江西省 | 34 |  | SOUDELOR2015·24km / MARIA2018·51km / MERANTI2016·161km |
 | 池州 | 安徽省 | 33 |  | SOUDELOR2015·31km / MERANTI2016·103km / HAIMA2016·222km |
 | 文山壮族苗族 | 云南省 | 33 |  | MANGKHUT2018·88km / YAGI2024·153km / RAGASA2025·298km |
+| 新余 | 江西省 | 32 |  | SOUDELOR2015·139km / MERANTI2016·225km / NEPARTAK2016·229km |
+| 安庆 | 安徽省 | 31 |  | SOUDELOR2015·5km / WINNIE1997·124km / MERANTI2016·170km |
+| 六安 | 安徽省 | 30 |  | SOUDELOR2015·81km / WINNIE1997·111km / MERANTI2016·226km |
+| 扬州 | 江苏省 | 29 |  | SOUDELOR2015·25km / MERANTI2016·87km / WINNIE1997·159km |
+| 滁州 | 安徽省 | 29 |  | WINNIE1997·19km / SOUDELOR2015·76km / MERANTI2016·137km |
+| 株洲 | 湖南省 | 29 |  | SEPAT2007·5km / MARIA2018·137km / SAOMAI2006·176km |
+| 萍乡 | 江西省 | 28 |  | MARIA2018·100km / SOUDELOR2015·228km / HAIMA2016·232km |
+| 黄冈 | 湖北省 | 28 |  | SOUDELOR2015·85km / SAOMAI2006·151km / MARIA2018·171km |
+| 红河哈尼族彝族 | 云南省 | 27 |  | SALLY1996·32km / MANGKHUT2018·97km / YAGI2024·114km |
+| 淮南 | 安徽省 | 25 |  | WINNIE1997·61km / SOUDELOR2015·175km / DOUG1994·265km |
+| 黄石 | 湖北省 | 25 |  | SOUDELOR2015·138km / MARIA2018·152km / SEPAT2007·256km |
+| 长沙 | 湖南省 | 25 |  | SEPAT2007·35km / MARIA2018·91km / SAOMAI2006·146km |
