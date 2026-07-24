@@ -381,10 +381,15 @@ const ImpactPanel = (() => {
       const pex = tier === 1 ? ex("after_light_extra") : tier === 2 ? ex("after_mid_extra") : ex("after_extra");
       return base.concat(pex);
     }
-    if (a.phase === "approach" && !a.win && a.closing && ph.watch) {
-      return ph.watch.concat(ex("watch_extra"));
+    if (a.phase === "approach") {
+      // 风雨还早（>3 天）或只是远处靠近尚无窗口 → 远期跟踪清单（先规划/留意路径/别囤），
+      // 绝不上「避免外出、远离广告牌」这类避险项——影响范围还没到、外面还天晴（与标题同口径）
+      const leadH = a.win ? (a.win.startT - Date.now()) / 3.6e6 : Infinity;
+      if (ph.watch && ((!a.win && a.closing) || leadH > 72)) {
+        return ph.watch.concat(ex("watch_extra"));
+      }
     }
-    return checklistItems(a.level);
+    return checklistItems(a.level);   // 3 天内：备灾清单（人群×等级）
   }
 
   /* 本地实际影响分档（1 外围掠过·轻微 / 2 明显影响 / 3 正面重创）。
