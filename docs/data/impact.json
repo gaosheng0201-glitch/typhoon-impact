@@ -1,1 +1,1 @@
-{"updated":"2026-07-24T03:47:36Z","method":"FNV3 多期预报滞后集合统计，影响半径=150km+该时效历史实测误差（见 METHODOLOGY.md）","note":"研究性数据（Google FNV3，CC BY 4.0），仅供参考，避险决策以官方预警为准","storms":[{"tfid":"202609","name":"巴威","enName":"BAVI","stale":true,"latestInit":"2026-07-14T12:00Z","text":"最新一期预报已全部过期，等待下一期更新"}]}
+{"updated":"2026-07-24T08:45:12Z","method":"FNV3 多期预报滞后集合统计，影响半径=150km+该时效历史实测误差（见 METHODOLOGY.md）","note":"研究性数据（Google FNV3，CC BY 4.0），仅供参考，避险决策以官方预警为准","storms":[{"tfid":"202609","name":"巴威","enName":"BAVI","stale":true,"latestInit":"2026-07-14T12:00Z","text":"最新一期预报已全部过期，等待下一期更新"}]}
